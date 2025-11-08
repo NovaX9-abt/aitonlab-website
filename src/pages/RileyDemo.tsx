@@ -4,19 +4,17 @@ import { Phone, MessageSquare, Globe, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
 const RileyDemo = () => {
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleBookDemo = () => {
     toast({
       title: "Demo Line Coming Soon! 📞",
-      description: "Our demo line will be available soon. Stay tuned!",
+      description: "Our demo line will be available soon. Stay tuned!"
     });
   };
-
-  return (
-    <main className="min-h-screen">
+  return <main className="min-h-screen">
       <Navbar />
       
       {/* Hero Section */}
@@ -45,12 +43,7 @@ const RileyDemo = () => {
             </p>
 
             {/* CTA */}
-            <Button 
-              variant="hero" 
-              size="lg"
-              onClick={handleBookDemo}
-              className="group mt-6"
-            >
+            <Button variant="hero" size="lg" onClick={handleBookDemo} className="group mt-6">
               Book a Demo Call with Riley
               <Phone className="group-hover:rotate-12 transition-transform" />
             </Button>
@@ -59,7 +52,9 @@ const RileyDemo = () => {
 
         {/* Decorative Elements */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{
+        animationDelay: "1s"
+      }}></div>
       </section>
 
       {/* What Riley Does */}
@@ -94,7 +89,9 @@ const RileyDemo = () => {
                 </div>
               </Card>
 
-              <Card className="p-8 hover:shadow-elegant transition-smooth animate-slide-up" style={{ animationDelay: "0.1s" }}>
+              <Card className="p-8 hover:shadow-elegant transition-smooth animate-slide-up" style={{
+              animationDelay: "0.1s"
+            }}>
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                     <MessageSquare className="w-7 h-7 text-primary" />
@@ -106,19 +103,21 @@ const RileyDemo = () => {
                 </div>
               </Card>
 
-              <Card className="p-8 hover:shadow-elegant transition-smooth animate-slide-up" style={{ animationDelay: "0.2s" }}>
+              <Card className="p-8 hover:shadow-elegant transition-smooth animate-slide-up" style={{
+              animationDelay: "0.2s"
+            }}>
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                     <Globe className="w-7 h-7 text-primary" />
                   </div>
                   <h3 className="text-2xl font-semibold">Multilingual Support</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Riley speaks English, French, and Kinyarwanda fluently, ensuring every customer feels understood and valued.
-                  </p>
+                  <p className="text-muted-foreground leading-relaxed">Riley speaks English and French fluently, ensuring every customer feels understood and valued.</p>
                 </div>
               </Card>
 
-              <Card className="p-8 hover:shadow-elegant transition-smooth animate-slide-up" style={{ animationDelay: "0.3s" }}>
+              <Card className="p-8 hover:shadow-elegant transition-smooth animate-slide-up" style={{
+              animationDelay: "0.3s"
+            }}>
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                     <Clock className="w-7 h-7 text-primary" />
@@ -149,12 +148,7 @@ const RileyDemo = () => {
               <p className="text-muted-foreground mb-6">
                 See how an AI voice assistant could transform your customer support
               </p>
-              <Button 
-                variant="hero" 
-                size="lg"
-                onClick={handleBookDemo}
-                className="group"
-              >
+              <Button variant="hero" size="lg" onClick={handleBookDemo} className="group">
                 Book a Demo Call with Riley
                 <Phone className="group-hover:rotate-12 transition-transform" />
               </Button>
@@ -164,8 +158,6 @@ const RileyDemo = () => {
       </section>
 
       <Footer />
-    </main>
-  );
+    </main>;
 };
-
 export default RileyDemo;
