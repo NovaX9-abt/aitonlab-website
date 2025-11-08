@@ -58,6 +58,12 @@ const Navbar = () => {
               Services
             </button>
             <Link
+              to="/pricing"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
+              Pricing
+            </Link>
+            <Link
               to="/portfolio"
               className="text-sm font-medium hover:text-primary transition-colors"
             >
@@ -109,6 +115,13 @@ const Navbar = () => {
               >
                 Services
               </button>
+              <Link
+                to="/pricing"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-sm font-medium hover:text-primary transition-colors py-2"
+              >
+                Pricing
+              </Link>
               <Link
                 to="/portfolio"
                 onClick={() => setIsMobileMenuOpen(false)}
