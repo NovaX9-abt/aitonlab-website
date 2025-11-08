@@ -4,10 +4,8 @@ import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Card } from "@/components/ui/card";
-
 const Portfolio = () => {
-  return (
-    <main className="min-h-screen">
+  return <main className="min-h-screen">
       <Navbar />
       
       {/* Hero Section with Photo */}
@@ -34,9 +32,7 @@ const Portfolio = () => {
                   <p className="text-lg text-muted-foreground">
                     AI Solutions Developer & Young Entrepreneur
                   </p>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-sm font-medium text-primary">
-                    17 Years Old • Based in Rwanda
-                  </div>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-sm font-medium text-primary">18 Years Old • Based in Rwanda</div>
                 </div>
               </div>
               
@@ -60,8 +56,6 @@ const Portfolio = () => {
 
       {/* Footer */}
       <Footer />
-    </main>
-  );
+    </main>;
 };
-
 export default Portfolio;
