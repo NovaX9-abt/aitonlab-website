@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Phone, Clock, DollarSign, Users, Shield, Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+  const navigate = useNavigate();
+  
   const benefits = [
     {
       icon: Clock,
@@ -37,8 +40,7 @@ const Services = () => {
   ];
 
   const handleGetStarted = () => {
-    const contactSection = document.getElementById("contact");
-    contactSection?.scrollIntoView({ behavior: "smooth" });
+    navigate("/riley-demo");
   };
 
   return (
