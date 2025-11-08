@@ -13,7 +13,7 @@ const Pricing = () => {
       price: "$200",
       description: "Ideal for small businesses (restaurants, salons, boutiques).",
       features: [
-        "1 multilingual voice assistant (English / French / Kinyarwanda)",
+        "1 multilingual voice assistant (English / French)",
         "Basic automation: answering calls, simple responses, manual redirection",
         "Integration with Google Sheets or Airtable",
         "3-day free trial included",

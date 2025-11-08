@@ -51,12 +51,6 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Services
-            </button>
             <Link
               to="/pricing"
               className="text-sm font-medium hover:text-primary transition-colors"
@@ -109,12 +103,6 @@ const Navbar = () => {
               >
                 Home
               </Link>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="text-sm font-medium hover:text-primary transition-colors py-2 text-left"
-              >
-                Services
-              </button>
               <Link
                 to="/pricing"
                 onClick={() => setIsMobileMenuOpen(false)}
