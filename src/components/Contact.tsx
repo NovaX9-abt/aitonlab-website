@@ -11,7 +11,9 @@ const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    businessName: "",
+    phone: "",
+    service: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,22 +23,10 @@ const Contact = () => {
     setIsSubmitting(true);
 
     // Basic validation
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+    if (!formData.name.trim() || !formData.businessName.trim() || !formData.phone.trim() || !formData.service.trim()) {
       toast({
         title: "Missing Information",
-        description: "Please fill in all fields before submitting.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
+        description: "Please fill in all required fields.",
         variant: "destructive",
       });
       setIsSubmitting(false);
@@ -48,15 +38,15 @@ const Contact = () => {
 
     toast({
       title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
+      description: "Thank you for reaching out. We'll get back to you soon!",
     });
 
     // Reset form
-    setFormData({ name: "", email: "", message: "" });
+    setFormData({ name: "", businessName: "", phone: "", service: "", message: "" });
     setIsSubmitting(false);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -75,7 +65,7 @@ const Contact = () => {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Work Together</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to transform your customer support? Let's discuss how AI can help your business grow.
+              Ready to automate your business? Let's discuss which solution is right for you.
             </p>
           </div>
 
@@ -143,7 +133,7 @@ const Contact = () => {
               <Card className="p-8 shadow-elegant">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Your Name</Label>
+                    <Label htmlFor="name">Your Name *</Label>
                     <Input
                       id="name"
                       name="name"
@@ -156,53 +146,84 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
+                    <Label htmlFor="businessName">Business Name *</Label>
                     <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="john@example.com"
-                      value={formData.email}
+                      id="businessName"
+                      name="businessName"
+                      placeholder="Your Business Name"
+                      value={formData.businessName}
                       onChange={handleChange}
                       required
-                      maxLength={255}
+                      maxLength={100}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Your Message</Label>
+                    <Label htmlFor="phone">Phone Number *</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+250 XXX XXX XXX"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      maxLength={20}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="service">What Service Do You Want? *</Label>
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      required
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="whatsapp">WhatsApp Automation</option>
+                      <option value="email">Email & CRM Automation</option>
+                      <option value="booking">Booking Systems</option>
+                      <option value="voice">Voice AI Agent (Riley)</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Additional Details (Optional)</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell me about your project or business needs..."
+                      placeholder="Tell us about your business needs..."
                       value={formData.message}
                       onChange={handleChange}
-                      required
                       maxLength={1000}
-                      rows={6}
+                      rows={4}
                       className="resize-none"
                     />
-                    <p className="text-xs text-muted-foreground text-right">
-                      {formData.message.length}/1000 characters
-                    </p>
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    variant="hero" 
-                    size="lg" 
-                    className="w-full group"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      "Sending..."
-                    ) : (
-                      <>
-                        Send Message
-                        <Send className="group-hover:translate-x-1 transition-transform" />
-                      </>
-                    )}
-                  </Button>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button 
+                      type="submit" 
+                      variant="hero" 
+                      className="flex-1 group"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                      <Send className="group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                    <Button 
+                      type="button"
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => window.location.href = "/riley-demo"}
+                    >
+                      <Phone className="mr-2" />
+                      Call Riley for Demo
+                    </Button>
+                  </div>
                 </form>
               </Card>
             </div>

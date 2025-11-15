@@ -8,10 +8,14 @@ const RileyDemo = () => {
   const {
     toast
   } = useToast();
-  const handleBookDemo = () => {
+  const handleCallRiley = () => {
+    window.location.href = "tel:+250788000000"; // Replace with actual Riley phone number
+  };
+
+  const handleBookSetup = () => {
     toast({
-      title: "Demo Line Coming Soon! 📞",
-      description: "Our demo line will be available soon. Stay tuned!"
+      title: "Setup Consultation",
+      description: "Redirecting to booking page...",
     });
   };
   return <main className="min-h-screen">
@@ -33,20 +37,24 @@ const RileyDemo = () => {
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Riley
               </span>
-              , Your AI Voice Assistant
+              {" "}— Your 24/7 Voice AI Assistant
             </h1>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Riley is the AI voice assistant of <span className="font-semibold text-foreground">Aiton AI</span>, 
-              helping local businesses in Rwanda deliver exceptional customer service around the clock.
+              Riley answers calls for your business, handles customers, books appointments, and gives information — automatically. Try a live demo call now.
             </p>
 
-            {/* CTA */}
-            <Button variant="hero" size="lg" onClick={handleBookDemo} className="group mt-6">
-              Book a Demo Call with Riley
-              <Phone className="group-hover:rotate-12 transition-transform" />
-            </Button>
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+              <Button variant="hero" size="lg" onClick={handleCallRiley} className="group">
+                Call Riley Now
+                <Phone className="group-hover:rotate-12 transition-transform" />
+              </Button>
+              <Button variant="outline" size="lg" onClick={handleBookSetup}>
+                Book a Setup Consultation
+              </Button>
+            </div>
           </div>
         </div>
 
@@ -64,68 +72,84 @@ const RileyDemo = () => {
             {/* Header */}
             <div className="text-center mb-16 animate-fade-in">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                What Riley Can Do For{" "}
+                Riley's{" "}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Your Business
+                  Capabilities
                 </span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Riley handles customer calls automatically, saving you time while increasing customer satisfaction. 
-                He's always professional, always available, and speaks your customers' language.
-              </p>
             </div>
 
-            {/* Capabilities Grid */}
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <Card className="p-8 hover:shadow-elegant transition-smooth animate-slide-up">
-                <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <Phone className="w-7 h-7 text-primary" />
+            {/* Capabilities List */}
+            <div className="space-y-6 max-w-3xl mx-auto">
+              <Card className="p-6 hover:shadow-elegant transition-smooth animate-slide-up">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-5 h-5 text-primary-foreground" />
                   </div>
-                  <h3 className="text-2xl font-semibold">Answer Customer Calls</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Riley picks up every call instantly, provides accurate information, and handles multiple conversations simultaneously without missing a beat.
-                  </p>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Answers Calls 24/7</h3>
+                    <p className="text-muted-foreground">Never miss a customer, even when you're closed or busy</p>
+                  </div>
                 </div>
               </Card>
 
-              <Card className="p-8 hover:shadow-elegant transition-smooth animate-slide-up" style={{
-              animationDelay: "0.1s"
-            }}>
-                <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <MessageSquare className="w-7 h-7 text-primary" />
+              <Card className="p-6 hover:shadow-elegant transition-smooth animate-slide-up" style={{ animationDelay: "100ms" }}>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                    <Globe className="w-5 h-5 text-primary-foreground" />
                   </div>
-                  <h3 className="text-2xl font-semibold">Take Bookings & Handle Inquiries</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    From scheduling appointments to answering product questions, Riley manages it all with the professionalism your customers expect.
-                  </p>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Speaks English & French</h3>
+                    <p className="text-muted-foreground">Communicates fluently in your customers' preferred language</p>
+                  </div>
                 </div>
               </Card>
 
-              <Card className="p-8 hover:shadow-elegant transition-smooth animate-slide-up" style={{
-              animationDelay: "0.2s"
-            }}>
-                <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <Globe className="w-7 h-7 text-primary" />
+              <Card className="p-6 hover:shadow-elegant transition-smooth animate-slide-up" style={{ animationDelay: "200ms" }}>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                    <MessageSquare className="w-5 h-5 text-primary-foreground" />
                   </div>
-                  <h3 className="text-2xl font-semibold">Multilingual Support</h3>
-                  <p className="text-muted-foreground leading-relaxed">Riley speaks English and French fluently, ensuring every customer feels understood and valued.</p>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Understands Context</h3>
+                    <p className="text-muted-foreground">Has intelligent conversations and remembers important details</p>
+                  </div>
                 </div>
               </Card>
 
-              <Card className="p-8 hover:shadow-elegant transition-smooth animate-slide-up" style={{
-              animationDelay: "0.3s"
-            }}>
-                <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <Clock className="w-7 h-7 text-primary" />
+              <Card className="p-6 hover:shadow-elegant transition-smooth animate-slide-up" style={{ animationDelay: "300ms" }}>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-primary-foreground" />
                   </div>
-                  <h3 className="text-2xl font-semibold">24/7 Availability</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Riley never takes a break. Whether it's 3 AM or peak business hours, your customers always get immediate, professional support.
-                  </p>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Books Appointments</h3>
+                    <p className="text-muted-foreground">Schedules meetings and syncs with your calendar automatically</p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 hover:shadow-elegant transition-smooth animate-slide-up" style={{ animationDelay: "400ms" }}>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                    <MessageSquare className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Sends Customer Details to Your System</h3>
+                    <p className="text-muted-foreground">Captures and organizes customer information in your preferred tools</p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 hover:shadow-elegant transition-smooth animate-slide-up" style={{ animationDelay: "500ms" }}>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                    <Globe className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Fully Customizable for Any Business</h3>
+                    <p className="text-muted-foreground">Tailored to your specific industry, services, and workflow</p>
+                  </div>
                 </div>
               </Card>
             </div>
@@ -148,8 +172,8 @@ const RileyDemo = () => {
               <p className="text-muted-foreground mb-6">
                 See how an AI voice assistant could transform your customer support
               </p>
-              <Button variant="hero" size="lg" onClick={handleBookDemo} className="group">
-                Book a Demo Call with Riley
+              <Button variant="hero" size="lg" onClick={handleCallRiley} className="group">
+                Call Riley Now
                 <Phone className="group-hover:rotate-12 transition-transform" />
               </Button>
             </div>
