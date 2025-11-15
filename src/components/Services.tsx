@@ -1,43 +1,55 @@
-import { Bot, Phone, MessageSquare, Clock } from "lucide-react";
+import { MessageSquare, Mail, Calendar, Phone } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
-      icon: Bot,
-      title: "AI Voice Assistants",
-      description: "Custom-built AI voice agents that handle customer calls automatically, speaking English and French fluently.",
+      icon: MessageSquare,
+      title: "WhatsApp Automations",
+      description: "Automated replies, lead capture, menus, funnels, and follow-up systems directly on WhatsApp. Works 24/7. No missed leads again.",
+      buttonText: "Learn More",
+      action: () => {},
+    },
+    {
+      icon: Mail,
+      title: "Email & CRM Automation",
+      description: "Automatically sort emails, send instant alerts, follow up leads, and organize your customer data with smart Google Sheets or CRM integrations.",
+      buttonText: "Learn More",
+      action: () => {},
+    },
+    {
+      icon: Calendar,
+      title: "Booking Systems",
+      description: "Let your clients book appointments through WhatsApp or forms. Automatically sync to Google Calendar and send confirmations.",
+      buttonText: "Learn More",
+      action: () => {},
     },
     {
       icon: Phone,
-      title: "24/7 Availability",
-      description: "Never miss a customer call again. Your AI assistant works around the clock, even when you're closed.",
-    },
-    {
-      icon: MessageSquare,
-      title: "Smart Conversations",
-      description: "Natural conversations that answer questions, take bookings, and provide information to your customers.",
-    },
-    {
-      icon: Clock,
-      title: "Instant Setup",
-      description: "Get your AI assistant up and running in 2-7 days. Start with a free 3-day trial to test it out.",
+      title: "Voice AI Agents (Riley)",
+      description: "A professional voice agent that answers calls 24/7 in English or French. Books appointments, answers questions, and captures leads.",
+      buttonText: "Try Riley Demo",
+      action: () => navigate("/riley-demo"),
     },
   ];
 
   return (
-    <section className="py-24 bg-muted/20">
+    <section id="services" className="py-24 bg-muted/20">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            AI Voice Assistants for Your Business
+            Our Automation Services
           </h2>
           <p className="text-lg text-muted-foreground">
-            We build custom AI voice agents that handle customer calls, take bookings, and provide information—automatically and professionally.
+            Choose the automation that fits your business needs. All solutions are designed specifically for Rwandan companies.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <Card
               key={index}
@@ -50,10 +62,17 @@ const Services = () => {
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
+              <CardContent className="space-y-4">
+                <CardDescription className="text-base leading-relaxed">
                   {service.description}
                 </CardDescription>
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={service.action}
+                >
+                  {service.buttonText}
+                </Button>
               </CardContent>
             </Card>
           ))}

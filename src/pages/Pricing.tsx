@@ -1,174 +1,166 @@
+import { Check } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Briefcase, Settings, Rocket } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Pricing = () => {
   const plans = [
     {
-      icon: Briefcase,
-      name: "Starter",
-      price: "$200",
-      description: "Ideal for small businesses (restaurants, salons, boutiques).",
+      name: "WhatsApp Automation",
+      priceRange: "$49 – $199",
+      description: "Automated replies, lead capture, and follow-ups on WhatsApp",
       features: [
-        "1 multilingual voice assistant (English / French)",
-        "Basic automation: answering calls, simple responses, manual redirection",
-        "Integration with Google Sheets or Airtable",
-        "3-day free trial included",
+        "24/7 automated responses",
+        "Lead capture & qualification",
+        "Custom menus & funnels",
+        "Follow-up sequences",
+        "Google Sheets integration",
       ],
-      delivery: "Delivery: 2 days",
-      cta: "Buy Starter Plan ($200)",
-      link: "#", // Placeholder
-      highlight: false,
+      delivery: "1–2 days",
+      link: "#",
     },
     {
-      icon: Settings,
-      name: "Pro",
-      price: "$300",
-      description: "For businesses that want real automation.",
+      name: "Email & CRM Automation",
+      priceRange: "$59 – $249",
+      description: "Smart email sorting, alerts, and CRM integrations",
       features: [
-        "Everything in the Starter plan",
-        "Integration with Google Calendar, WhatsApp, or email",
-        "Booking and appointment management",
-        "Automatic client confirmation messages",
-        "3-day free trial included",
+        "Automatic email sorting",
+        "Instant lead alerts",
+        "Follow-up automation",
+        "Google Sheets or CRM sync",
+        "Customer data organization",
       ],
-      delivery: "Delivery: 3–5 days",
-      cta: "Buy Pro Plan ($300)",
-      link: "#", // Placeholder
-      highlight: true,
+      delivery: "2–3 days",
+      link: "#",
     },
     {
-      icon: Rocket,
-      name: "Premium",
-      price: "$400",
-      description: "For larger companies (clinics, hotels, agencies).",
+      name: "Booking Systems",
+      priceRange: "$149 – $199",
+      description: "Automated appointment scheduling and confirmations",
       features: [
-        "Custom voice (via ElevenLabs)",
-        "Multi-app integrations (CRM, Notion, Drive, etc.)",
-        "Airtable or Google Sheets dashboard for all calls and client data",
-        "7 days of free support and adjustments after delivery",
-        "3-day free trial included",
+        "WhatsApp or form bookings",
+        "Google Calendar sync",
+        "Automatic confirmations",
+        "Reminder notifications",
+        "Customer management",
       ],
-      delivery: "Delivery: 5–7 days",
-      cta: "Buy Premium Plan ($400)",
-      link: "#", // Placeholder
-      highlight: false,
+      delivery: "2–3 days",
+      link: "#",
+    },
+    {
+      name: "Voice AI Agent Setup",
+      priceRange: "$299 – $399",
+      description: "Professional AI voice assistant like Riley for your business",
+      features: [
+        "24/7 call handling",
+        "English & French support",
+        "Appointment booking",
+        "Lead capture & qualification",
+        "Custom voice options available",
+        "$10 usage credits included",
+      ],
+      delivery: "3–5 days",
+      link: "/riley-demo",
+      popular: true,
     },
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen">
       <Navbar />
       
-      <main className="pt-32 pb-24">
+      <section className="py-24 bg-gradient-to-b from-background via-muted/20 to-background">
         <div className="container mx-auto px-6">
-          <div className="max-w-7xl mx-auto">
-            {/* Header */}
-            <div className="text-center mb-16 animate-fade-in">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
-                <Briefcase className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Simple, Transparent Pricing</span>
-              </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Choose Your{" "}
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Perfect Plan
-                </span>
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                One-time payment, no subscriptions. Get your AI voice assistant up and running in days.
-              </p>
-            </div>
+          {/* Header */}
+          <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Choose Your Perfect{" "}
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Automation
+              </span>
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              One-time setup fees. No subscriptions. Clear pricing for Rwandan businesses.
+            </p>
+          </div>
 
-            {/* Pricing Cards */}
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {plans.map((plan, index) => (
-                <Card
-                  key={index}
-                  className={`p-8 relative animate-slide-up hover:shadow-elegant transition-smooth ${
-                    plan.highlight ? "border-primary/50 shadow-lg" : ""
-                  }`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {plan.highlight && (
-                    <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white border-0">
-                      Most Popular
-                    </Badge>
-                  )}
-                  
-                  <div className="space-y-6">
-                    {/* Icon & Name */}
-                    <div className="space-y-4">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                        <plan.icon className="w-7 h-7 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                        <p className="text-sm text-muted-foreground">{plan.description}</p>
-                      </div>
-                    </div>
-
-                    {/* Price */}
-                    <div>
-                      <div className="text-4xl font-bold text-primary">{plan.price}</div>
-                      <p className="text-sm text-muted-foreground mt-1">One-time payment</p>
-                    </div>
-
-                    {/* Features */}
-                    <div className="space-y-3">
-                      {plan.features.map((feature, i) => (
-                        <div key={i} className="flex gap-3">
-                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-foreground">{feature}</span>
+          {/* Pricing Grid */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+            {plans.map((plan, index) => (
+              <Card
+                key={index}
+                className={`relative p-8 hover:shadow-elegant transition-all duration-300 animate-slide-up ${
+                  plan.popular ? "border-primary shadow-elegant" : ""
+                }`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {plan.popular && (
+                  <Badge className="absolute top-4 right-4 bg-gradient-primary text-primary-foreground">
+                    Most Popular
+                  </Badge>
+                )}
+                <CardHeader className="p-0 mb-6">
+                  <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
+                  <div className="text-3xl font-bold text-primary mb-2">
+                    {plan.priceRange}
+                  </div>
+                  <CardDescription className="text-base">
+                    {plan.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="p-0 space-y-6">
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 text-primary" />
                         </div>
-                      ))}
-                    </div>
-
-                    {/* Delivery */}
-                    <div className="pt-4 border-t border-border">
-                      <p className="text-sm font-medium text-muted-foreground">{plan.delivery}</p>
-                    </div>
-
-                    {/* CTA Button */}
+                        <span className="text-muted-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="pt-4 border-t">
+                    <p className="text-sm text-muted-foreground mb-4">
+                      <span className="font-semibold text-foreground">Delivery:</span> {plan.delivery}
+                    </p>
                     <Button
-                      variant={plan.highlight ? "hero" : "default"}
-                      size="lg"
+                      variant={plan.popular ? "default" : "outline"}
                       className="w-full"
                       onClick={() => window.location.href = plan.link}
                     >
-                      {plan.cta}
+                      Get Started
                     </Button>
                   </div>
-                </Card>
-              ))}
-            </div>
-
-            {/* Trial Info */}
-            <Card className="p-8 md:p-12 text-center bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 animate-fade-in">
-              <div className="max-w-2xl mx-auto space-y-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mx-auto">
-                  <Check className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold">
-                  Try Your AI Voice Assistant Free for 3 Days
-                </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  If you love it, keep it for a one-time setup fee — starting from $200.
-                </p>
-                <Button variant="hero" size="lg" className="mt-4">
-                  Start Your Free Trial
-                </Button>
-              </div>
-            </Card>
+                </CardContent>
+              </Card>
+            ))}
           </div>
+
+          {/* Free Trial Card */}
+          <Card className="max-w-3xl mx-auto p-8 text-center shadow-elegant bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 animate-fade-in">
+            <h3 className="text-2xl font-bold mb-4">
+              Try Your AI Voice Assistant Free for 3 Days
+            </h3>
+            <p className="text-lg text-muted-foreground mb-6">
+              If you love it, keep it for a one-time setup fee — starting from $200.
+            </p>
+            <Button variant="hero" size="lg" onClick={() => window.location.href = "/riley-demo"}>
+              Book Your Free Demo
+            </Button>
+          </Card>
+
+          {/* Note about pricing */}
+          <p className="text-center text-sm text-muted-foreground mt-12 max-w-2xl mx-auto">
+            All projects include a 3-day free test period. Pricing depends on complexity and specific requirements. 
+            Contact us for a custom quote tailored to your business needs.
+          </p>
         </div>
-      </main>
+      </section>
 
       <Footer />
-    </div>
+    </main>
   );
 };
 

@@ -23,24 +23,17 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <Phone className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium text-foreground">AI-Powered Phone Support</span>
-          </div>
-
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Empowering Businesses with{" "}
+            Smart Automations for Rwandan Businesses —{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              AI-Powered
-            </span>{" "}
-            Customer Support
+              Fast, Simple, Affordable
+            </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I help companies in Rwanda automate their phone support with AI agents that answer calls professionally, 24/7.
+            We help companies automate tasks like WhatsApp replies, customer follow-ups, bookings, and voice call handling — so you save time and close more clients.
           </p>
 
           {/* CTAs */}
@@ -51,7 +44,7 @@ const Hero = () => {
               onClick={handleBookCall}
               className="group"
             >
-              Book a Call
+              Book a Demo with Riley
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
@@ -62,24 +55,8 @@ const Hero = () => {
                 servicesSection?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Learn More
+              See Our Services
             </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
-            <div className="space-y-2">
-              <div className="text-4xl font-bold text-primary">24/7</div>
-              <div className="text-sm text-muted-foreground">Available Support</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-4xl font-bold text-primary">100%</div>
-              <div className="text-sm text-muted-foreground">Professional</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-4xl font-bold text-primary">Local</div>
-              <div className="text-sm text-muted-foreground">Rwanda Numbers</div>
-            </div>
           </div>
         </div>
       </div>
