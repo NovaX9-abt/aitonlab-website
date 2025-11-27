@@ -45,7 +45,7 @@ const Services = () => {
             Our Automation Services
           </h2>
           <p className="text-lg text-muted-foreground">
-            Choose the automation that fits your business needs. All solutions are designed specifically for Rwandan companies.
+            Choose the automation that fits your business needs. Professional solutions for companies worldwide.
           </p>
         </div>
 

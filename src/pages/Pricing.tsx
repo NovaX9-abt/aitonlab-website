@@ -82,7 +82,7 @@ const Pricing = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              One-time setup fees. No subscriptions. Clear pricing for Rwandan businesses.
+              One-time setup fees. No subscriptions. Transparent pricing for businesses worldwide.
             </p>
           </div>
 

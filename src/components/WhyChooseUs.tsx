@@ -10,8 +10,8 @@ const WhyChooseUs = () => {
     },
     {
       icon: MapPin,
-      title: "Built for Rwandan Businesses",
-      description: "Local expertise",
+      title: "Global Expertise",
+      description: "Worldwide clients",
     },
     {
       icon: DollarSign,
@@ -30,10 +30,10 @@ const WhyChooseUs = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why Choose <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Aiton AI</span>
+            Why Choose <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Us</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            We understand the unique needs of businesses in Rwanda
+            Simple, effective automation solutions for businesses worldwide
           </p>
         </div>
 
