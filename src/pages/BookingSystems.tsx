@@ -34,7 +34,7 @@ const BookingSystems = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                Most businesses in Rwanda waste hours playing phone tag with customers trying to schedule appointments. 
+                Many businesses waste hours playing phone tag with customers trying to schedule appointments. 
                 You go back and forth on WhatsApp, double-book time slots, forget appointments, or miss bookings when you're busy.
               </p>
               <p className="text-muted-foreground leading-relaxed">

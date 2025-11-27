@@ -34,7 +34,7 @@ const WhatsAppAutomation = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                Most businesses in Rwanda lose customers because they can't respond to WhatsApp messages fast enough. 
+                Many businesses lose customers because they can't respond to WhatsApp messages fast enough. 
                 Maybe you're busy with other work, or you're closed for the night.
               </p>
               <p className="text-muted-foreground leading-relaxed">
@@ -70,7 +70,7 @@ const WhatsAppAutomation = () => {
                     Delivery Service
                   </h3>
                   <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-6">
-                    <li>Customer asks "Do you deliver to Kimironko?" → Instant yes/no reply</li>
+                    <li>Customer asks "Do you deliver to my area?" → Instant yes/no reply</li>
                     <li>Order confirmation with tracking link sent automatically</li>
                     <li>Follow-up message after delivery asking for feedback</li>
                   </ul>
