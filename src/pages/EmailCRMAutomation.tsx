@@ -1,4 +1,4 @@
-import { Mail, CheckCircle2, ArrowRight } from "lucide-react";
+import { Mail, CheckCircle2, ArrowRight, Users, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,15 @@ import Footer from "@/components/Footer";
 
 const EmailCRMAutomation = () => {
   const navigate = useNavigate();
+
+  const whatYouGet = [
+    "Automatic email sorting",
+    "Lead tagging",
+    "CRM syncing or Google Sheets sync",
+    "Follow-up automation",
+    "WhatsApp alerts for important leads",
+    "Monthly reporting (optional)",
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -94,6 +103,22 @@ const EmailCRMAutomation = () => {
             </CardContent>
           </Card>
 
+          {/* Who This Is Best For */}
+          <Card className="mb-8 animate-slide-up" style={{ animationDelay: "150ms" }}>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Users className="w-5 h-5 text-primary" />
+                Who This Is Best For
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground leading-relaxed">
+                Ideal for <span className="font-semibold text-foreground">consultants, agencies, real estate agents, e-commerce businesses, and companies handling many leads by email</span> — 
+                any business that needs to organize and follow up with customers efficiently.
+              </p>
+            </CardContent>
+          </Card>
+
           {/* Benefits */}
           <Card className="mb-8 animate-slide-up" style={{ animationDelay: "200ms" }}>
             <CardHeader>
@@ -117,18 +142,38 @@ const EmailCRMAutomation = () => {
             </CardContent>
           </Card>
 
+          {/* What You Will Get */}
+          <Card className="mb-8 animate-slide-up" style={{ animationDelay: "250ms" }}>
+            <CardHeader>
+              <CardTitle>What You Will Get</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {whatYouGet.map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <span className="text-muted-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Pricing */}
           <Card className="mb-12 animate-slide-up" style={{ animationDelay: "300ms" }}>
             <CardHeader>
-              <CardTitle>Flexible Pricing</CardTitle>
+              <CardTitle>Pricing</CardTitle>
+              <CardDescription>Starting from $79 – $149</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Pricing varies depending on complexity. Simple automations are affordable (from $49), 
-                and advanced workflows may cost more. All solutions include a 3-day free test.
+                Pricing depends on the complexity of your workflow. Simple automation starts at the prices listed above, 
+                and advanced custom systems may cost more after your free analysis.
               </p>
-              <p className="text-sm text-muted-foreground">
-                We'll analyze your needs and recommend the simplest solution that works for your business.
+              <p className="text-sm text-muted-foreground font-medium">
+                Every project includes a free 3-day test before final delivery.
               </p>
             </CardContent>
           </Card>
@@ -144,13 +189,18 @@ const EmailCRMAutomation = () => {
                   We will recommend the simplest and most cost-effective automation for your business.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    variant="hero" 
-                    size="lg"
-                    onClick={() => navigate("/riley-demo")}
-                  >
-                    Book a Demo with Riley
-                  </Button>
+                  <div className="flex flex-col items-center">
+                    <Button 
+                      variant="hero" 
+                      size="lg"
+                      onClick={() => navigate("/riley-demo")}
+                    >
+                      Book a Demo with Riley
+                    </Button>
+                    <span className="text-sm text-muted-foreground mt-2">
+                      Includes a free 3-day test if you decide to proceed.
+                    </span>
+                  </div>
                   <Button 
                     variant="outline" 
                     size="lg"

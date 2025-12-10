@@ -9,7 +9,7 @@ const Pricing = () => {
   const plans = [
     {
       name: "WhatsApp Automation",
-      priceRange: "$49 – $199",
+      priceRange: "$49 – $149",
       description: "Automated replies, lead capture, and follow-ups on WhatsApp",
       features: [
         "24/7 automated responses",
@@ -19,25 +19,11 @@ const Pricing = () => {
         "Google Sheets integration",
       ],
       delivery: "1–2 days",
-      link: "#",
-    },
-    {
-      name: "Email & CRM Automation",
-      priceRange: "$59 – $249",
-      description: "Smart email sorting, alerts, and CRM integrations",
-      features: [
-        "Automatic email sorting",
-        "Instant lead alerts",
-        "Follow-up automation",
-        "Google Sheets or CRM sync",
-        "Customer data organization",
-      ],
-      delivery: "2–3 days",
-      link: "#",
+      link: "/services/whatsapp",
     },
     {
       name: "Booking Systems",
-      priceRange: "$149 – $199",
+      priceRange: "$129 – $179",
       description: "Automated appointment scheduling and confirmations",
       features: [
         "WhatsApp or form bookings",
@@ -47,11 +33,11 @@ const Pricing = () => {
         "Customer management",
       ],
       delivery: "2–3 days",
-      link: "#",
+      link: "/services/booking",
     },
     {
       name: "Voice AI Agent Setup",
-      priceRange: "$299 – $399",
+      priceRange: "$249 – $399",
       description: "Professional AI voice assistant like Riley for your business",
       features: [
         "24/7 call handling",
@@ -64,6 +50,20 @@ const Pricing = () => {
       delivery: "3–5 days",
       link: "/riley-demo",
       popular: true,
+    },
+    {
+      name: "Email & CRM Automation",
+      priceRange: "$79 – $149",
+      description: "Smart email sorting, alerts, and CRM integrations",
+      features: [
+        "Automatic email sorting",
+        "Instant lead alerts",
+        "Follow-up automation",
+        "Google Sheets or CRM sync",
+        "Customer data organization",
+      ],
+      delivery: "2–3 days",
+      link: "/services/email-crm",
     },
   ];
 
@@ -144,7 +144,7 @@ const Pricing = () => {
               Try Your AI Voice Assistant Free for 3 Days
             </h3>
             <p className="text-lg text-muted-foreground mb-6">
-              If you love it, keep it for a one-time setup fee — starting from $200.
+              If you love it, keep it for a one-time setup fee — starting from $249.
             </p>
             <Button variant="hero" size="lg" onClick={() => window.location.href = "/riley-demo"}>
               Book Your Free Demo
@@ -153,8 +153,8 @@ const Pricing = () => {
 
           {/* Note about pricing */}
           <p className="text-center text-sm text-muted-foreground mt-12 max-w-2xl mx-auto">
-            All projects include a 3-day free test period. Pricing depends on complexity and specific requirements. 
-            Contact us for a custom quote tailored to your business needs.
+            Pricing depends on the complexity of your workflow. Simple automation starts at the prices listed above, 
+            and advanced custom systems may cost more after your free analysis. Every project includes a free 3-day test before final delivery.
           </p>
         </div>
       </section>

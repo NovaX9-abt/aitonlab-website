@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Phone, MessageSquare, Globe, Clock } from "lucide-react";
+import { Phone, MessageSquare, Globe, Clock, Heart, Users, Check } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
 const RileyDemo = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+
   const handleCallRiley = () => {
     window.location.href = "tel:+250788000000"; // Replace with actual Riley phone number
   };
@@ -18,7 +18,27 @@ const RileyDemo = () => {
       description: "Redirecting to booking page...",
     });
   };
-  return <main className="min-h-screen">
+
+  const whatYouGet = [
+    "Fully customized voice assistant",
+    "Call handling 24/7",
+    "Lead capture and qualification",
+    "Appointment booking",
+    "Google Calendar & Sheets integration",
+    "Custom workflows",
+    "$10 usage credits included",
+  ];
+
+  const whyBusinessesLoveRiley = [
+    "Never miss a call again",
+    "Convert more leads automatically",
+    "Reduce customer service workload",
+    "Speak with customers in English or French",
+    "Handle appointments and lead qualification in seconds",
+  ];
+
+  return (
+    <main className="min-h-screen">
       <Navbar />
       
       {/* Hero Section */}
@@ -47,10 +67,15 @@ const RileyDemo = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-              <Button variant="hero" size="lg" onClick={handleCallRiley} className="group">
-                Call Riley Now
-                <Phone className="group-hover:rotate-12 transition-transform" />
-              </Button>
+              <div className="flex flex-col items-center">
+                <Button variant="hero" size="lg" onClick={handleCallRiley} className="group">
+                  Call Riley Now
+                  <Phone className="group-hover:rotate-12 transition-transform" />
+                </Button>
+                <span className="text-sm text-muted-foreground mt-2">
+                  Includes a free 3-day test if you decide to proceed.
+                </span>
+              </div>
               <Button variant="outline" size="lg" onClick={handleBookSetup}>
                 Book a Setup Consultation
               </Button>
@@ -60,13 +85,57 @@ const RileyDemo = () => {
 
         {/* Decorative Elements */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{
-        animationDelay: "1s"
-      }}></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
+      </section>
+
+      {/* Why Businesses Love Riley */}
+      <section className="py-16 bg-muted/20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto">
+            <Card className="p-8 animate-fade-in">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center">
+                  <Heart className="w-5 h-5 text-primary-foreground" />
+                </div>
+                <h2 className="text-2xl font-bold">Why Businesses Love Riley</h2>
+              </div>
+              <div className="space-y-3">
+                {whyBusinessesLoveRiley.map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <span className="text-muted-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Who This Is Best For */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto">
+            <Card className="p-8 animate-fade-in">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center">
+                  <Users className="w-5 h-5 text-primary-foreground" />
+                </div>
+                <h2 className="text-2xl font-bold">Who This Is Best For</h2>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                Ideal for <span className="font-semibold text-foreground">businesses that receive frequent calls such as salons, clinics, real estate agencies, support teams, taxis, logistics, and appointment-based companies</span> — 
+                any business that wants to capture every call and convert more leads.
+              </p>
+            </Card>
+          </div>
+        </div>
       </section>
 
       {/* What Riley Does */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-muted/20">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             {/* Header */}
@@ -154,8 +223,36 @@ const RileyDemo = () => {
               </Card>
             </div>
 
+            {/* What You Will Get */}
+            <Card className="mt-16 p-8 max-w-3xl mx-auto animate-fade-in">
+              <h3 className="text-2xl font-bold mb-6">What You Will Get</h3>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {whatYouGet.map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <span className="text-muted-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+
+            {/* Pricing */}
+            <Card className="mt-8 p-8 max-w-3xl mx-auto animate-fade-in">
+              <h3 className="text-2xl font-bold mb-2">Pricing</h3>
+              <p className="text-primary font-semibold mb-4">$249 – $399</p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Pricing depends on the complexity of your workflow. Simple automation starts at the prices listed above, 
+                and advanced custom systems may cost more after your free analysis.
+              </p>
+              <p className="text-sm text-muted-foreground font-medium">
+                Every project includes a free 3-day test before final delivery.
+              </p>
+            </Card>
+
             {/* Why It Matters */}
-            <Card className="p-10 md:p-12 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 animate-fade-in">
+            <Card className="mt-8 p-10 md:p-12 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 max-w-3xl mx-auto animate-fade-in">
               <div className="text-center space-y-6">
                 <h3 className="text-3xl font-bold">Why AI Voice Assistants Matter</h3>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -172,16 +269,23 @@ const RileyDemo = () => {
               <p className="text-muted-foreground mb-6">
                 See how an AI voice assistant could transform your customer support
               </p>
-              <Button variant="hero" size="lg" onClick={handleCallRiley} className="group">
-                Call Riley Now
-                <Phone className="group-hover:rotate-12 transition-transform" />
-              </Button>
+              <div className="flex flex-col items-center">
+                <Button variant="hero" size="lg" onClick={handleCallRiley} className="group">
+                  Call Riley Now
+                  <Phone className="group-hover:rotate-12 transition-transform" />
+                </Button>
+                <span className="text-sm text-muted-foreground mt-2">
+                  Includes a free 3-day test if you decide to proceed.
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <Footer />
-    </main>;
+    </main>
+  );
 };
+
 export default RileyDemo;

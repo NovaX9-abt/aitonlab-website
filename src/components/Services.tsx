@@ -1,7 +1,8 @@
-import { MessageSquare, Mail, Calendar, Phone } from "lucide-react";
+import { MessageSquare, Mail, Calendar, Phone, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const Services = () => {
   const navigate = useNavigate();
@@ -13,13 +14,6 @@ const Services = () => {
       description: "Automated replies, lead capture, menus, funnels, and follow-up systems directly on WhatsApp. Works 24/7. No missed leads again.",
       buttonText: "Learn More",
       action: () => navigate("/services/whatsapp"),
-    },
-    {
-      icon: Mail,
-      title: "Email & CRM Automation",
-      description: "Automatically sort emails, send instant alerts, follow up leads, and organize your customer data with smart Google Sheets or CRM integrations.",
-      buttonText: "Learn More",
-      action: () => navigate("/services/email-crm"),
     },
     {
       icon: Calendar,
@@ -35,6 +29,20 @@ const Services = () => {
       buttonText: "Try Riley Demo",
       action: () => navigate("/riley-demo"),
     },
+    {
+      icon: Mail,
+      title: "Email & CRM Automation",
+      description: "Automatically sort emails, send instant alerts, follow up leads, and organize your customer data with smart Google Sheets or CRM integrations.",
+      buttonText: "Learn More",
+      action: () => navigate("/services/email-crm"),
+    },
+  ];
+
+  const serviceComparison = [
+    { need: "Instant replies on WhatsApp", service: "WhatsApp Automation" },
+    { need: "Customers booking appointments", service: "Booking System" },
+    { need: "High call volume / missed calls", service: "Voice AI Agent Setup" },
+    { need: "Organizing leads & emails", service: "Email & CRM Automation" },
   ];
 
   return (
@@ -48,6 +56,32 @@ const Services = () => {
             Choose the automation that fits your business needs. Professional solutions for companies worldwide.
           </p>
         </div>
+
+        {/* Service Comparison Table */}
+        <Card className="max-w-3xl mx-auto mb-16 animate-fade-in">
+          <CardHeader>
+            <CardTitle className="text-xl">Which Service Is Right For You?</CardTitle>
+            <CardDescription>Find the perfect automation for your needs</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Your Need</TableHead>
+                  <TableHead>Recommended Service</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {serviceComparison.map((item, index) => (
+                  <TableRow key={index}>
+                    <TableCell className="font-medium">{item.need}</TableCell>
+                    <TableCell className="text-primary">{item.service}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
@@ -72,6 +106,7 @@ const Services = () => {
                   onClick={service.action}
                 >
                   {service.buttonText}
+                  <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
             </Card>
