@@ -1,57 +1,11 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, MessageSquare, Send, Phone } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    businessName: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Basic validation
-    if (!formData.name.trim() || !formData.businessName.trim() || !formData.phone.trim() || !formData.service.trim()) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. We'll get back to you soon!",
-    });
-
-    // Reset form
-    setFormData({ name: "", businessName: "", phone: "", service: "", message: "" });
-    setIsSubmitting(false);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   return (
     <section id="contact" className="py-24 bg-gradient-to-b from-background to-muted/20">
@@ -131,15 +85,17 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="md:col-span-3 animate-slide-up" style={{ animationDelay: "0.2s" }}>
               <Card className="p-8 shadow-elegant">
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form 
+                  action="https://formspree.io/f/xdkqpkjb" 
+                  method="POST" 
+                  className="space-y-6"
+                >
                   <div className="space-y-2">
                     <Label htmlFor="name">Your Name *</Label>
                     <Input
                       id="name"
                       name="name"
                       placeholder="John Doe"
-                      value={formData.name}
-                      onChange={handleChange}
                       required
                       maxLength={100}
                     />
@@ -151,8 +107,6 @@ const Contact = () => {
                       id="businessName"
                       name="businessName"
                       placeholder="Your Business Name"
-                      value={formData.businessName}
-                      onChange={handleChange}
                       required
                       maxLength={100}
                     />
@@ -165,8 +119,6 @@ const Contact = () => {
                       name="phone"
                       type="tel"
                       placeholder="+250 XXX XXX XXX"
-                      value={formData.phone}
-                      onChange={handleChange}
                       required
                       maxLength={20}
                     />
@@ -177,8 +129,6 @@ const Contact = () => {
                     <select
                       id="service"
                       name="service"
-                      value={formData.service}
-                      onChange={handleChange}
                       required
                       className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
@@ -196,8 +146,6 @@ const Contact = () => {
                       id="message"
                       name="message"
                       placeholder="Tell us about your business needs..."
-                      value={formData.message}
-                      onChange={handleChange}
                       maxLength={1000}
                       rows={4}
                       className="resize-none"
@@ -209,9 +157,8 @@ const Contact = () => {
                       type="submit" 
                       variant="hero" 
                       className="flex-1 group"
-                      disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Sending..." : "Send Message"}
+                      Send Message
                       <Send className="group-hover:translate-x-1 transition-transform" />
                     </Button>
                     <Button 
