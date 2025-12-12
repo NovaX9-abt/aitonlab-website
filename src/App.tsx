@@ -9,6 +9,7 @@ import Pricing from "./pages/Pricing";
 import WhatsAppAutomation from "./pages/WhatsAppAutomation";
 import EmailCRMAutomation from "./pages/EmailCRMAutomation";
 import BookingSystems from "./pages/BookingSystems";
+import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/services/whatsapp" element={<WhatsAppAutomation />} />
           <Route path="/services/email-crm" element={<EmailCRMAutomation />} />
           <Route path="/services/booking" element={<BookingSystems />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
