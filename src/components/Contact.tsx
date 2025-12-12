@@ -90,6 +90,7 @@ const Contact = () => {
                   method="POST" 
                   className="space-y-6"
                 >
+                  <input type="hidden" name="_next" value={window.location.origin + "/thank-you"} />
                   <div className="space-y-2">
                     <Label htmlFor="name">Your Name *</Label>
                     <Input
