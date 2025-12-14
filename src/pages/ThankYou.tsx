@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle, Home, Phone, Mail, MessageCircle } from "lucide-react";
+import { CheckCircle, Home } from "lucide-react";
 
 const ThankYou = () => {
   return (
@@ -16,54 +16,21 @@ const ThankYou = () => {
 
         {/* Title */}
         <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-          Thank You! Your message has been sent.
+          Thank You
         </h1>
 
-        {/* Subtitle */}
+        {/* Message */}
         <p className="text-muted-foreground mb-8">
-          We'll review your request and get back to you shortly.
+          Your message has been received. We will contact you shortly.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-          <Button asChild>
-            <Link to="/riley-demo">
-              <Phone className="h-4 w-4 mr-2" />
-              Call Riley for a Live Demo
-            </Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link to="/">
-              <Home className="h-4 w-4 mr-2" />
-              Return to Home
-            </Link>
-          </Button>
-        </div>
-
-        {/* Direct Contact */}
-        <div className="border-t border-border pt-6">
-          <p className="text-sm text-muted-foreground mb-4">
-            You can also reach us directly at:
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
-            <a
-              href="mailto:hello@aiton.ai"
-              className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth"
-            >
-              <Mail className="h-4 w-4" />
-              hello@aiton.ai
-            </a>
-            <a
-              href="https://wa.me/250788123456"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth"
-            >
-              <MessageCircle className="h-4 w-4" />
-              WhatsApp
-            </a>
-          </div>
-        </div>
+        {/* CTA Button */}
+        <Button asChild>
+          <Link to="/">
+            <Home className="h-4 w-4 mr-2" />
+            Back to Home
+          </Link>
+        </Button>
       </Card>
     </div>
   );
