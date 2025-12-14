@@ -1,11 +1,49 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, MessageSquare, Send, Phone } from "lucide-react";
+import { Mail, MessageSquare, Send, Phone, Loader2 } from "lucide-react";
 
 const Contact = () => {
+  const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const formData = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      businessName: (form.elements.namedItem("businessName") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      service: (form.elements.namedItem("service") as HTMLSelectElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const response = await fetch("https://formspree.io/f/xdkqpkjb", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        navigate("/thank-you");
+      } else {
+        setError("Something went wrong. Please try again.");
+        setIsSubmitting(false);
+      }
+    } catch {
+      setError("Failed to send message. Please check your connection and try again.");
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-24 bg-gradient-to-b from-background to-muted/20">
@@ -86,11 +124,14 @@ const Contact = () => {
             <div className="md:col-span-3 animate-slide-up" style={{ animationDelay: "0.2s" }}>
               <Card className="p-8 shadow-elegant">
                 <form 
-                  action="https://formspree.io/f/xdkqpkjb" 
-                  method="POST" 
+                  onSubmit={handleSubmit}
                   className="space-y-6"
                 >
-                  <input type="hidden" name="_next" value={window.location.origin + "/thank-you"} />
+                  {error && (
+                    <div className="p-3 rounded-md bg-destructive/10 border border-destructive/20 text-destructive text-sm">
+                      {error}
+                    </div>
+                  )}
                   <div className="space-y-2">
                     <Label htmlFor="name">Your Name *</Label>
                     <Input
@@ -158,9 +199,19 @@ const Contact = () => {
                       type="submit" 
                       variant="hero" 
                       className="flex-1 group"
+                      disabled={isSubmitting}
                     >
-                      Send Message
-                      <Send className="group-hover:translate-x-1 transition-transform" />
+                      {isSubmitting ? (
+                        <>
+                          Sending…
+                          <Loader2 className="animate-spin" />
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <Send className="group-hover:translate-x-1 transition-transform" />
+                        </>
+                      )}
                     </Button>
                     <Button 
                       type="button"
