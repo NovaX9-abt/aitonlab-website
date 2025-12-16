@@ -23,7 +23,7 @@ const Pricing = () => {
     },
     {
       name: "Booking Systems",
-      priceRange: "$129 – $179",
+      priceRange: "$79 – $149",
       description: "Automated appointment scheduling and confirmations",
       features: [
         "WhatsApp or form bookings",
@@ -45,15 +45,20 @@ const Pricing = () => {
         "Appointment booking",
         "Lead capture & qualification",
         "Custom voice options available",
-        "$10 usage credits included",
+        "Call usage packs available",
       ],
       delivery: "3–5 days",
       link: "/riley-demo",
       popular: true,
+      callPacks: [
+        { calls: "100 calls", price: "$10" },
+        { calls: "500 calls", price: "$40" },
+        { calls: "1,000 calls", price: "$90" },
+      ],
     },
     {
       name: "Email & CRM Automation",
-      priceRange: "$79 – $149",
+      priceRange: "$129 – $179",
       description: "Smart email sorting, alerts, and CRM integrations",
       features: [
         "Automatic email sorting",
@@ -121,6 +126,22 @@ const Pricing = () => {
                       </li>
                     ))}
                   </ul>
+                  {plan.callPacks && (
+                    <div className="pt-4 border-t border-border/50">
+                      <p className="text-sm font-semibold text-foreground mb-3">Call Usage Packs:</p>
+                      <div className="space-y-2">
+                        {plan.callPacks.map((pack, idx) => (
+                          <div key={idx} className="flex justify-between text-sm">
+                            <span className="text-muted-foreground">{pack.calls}</span>
+                            <span className="font-medium text-foreground">{pack.price}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-3">
+                        Additional call packs ensure predictable operating costs and full flexibility based on call volume.
+                      </p>
+                    </div>
+                  )}
                   <div className="pt-4 border-t">
                     <p className="text-sm text-muted-foreground mb-4">
                       <span className="font-semibold text-foreground">Delivery:</span> {plan.delivery}
