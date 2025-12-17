@@ -45,16 +45,17 @@ const Pricing = () => {
         "Appointment booking",
         "Lead capture & qualification",
         "Custom voice options available",
-        "Call usage packs available",
+        "Flexible usage packs — pay only for the call traffic you need",
       ],
       delivery: "3–5 days",
       link: "/riley-demo",
       popular: true,
-      callPacks: [
-        { calls: "100 calls", price: "$10" },
-        { calls: "500 calls", price: "$40" },
-        { calls: "1,000 calls", price: "$90" },
+      usagePacks: [
+        { name: "Starter Pack", calls: "100 calls", price: "$39" },
+        { name: "Growth Pack", calls: "300 calls", price: "$99" },
+        { name: "Pro Pack", calls: "1,000 calls", price: "$299" },
       ],
+      usagePacksNote: "These usage packs cover real call traffic handled by your AI assistant. You only pay for the setup once and then purchase call packs whenever you need more capacity.",
     },
     {
       name: "Email & CRM Automation",
@@ -126,19 +127,21 @@ const Pricing = () => {
                       </li>
                     ))}
                   </ul>
-                  {plan.callPacks && (
+                  {plan.usagePacks && (
                     <div className="pt-4 border-t border-border/50">
-                      <p className="text-sm font-semibold text-foreground mb-3">Call Usage Packs:</p>
+                      <p className="text-sm font-semibold text-foreground mb-3">Voice AI Usage Packs:</p>
                       <div className="space-y-2">
-                        {plan.callPacks.map((pack, idx) => (
+                        {plan.usagePacks.map((pack, idx) => (
                           <div key={idx} className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">{pack.calls}</span>
+                            <span className="text-muted-foreground">
+                              <span className="font-medium text-foreground">{pack.name}</span> — {pack.calls}
+                            </span>
                             <span className="font-medium text-foreground">{pack.price}</span>
                           </div>
                         ))}
                       </div>
                       <p className="text-xs text-muted-foreground mt-3">
-                        Additional call packs ensure predictable operating costs and full flexibility based on call volume.
+                        {plan.usagePacksNote}
                       </p>
                     </div>
                   )}
