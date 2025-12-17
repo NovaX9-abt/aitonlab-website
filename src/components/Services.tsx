@@ -25,7 +25,7 @@ const Services = () => {
     {
       icon: Phone,
       title: "Voice AI Agents (Riley)",
-      description: "A professional voice agent that answers calls 24/7 in English or French. Books appointments, answers questions, and captures leads.",
+      description: "A professional voice agent that answers calls 24/7 in English or French. Books appointments, captures leads, and offers flexible usage packs — pay only for the call traffic you need.",
       buttonText: "Try Riley Demo",
       action: () => navigate("/riley-demo"),
     },
