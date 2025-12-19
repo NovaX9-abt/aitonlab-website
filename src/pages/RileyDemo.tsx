@@ -9,18 +9,18 @@ const RileyDemo = () => {
   const navigate = useNavigate();
 
   const usagePacks = [
-    { name: "Starter Pack", calls: "100 calls", price: "$39" },
-    { name: "Growth Pack", calls: "300 calls", price: "$99" },
-    { name: "Pro Pack", calls: "1,000 calls", price: "$299" },
+    { name: "Starter", calls: "100 calls", price: "$29" },
+    { name: "Growth", calls: "300 calls", price: "$79" },
+    { name: "Pro", calls: "1,000 calls", price: "$199" },
   ];
 
   const features = [
-    "24/7 call handling",
+    "24/7 professional call handling",
     "English & French support",
-    "Appointment booking",
+    "Appointment booking integration",
     "Lead capture & qualification",
-    "Custom voice options available",
-    "Flexible usage packs — pay only for the call traffic you need",
+    "Calendar & CRM connections",
+    "Fair usage policy (2–4 min avg calls)",
   ];
 
   return (
@@ -71,7 +71,7 @@ const RileyDemo = () => {
               {/* Features Card */}
               <Card className="p-6 md:p-8">
                 <h2 className="text-xl font-bold mb-4">Voice AI Agent Setup</h2>
-                <p className="text-3xl font-bold text-primary mb-4">$249 – $399</p>
+                <p className="text-3xl font-bold text-primary mb-4">$199 – $299</p>
                 <p className="text-sm text-muted-foreground mb-6">One-time setup fee</p>
                 
                 <ul className="space-y-3">
@@ -106,12 +106,11 @@ const RileyDemo = () => {
                 </div>
                 
                 <p className="text-xs text-muted-foreground">
-                  These usage packs cover real call traffic handled by your AI assistant. 
-                  You only pay for the setup once and then purchase call packs whenever you need more capacity.
+                  Usage packs cover real call traffic. Setup is one-time — purchase call packs as needed.
                 </p>
                 
                 <p className="text-sm text-foreground mt-4 font-medium">
-                  You stay fully in control of your costs with transparent call-based pricing.
+                  Transparent call-based pricing. Fair usage policy applies (avg 2–4 min per call).
                 </p>
               </Card>
             </div>

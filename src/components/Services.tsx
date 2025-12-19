@@ -10,39 +10,43 @@ const Services = () => {
   const services = [
     {
       icon: MessageSquare,
-      title: "WhatsApp Automations",
-      description: "Automated replies, lead capture, menus, funnels, and follow-up systems directly on WhatsApp. Works 24/7. No missed leads again.",
+      title: "WhatsApp Automation",
+      price: "$99 – $249",
+      description: "Professional WhatsApp Cloud API integration with template setup, Meta compliance, and automation workflows. Reliable infrastructure with monitoring for consistent message delivery.",
       buttonText: "Learn More",
       action: () => navigate("/services/whatsapp"),
     },
     {
       icon: Calendar,
       title: "Booking Systems",
-      description: "Let your clients book appointments through WhatsApp or forms. Automatically sync to Google Calendar and send confirmations.",
+      price: "$149 – $299",
+      description: "Reliable booking infrastructure with calendar integration, automated notifications, and workflow automation. Critical business systems built for consistency and scale.",
       buttonText: "Learn More",
       action: () => navigate("/services/booking"),
     },
     {
       icon: Phone,
-      title: "Voice AI Agents (Riley)",
-      description: "A professional voice agent that answers calls 24/7 in English or French. Books appointments, captures leads, and offers flexible usage packs — pay only for the call traffic you need.",
+      title: "Voice AI Agent",
+      price: "$199 – $299 setup",
+      description: "Professional AI voice assistant handling real phone calls 24/7. English & French support with appointment booking, lead capture, and CRM integration. Usage packs purchased separately — fair usage policy applies.",
       buttonText: "Try Riley Demo",
       action: () => navigate("/riley-demo"),
     },
     {
       icon: Mail,
       title: "Email & CRM Automation",
-      description: "Automatically sort emails, send instant alerts, follow up leads, and organize your customer data with smart Google Sheets or CRM integrations.",
+      price: "$249 – $399",
+      description: "Business logic automation with email workflows, CRM integration, and data consistency. Reliable, maintainable systems that replace manual work and scale with your business.",
       buttonText: "Learn More",
       action: () => navigate("/services/email-crm"),
     },
   ];
 
   const serviceComparison = [
-    { need: "Instant replies on WhatsApp", service: "WhatsApp Automation" },
-    { need: "Customers booking appointments", service: "Booking System" },
-    { need: "High call volume / missed calls", service: "Voice AI Agent Setup" },
-    { need: "Organizing leads & emails", service: "Email & CRM Automation" },
+    { need: "WhatsApp message automation", service: "WhatsApp Automation" },
+    { need: "Appointment scheduling infrastructure", service: "Booking Systems" },
+    { need: "24/7 professional call handling", service: "Voice AI Agent" },
+    { need: "Business logic & CRM workflows", service: "Email & CRM Automation" },
   ];
 
   return (
@@ -95,6 +99,7 @@ const Services = () => {
                   <service.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
+                <p className="text-lg font-semibold text-primary">{service.price}</p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <CardDescription className="text-base leading-relaxed">
