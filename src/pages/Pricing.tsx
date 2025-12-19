@@ -9,66 +9,66 @@ const Pricing = () => {
   const plans = [
     {
       name: "WhatsApp Automation",
-      priceRange: "$49 – $149",
-      description: "Automated replies, lead capture, and follow-ups on WhatsApp",
+      priceRange: "$99 – $249",
+      description: "Professional WhatsApp Cloud API integration with reliable infrastructure",
       features: [
-        "24/7 automated responses",
+        "WhatsApp Cloud API integration",
+        "Template setup & Meta compliance",
+        "Automation workflows",
+        "Reliability monitoring",
         "Lead capture & qualification",
-        "Custom menus & funnels",
-        "Follow-up sequences",
-        "Google Sheets integration",
       ],
-      delivery: "1–2 days",
+      delivery: "2–4 days",
       link: "/services/whatsapp",
     },
     {
       name: "Booking Systems",
-      priceRange: "$79 – $149",
-      description: "Automated appointment scheduling and confirmations",
+      priceRange: "$149 – $299",
+      description: "Critical booking infrastructure for your business operations",
       features: [
-        "WhatsApp or form bookings",
-        "Google Calendar sync",
-        "Automatic confirmations",
-        "Reminder notifications",
-        "Customer management",
+        "Reliable booking systems",
+        "Calendar integration",
+        "Email & WhatsApp notifications",
+        "Automation-ready workflows",
+        "Client database management",
       ],
-      delivery: "2–3 days",
+      delivery: "3–5 days",
       link: "/services/booking",
     },
     {
-      name: "Voice AI Agent Setup",
-      priceRange: "$249 – $399",
-      description: "Professional AI voice assistant like Riley for your business",
+      name: "Voice AI Agent",
+      priceRange: "$199 – $299",
+      description: "Professional AI voice assistant with usage-based pricing",
       features: [
         "24/7 call handling",
         "English & French support",
-        "Appointment booking",
+        "Appointment booking integration",
         "Lead capture & qualification",
-        "Custom voice options available",
-        "Flexible usage packs — pay only for the call traffic you need",
+        "Calendar & CRM connections",
+        "Fair usage policy (2–4 min avg calls)",
       ],
       delivery: "3–5 days",
       link: "/riley-demo",
       popular: true,
       usagePacks: [
-        { name: "Starter Pack", calls: "100 calls", price: "$39" },
-        { name: "Growth Pack", calls: "300 calls", price: "$99" },
-        { name: "Pro Pack", calls: "1,000 calls", price: "$299" },
+        { name: "Starter", calls: "100 calls", price: "$29" },
+        { name: "Growth", calls: "300 calls", price: "$79" },
+        { name: "Pro", calls: "1,000 calls", price: "$199" },
       ],
-      usagePacksNote: "These usage packs cover real call traffic handled by your AI assistant. You only pay for the setup once and then purchase call packs whenever you need more capacity.",
+      usagePacksNote: "Usage packs cover real call traffic. Setup is one-time — purchase call packs as needed.",
     },
     {
       name: "Email & CRM Automation",
-      priceRange: "$129 – $179",
-      description: "Smart email sorting, alerts, and CRM integrations",
+      priceRange: "$249 – $399",
+      description: "Business logic automation with reliable, maintainable systems",
       features: [
-        "Automatic email sorting",
-        "Instant lead alerts",
-        "Follow-up automation",
-        "Google Sheets or CRM sync",
-        "Customer data organization",
+        "Business logic automation",
+        "Email workflow systems",
+        "CRM integration",
+        "Data consistency & validation",
+        "Scalable infrastructure",
       ],
-      delivery: "2–3 days",
+      delivery: "3–5 days",
       link: "/services/email-crm",
     },
   ];
@@ -168,7 +168,7 @@ const Pricing = () => {
               Try Your AI Voice Assistant Free for 3 Days
             </h3>
             <p className="text-lg text-muted-foreground mb-6">
-              If you love it, keep it for a one-time setup fee — starting from $249.
+              Experience professional AI call handling. Setup starts from $199.
             </p>
             <Button variant="hero" size="lg" onClick={() => window.location.href = "/riley-demo"}>
               Book Your Free Demo

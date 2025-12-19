@@ -9,12 +9,12 @@ const EmailCRMAutomation = () => {
   const navigate = useNavigate();
 
   const whatYouGet = [
-    "Automatic email sorting",
-    "Lead tagging",
-    "CRM syncing or Google Sheets sync",
-    "Follow-up automation",
-    "WhatsApp alerts for important leads",
-    "Monthly reporting (optional)",
+    "Business logic automation",
+    "Email workflow systems",
+    "CRM integration & sync",
+    "Data consistency & validation",
+    "Automated lead routing",
+    "Scalable, maintainable systems",
   ];
 
   return (
@@ -32,7 +32,7 @@ const EmailCRMAutomation = () => {
               Email & CRM Automation
             </h1>
             <p className="text-xl text-muted-foreground">
-              Stop losing leads in your inbox. Organize, follow up, and close more deals.
+              Business logic automation that replaces manual work with reliable, maintainable systems.
             </p>
           </div>
 
@@ -165,12 +165,12 @@ const EmailCRMAutomation = () => {
           <Card className="mb-12 animate-slide-up" style={{ animationDelay: "300ms" }}>
             <CardHeader>
               <CardTitle>Pricing</CardTitle>
-              <CardDescription>Starting from $79 – $149</CardDescription>
+              <CardDescription>$249 – $399</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Pricing depends on the complexity of your workflow. Simple automation starts at the prices listed above, 
-                and advanced custom systems may cost more after your free analysis.
+                We build reliable business systems — not simple email forwarding. Pricing reflects proper CRM integration, 
+                data consistency, and maintainable automation architecture.
               </p>
               <p className="text-sm text-muted-foreground font-medium">
                 Every project includes a free 3-day test before final delivery.

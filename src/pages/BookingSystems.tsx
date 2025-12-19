@@ -9,12 +9,12 @@ const BookingSystems = () => {
   const navigate = useNavigate();
 
   const whatYouGet = [
-    "Automated booking process",
-    "Google Calendar sync",
-    "Confirmation messages",
-    "Reminder notifications",
-    "Client database storage",
-    "Optional WhatsApp or form booking options",
+    "Reliable booking infrastructure",
+    "Calendar integration",
+    "Email & WhatsApp notifications",
+    "Automated reminders",
+    "Client database management",
+    "Automation-ready workflows",
   ];
 
   return (
@@ -32,7 +32,7 @@ const BookingSystems = () => {
               Booking Systems
             </h1>
             <p className="text-xl text-muted-foreground">
-              Let customers book appointments instantly. No phone tag, no confusion.
+              Critical booking infrastructure that scales with your business operations.
             </p>
           </div>
 
@@ -168,12 +168,12 @@ const BookingSystems = () => {
           <Card className="mb-12 animate-slide-up" style={{ animationDelay: "300ms" }}>
             <CardHeader>
               <CardTitle>Pricing</CardTitle>
-              <CardDescription>Starting from $129 – $179</CardDescription>
+              <CardDescription>$149 – $299</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Pricing depends on the complexity of your workflow. Simple automation starts at the prices listed above, 
-                and advanced custom systems may cost more after your free analysis.
+                We build reliable booking infrastructure — not simple calendar embeds. Pricing reflects proper integration, 
+                notification systems, and automation-ready architecture.
               </p>
               <p className="text-sm text-muted-foreground font-medium">
                 Every project includes a free 3-day test before final delivery.

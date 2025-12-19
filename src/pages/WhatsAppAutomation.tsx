@@ -9,12 +9,12 @@ const WhatsAppAutomation = () => {
   const navigate = useNavigate();
 
   const whatYouGet = [
-    "Instant auto-replies",
-    "Lead collection",
-    "Custom chatbot menu",
-    "Google Sheets integration",
-    "Automated follow-ups",
-    "Optional booking flow",
+    "WhatsApp Cloud API integration",
+    "Template setup & approval",
+    "Meta compliance configuration",
+    "Automation workflow design",
+    "Reliability monitoring",
+    "Lead capture & organization",
   ];
 
   return (
@@ -29,10 +29,10 @@ const WhatsAppAutomation = () => {
               <MessageSquare className="w-8 h-8 text-primary-foreground" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              WhatsApp Automations
+              WhatsApp Automation
             </h1>
             <p className="text-xl text-muted-foreground">
-              Never miss a customer message again. Respond instantly, 24/7.
+              Professional WhatsApp Cloud API integration with reliable infrastructure.
             </p>
           </div>
 
@@ -163,12 +163,12 @@ const WhatsAppAutomation = () => {
           <Card className="mb-12 animate-slide-up" style={{ animationDelay: "300ms" }}>
             <CardHeader>
               <CardTitle>Pricing</CardTitle>
-              <CardDescription>Starting from $49 – $149</CardDescription>
+              <CardDescription>$99 – $249</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Pricing depends on the complexity of your workflow. Simple automation starts at the prices listed above, 
-                and advanced custom systems may cost more after your free analysis.
+                Pricing reflects the complexity of your integration. We build reliable systems with proper API setup, 
+                Meta compliance, and monitoring — not quick fixes that break.
               </p>
               <p className="text-sm text-muted-foreground font-medium">
                 Every project includes a free 3-day test before final delivery.
