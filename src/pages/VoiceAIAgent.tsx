@@ -39,7 +39,7 @@ const VoiceAIAgent = () => {
               Voice AI Agent
             </h1>
             <p className="text-xl text-muted-foreground">
-              A professional AI voice assistant that handles real phone calls for your business, 24/7.
+              A professional AI voice assistant that answers real phone calls for your business, 24/7.
             </p>
           </div>
 
@@ -183,7 +183,7 @@ const VoiceAIAgent = () => {
               {/* Setup */}
               <div>
                 <h3 className="font-semibold text-lg mb-2">Voice AI Agent Setup</h3>
-                <p className="text-2xl font-bold text-primary mb-2">$199 – $299</p>
+                <p className="text-2xl font-bold text-primary mb-2">$249 – $349</p>
                 <p className="text-sm text-muted-foreground">One-time setup fee</p>
               </div>
 
@@ -201,15 +201,6 @@ const VoiceAIAgent = () => {
                     </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Usage Note */}
-              <div className="p-4 rounded-lg bg-muted/30 border border-border/50">
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  One call is considered an interaction of up to approximately 4 minutes. 
-                  Average call duration is 2–4 minutes. 
-                  Unusually long calls may count as multiple calls.
-                </p>
               </div>
             </CardContent>
           </Card>

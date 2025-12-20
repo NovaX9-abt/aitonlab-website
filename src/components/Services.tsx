@@ -19,7 +19,7 @@ const Services = () => {
     {
       icon: Calendar,
       title: "Booking Systems",
-      price: "$149 – $299",
+      price: "$149 – $249",
       description: "Reliable booking infrastructure with calendar integration, automated notifications, and workflow automation. Critical business systems built for consistency and scale.",
       buttonText: "Learn More",
       action: () => navigate("/services/booking"),
@@ -27,15 +27,19 @@ const Services = () => {
     {
       icon: Phone,
       title: "Voice AI Agent",
-      price: "$199 – $299 setup",
-      description: "Professional AI voice assistant handling real phone calls 24/7. English & French support with appointment booking, lead capture, and CRM integration. Usage packs purchased separately — fair usage policy applies.",
-      buttonText: "Try Riley Demo",
-      action: () => navigate("/riley-demo"),
+      price: "$249 – $349 setup",
+      description: "Professional AI voice assistant answering real phone calls 24/7. English & French support with appointment booking, lead capture, and CRM integration. Usage packs purchased separately.",
+      buttonText: "Learn More",
+      action: () => navigate("/services/voice-ai"),
+      secondaryButton: {
+        text: "Try Riley Demo",
+        action: () => navigate("/riley-demo"),
+      },
     },
     {
       icon: Mail,
       title: "Email & CRM Automation",
-      price: "$249 – $399",
+      price: "$199 – $349",
       description: "Business logic automation with email workflows, CRM integration, and data consistency. Reliable, maintainable systems that replace manual work and scale with your business.",
       buttonText: "Learn More",
       action: () => navigate("/services/email-crm"),
@@ -105,14 +109,25 @@ const Services = () => {
                 <CardDescription className="text-base leading-relaxed">
                   {service.description}
                 </CardDescription>
-                <Button 
-                  variant="outline" 
-                  className="w-full"
-                  onClick={service.action}
-                >
-                  {service.buttonText}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <div className="space-y-2">
+                  <Button 
+                    variant="outline" 
+                    className="w-full"
+                    onClick={service.action}
+                  >
+                    {service.buttonText}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                  {service.secondaryButton && (
+                    <Button 
+                      variant="hero" 
+                      className="w-full"
+                      onClick={service.secondaryButton.action}
+                    >
+                      {service.secondaryButton.text}
+                    </Button>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}
