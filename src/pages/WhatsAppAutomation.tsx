@@ -4,21 +4,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
 const WhatsAppAutomation = () => {
   const navigate = useNavigate();
-
-  const whatYouGet = [
-    "WhatsApp Cloud API integration",
-    "Template setup & approval",
-    "Meta compliance configuration",
-    "Automation workflow design",
-    "Reliability monitoring",
-    "Lead capture & organization",
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const whatYouGet = ["WhatsApp Cloud API integration", "Template setup & approval", "Meta compliance configuration", "Automation workflow design", "Reliability monitoring", "Lead capture & organization"];
+  return <div className="min-h-screen bg-background">
       <Navbar />
       
       <main className="container mx-auto px-6 py-24">
@@ -54,7 +43,9 @@ const WhatsAppAutomation = () => {
           </Card>
 
           {/* Examples */}
-          <Card className="mb-8 animate-slide-up" style={{ animationDelay: "100ms" }}>
+          <Card className="mb-8 animate-slide-up" style={{
+          animationDelay: "100ms"
+        }}>
             <CardHeader>
               <CardTitle>Real Examples</CardTitle>
               <CardDescription>See how businesses use WhatsApp automation</CardDescription>
@@ -102,7 +93,9 @@ const WhatsAppAutomation = () => {
           </Card>
 
           {/* Who This Is Best For */}
-          <Card className="mb-8 animate-slide-up" style={{ animationDelay: "150ms" }}>
+          <Card className="mb-8 animate-slide-up" style={{
+          animationDelay: "150ms"
+        }}>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-primary" />
@@ -118,49 +111,45 @@ const WhatsAppAutomation = () => {
           </Card>
 
           {/* Benefits */}
-          <Card className="mb-8 animate-slide-up" style={{ animationDelay: "200ms" }}>
+          <Card className="mb-8 animate-slide-up" style={{
+          animationDelay: "200ms"
+        }}>
             <CardHeader>
               <CardTitle>Why This Helps Your Business</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {[
-                  "Never lose a customer because you replied too late",
-                  "Capture every lead automatically, even at 3 AM",
-                  "Save 5-10 hours per week answering the same questions",
-                  "Organize customer data in one place for easy follow-up",
-                  "Look more professional and reliable to your customers"
-                ].map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-3">
+                {["Never lose a customer because you replied too late", "Capture every lead automatically, even at 3 AM", "Save 5-10 hours per week answering the same questions", "Organize customer data in one place for easy follow-up", "Look more professional and reliable to your customers"].map((benefit, index) => <div key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <p className="text-muted-foreground">{benefit}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </CardContent>
           </Card>
 
           {/* What You Will Get */}
-          <Card className="mb-8 animate-slide-up" style={{ animationDelay: "250ms" }}>
+          <Card className="mb-8 animate-slide-up" style={{
+          animationDelay: "250ms"
+        }}>
             <CardHeader>
               <CardTitle>What You Will Get</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 gap-3">
-                {whatYouGet.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
+                {whatYouGet.map((item, index) => <div key={index} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <Check className="w-3 h-3 text-primary" />
                     </div>
                     <span className="text-muted-foreground">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </CardContent>
           </Card>
 
           {/* Pricing */}
-          <Card className="mb-12 animate-slide-up" style={{ animationDelay: "300ms" }}>
+          <Card className="mb-12 animate-slide-up" style={{
+          animationDelay: "300ms"
+        }}>
             <CardHeader>
               <CardTitle>Pricing</CardTitle>
               <CardDescription>$99 – $249</CardDescription>
@@ -171,19 +160,16 @@ const WhatsAppAutomation = () => {
                 Meta compliance, and monitoring — not quick fixes that break.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                <span className="font-medium text-foreground">Delivery time:</span> 3–5 business days after Meta approval.
+                Advanced features such as payments, catalogs, or tracking may require additional configuration depending on your business needs.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Advanced features such as AI-powered conversations, payments, catalogs, or tracking may require additional configuration depending on your business needs.
-              </p>
-              <p className="text-sm text-muted-foreground font-medium">
-                Every project includes a free 3-day test before final delivery.
-              </p>
+              <p className="text-sm text-muted-foreground font-medium">Advanced features such as AI-powered conversations may require additional configuration depending on your business needs.</p>
             </CardContent>
           </Card>
 
           {/* CTA */}
-          <div className="text-center animate-fade-in" style={{ animationDelay: "400ms" }}>
+          <div className="text-center animate-fade-in" style={{
+          animationDelay: "400ms"
+        }}>
             <Card className="bg-muted/20 border-none">
               <CardContent className="pt-8 pb-8">
                 <h2 className="text-2xl font-bold mb-4">
@@ -194,22 +180,14 @@ const WhatsAppAutomation = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <div className="flex flex-col items-center">
-                    <Button 
-                      variant="hero" 
-                      size="lg"
-                      onClick={() => navigate("/riley-demo")}
-                    >
+                    <Button variant="hero" size="lg" onClick={() => navigate("/riley-demo")}>
                       Book a Demo with Riley
                     </Button>
                     <span className="text-sm text-muted-foreground mt-2">
                       Includes a free 3-day test if you decide to proceed.
                     </span>
                   </div>
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    onClick={() => navigate("/#contact")}
-                  >
+                  <Button variant="outline" size="lg" onClick={() => navigate("/#contact")}>
                     Get a Free Quote
                   </Button>
                 </div>
@@ -220,8 +198,6 @@ const WhatsAppAutomation = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default WhatsAppAutomation;
