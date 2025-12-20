@@ -151,7 +151,8 @@ const WhatsAppAutomation = () => {
           animationDelay: "300ms"
         }}>
             <CardHeader>
-              <CardTitle>Pricing</CardTitle>
+              <CardTitle>
+            </CardTitle>
               <CardDescription>$99 – $249</CardDescription>
             </CardHeader>
             <CardContent>
