@@ -172,6 +172,9 @@ const EmailCRMAutomation = () => {
                 We build reliable business systems — not simple email forwarding. Pricing reflects proper CRM integration, 
                 data consistency, and maintainable automation architecture.
               </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                CRM integrations are implemented using tools such as Google Sheets, Notion, or similar systems, depending on the business requirements.
+              </p>
               <p className="text-sm text-muted-foreground font-medium">
                 Every project includes a free 3-day test before final delivery.
               </p>
