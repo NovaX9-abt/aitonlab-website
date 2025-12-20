@@ -168,7 +168,7 @@ const BookingSystems = () => {
           <Card className="mb-12 animate-slide-up" style={{ animationDelay: "300ms" }}>
             <CardHeader>
               <CardTitle>Pricing</CardTitle>
-              <CardDescription>$149 – $299</CardDescription>
+              <CardDescription>$149 – $249</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed mb-4">

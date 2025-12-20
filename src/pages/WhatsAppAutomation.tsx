@@ -171,7 +171,10 @@ const WhatsAppAutomation = () => {
                 Meta compliance, and monitoring — not quick fixes that break.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Advanced features such as payments, catalogs, or tracking may require additional configuration depending on your business needs.
+                <span className="font-medium text-foreground">Delivery time:</span> 3–5 business days after Meta approval.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Advanced features such as AI-powered conversations, payments, catalogs, or tracking may require additional configuration depending on your business needs.
               </p>
               <p className="text-sm text-muted-foreground font-medium">
                 Every project includes a free 3-day test before final delivery.

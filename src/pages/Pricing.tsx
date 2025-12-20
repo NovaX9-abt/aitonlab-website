@@ -23,7 +23,7 @@ const Pricing = () => {
     },
     {
       name: "Booking Systems",
-      priceRange: "$149 – $299",
+      priceRange: "$149 – $249",
       description: "Critical booking infrastructure for your business operations",
       features: [
         "Reliable booking systems",
@@ -37,7 +37,7 @@ const Pricing = () => {
     },
     {
       name: "Voice AI Agent",
-      priceRange: "$199 – $299",
+      priceRange: "$249 – $349",
       description: "Professional AI voice assistant with usage-based pricing",
       features: [
         "24/7 call handling",
@@ -45,10 +45,10 @@ const Pricing = () => {
         "Appointment booking integration",
         "Lead capture & qualification",
         "Calendar & CRM connections",
-        "Fair usage policy (2–4 min avg calls)",
+        "Monitoring & reliability checks",
       ],
       delivery: "3–5 days",
-      link: "/riley-demo",
+      link: "/services/voice-ai",
       popular: true,
       usagePacks: [
         { name: "Starter", calls: "100 calls", price: "$29" },
@@ -59,7 +59,7 @@ const Pricing = () => {
     },
     {
       name: "Email & CRM Automation",
-      priceRange: "$249 – $399",
+      priceRange: "$199 – $349",
       description: "Business logic automation with reliable, maintainable systems",
       features: [
         "Business logic automation",
@@ -168,7 +168,7 @@ const Pricing = () => {
               Try Your AI Voice Assistant Free for 3 Days
             </h3>
             <p className="text-lg text-muted-foreground mb-6">
-              Experience professional AI call handling. Setup starts from $199.
+              Experience professional AI call handling. Setup starts from $249.
             </p>
             <Button variant="hero" size="lg" onClick={() => window.location.href = "/riley-demo"}>
               Book Your Free Demo
