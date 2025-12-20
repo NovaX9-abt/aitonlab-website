@@ -161,7 +161,7 @@ const WhatsAppAutomation = () => {
                 Meta compliance, and monitoring — not quick fixes that break.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Advanced features such as payments, catalogs, or tracking may require additional configuration depending on your business needs.
+                Advanced features such as AI-powered conversations may require additional configuration depending on your business needs.
               </p>
               <p className="text-sm text-muted-foreground font-medium">Advanced features such as AI-powered conversations may require additional configuration depending on your business needs.</p>
             </CardContent>
