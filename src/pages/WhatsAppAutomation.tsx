@@ -170,6 +170,9 @@ const WhatsAppAutomation = () => {
                 Pricing reflects the complexity of your integration. We build reliable systems with proper API setup, 
                 Meta compliance, and monitoring — not quick fixes that break.
               </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Advanced features such as payments, catalogs, or tracking may require additional configuration depending on your business needs.
+              </p>
               <p className="text-sm text-muted-foreground font-medium">
                 Every project includes a free 3-day test before final delivery.
               </p>

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import RileyDemo from "./pages/RileyDemo";
 import Pricing from "./pages/Pricing";
+import VoiceAIAgent from "./pages/VoiceAIAgent";
 import WhatsAppAutomation from "./pages/WhatsAppAutomation";
 import EmailCRMAutomation from "./pages/EmailCRMAutomation";
 import BookingSystems from "./pages/BookingSystems";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/riley-demo" element={<RileyDemo />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/services/voice-ai" element={<VoiceAIAgent />} />
           <Route path="/services/whatsapp" element={<WhatsAppAutomation />} />
           <Route path="/services/email-crm" element={<EmailCRMAutomation />} />
           <Route path="/services/booking" element={<BookingSystems />} />

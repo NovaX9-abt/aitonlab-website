@@ -175,6 +175,9 @@ const BookingSystems = () => {
                 We build reliable booking infrastructure — not simple calendar embeds. Pricing reflects proper integration, 
                 notification systems, and automation-ready architecture.
               </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Booking can be accessed via web forms, email, or WhatsApp (when available), depending on your setup.
+              </p>
               <p className="text-sm text-muted-foreground font-medium">
                 Every project includes a free 3-day test before final delivery.
               </p>
