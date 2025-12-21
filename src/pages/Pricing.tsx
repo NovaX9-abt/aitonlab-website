@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, Bell } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -7,34 +7,6 @@ import Footer from "@/components/Footer";
 
 const Pricing = () => {
   const plans = [
-    {
-      name: "WhatsApp Automation",
-      priceRange: "$99 – $249",
-      description: "Professional WhatsApp Cloud API integration with reliable infrastructure",
-      features: [
-        "WhatsApp Cloud API integration",
-        "Template setup & Meta compliance",
-        "Automation workflows",
-        "Reliability monitoring",
-        "Lead capture & qualification",
-      ],
-      delivery: "2–4 days",
-      link: "/services/whatsapp",
-    },
-    {
-      name: "Booking Systems",
-      priceRange: "$149 – $249",
-      description: "Critical booking infrastructure for your business operations",
-      features: [
-        "Reliable booking systems",
-        "Calendar integration",
-        "Email & WhatsApp notifications",
-        "Automation-ready workflows",
-        "Client database management",
-      ],
-      delivery: "3–5 days",
-      link: "/services/booking",
-    },
     {
       name: "Voice AI Agent",
       priceRange: "$249 – $349",
@@ -49,6 +21,7 @@ const Pricing = () => {
       ],
       delivery: "3–5 days",
       link: "/services/voice-ai",
+      status: "available",
       popular: true,
       usagePacks: [
         { name: "Starter", calls: "100 calls", price: "$29" },
@@ -70,6 +43,22 @@ const Pricing = () => {
       ],
       delivery: "3–5 days",
       link: "/services/email-crm",
+      status: "available",
+    },
+    {
+      name: "WhatsApp Automation",
+      priceRange: "$99 – $249",
+      description: "Advanced WhatsApp automation powered by AI with conversational booking and CRM integration",
+      features: [
+        "WhatsApp Cloud API integration",
+        "AI-powered conversations",
+        "Conversational booking",
+        "Customer support automation",
+        "Reminders & CRM integration",
+      ],
+      delivery: "Coming Soon",
+      link: "/services/whatsapp",
+      status: "coming-soon",
     },
   ];
 
@@ -93,21 +82,28 @@ const Pricing = () => {
           </div>
 
           {/* Pricing Grid */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
             {plans.map((plan, index) => (
               <Card
                 key={index}
                 className={`relative p-8 hover:shadow-elegant transition-all duration-300 animate-slide-up ${
                   plan.popular ? "border-primary shadow-elegant" : ""
-                }`}
+                } ${plan.status === "coming-soon" ? "opacity-90" : ""}`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {plan.popular && (
-                  <Badge className="absolute top-4 right-4 bg-gradient-primary text-primary-foreground">
-                    Most Popular
-                  </Badge>
-                )}
-                <CardHeader className="p-0 mb-6">
+                <div className="absolute top-4 right-4 flex gap-2">
+                  {plan.popular && (
+                    <Badge className="bg-gradient-primary text-primary-foreground">
+                      Most Popular
+                    </Badge>
+                  )}
+                  {plan.status === "available" ? (
+                    <Badge className="bg-green-600 hover:bg-green-700">Available</Badge>
+                  ) : (
+                    <Badge variant="secondary">Coming Soon</Badge>
+                  )}
+                </div>
+                <CardHeader className="p-0 mb-6 pt-8">
                   <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
                   <div className="text-3xl font-bold text-primary mb-2">
                     {plan.priceRange}
@@ -145,17 +141,33 @@ const Pricing = () => {
                       </p>
                     </div>
                   )}
+                  {plan.status === "coming-soon" && (
+                    <p className="text-sm text-muted-foreground italic border-l-2 border-primary/30 pl-3">
+                      This service is not yet available for purchase.
+                    </p>
+                  )}
                   <div className="pt-4 border-t">
                     <p className="text-sm text-muted-foreground mb-4">
                       <span className="font-semibold text-foreground">Delivery:</span> {plan.delivery}
                     </p>
-                    <Button
-                      variant={plan.popular ? "default" : "outline"}
-                      className="w-full"
-                      onClick={() => window.location.href = plan.link}
-                    >
-                      Get Started
-                    </Button>
+                    {plan.status === "available" ? (
+                      <Button
+                        variant={plan.popular ? "default" : "outline"}
+                        className="w-full"
+                        onClick={() => window.location.href = plan.link}
+                      >
+                        Get Started
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="secondary"
+                        className="w-full"
+                        disabled
+                      >
+                        <Bell className="w-4 h-4 mr-2" />
+                        Coming Soon
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
