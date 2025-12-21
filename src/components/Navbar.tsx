@@ -66,8 +66,8 @@ const Navbar = () => {
               <button onClick={() => scrollToSection("contact")} className="text-sm font-medium hover:text-primary transition-colors py-2 text-left">
                 Contact
               </button>
-              <Button variant="hero" size="sm" onClick={() => scrollToSection("contact")} className="w-full">
-                Get Started
+              <Button variant="hero" size="sm" onClick={() => { setIsMobileMenuOpen(false); window.location.href = "/riley-demo"; }} className="w-full">
+                Discuss your needs with Riley
               </Button>
             </div>
           </div>}

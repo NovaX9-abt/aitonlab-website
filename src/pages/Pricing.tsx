@@ -154,9 +154,9 @@ const Pricing = () => {
                       <Button
                         variant={plan.popular ? "default" : "outline"}
                         className="w-full"
-                        onClick={() => window.location.href = plan.link}
+                        onClick={() => window.location.href = "/riley-demo"}
                       >
-                        Get Started
+                        Discuss your needs with Riley
                       </Button>
                     ) : (
                       <Button
