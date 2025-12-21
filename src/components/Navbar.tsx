@@ -67,7 +67,7 @@ const Navbar = () => {
                 Contact
               </button>
               <Button variant="hero" size="sm" onClick={() => { setIsMobileMenuOpen(false); window.location.href = "/riley-demo"; }} className="w-full">
-                Discuss your needs with Riley
+                Talk to Riley
               </Button>
             </div>
           </div>}

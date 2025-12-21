@@ -156,7 +156,7 @@ const Pricing = () => {
                         className="w-full"
                         onClick={() => window.location.href = "/riley-demo"}
                       >
-                        Discuss your needs with Riley
+                        Talk to Riley
                       </Button>
                     ) : (
                       <Button
