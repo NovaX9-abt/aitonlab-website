@@ -1,34 +1,20 @@
-import { MessageSquare, Mail, Calendar, Phone, ArrowRight } from "lucide-react";
+import { MessageSquare, Mail, Phone, ArrowRight, Bell } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
 
 const Services = () => {
   const navigate = useNavigate();
 
   const services = [
     {
-      icon: MessageSquare,
-      title: "WhatsApp Automation",
-      price: "$99 – $249",
-      description: "Professional WhatsApp Cloud API integration with template setup, Meta compliance, and automation workflows. Reliable infrastructure with monitoring for consistent message delivery.",
-      buttonText: "Learn More",
-      action: () => navigate("/services/whatsapp"),
-    },
-    {
-      icon: Calendar,
-      title: "Booking Systems",
-      price: "$149 – $249",
-      description: "Reliable booking infrastructure with calendar integration, automated notifications, and workflow automation. Critical business systems built for consistency and scale.",
-      buttonText: "Learn More",
-      action: () => navigate("/services/booking"),
-    },
-    {
       icon: Phone,
       title: "Voice AI Agent",
       price: "$249 – $349 setup",
-      description: "Professional AI voice assistant answering real phone calls 24/7. English & French support with appointment booking, lead capture, and CRM integration. Usage packs purchased separately.",
+      description: "An AI-powered voice agent that answers phone calls, understands customer requests, qualifies leads, and takes actions such as booking appointments or sending follow-ups. Designed for businesses that want to automate inbound calls while keeping a professional, human-like experience.",
+      status: "available",
       buttonText: "Learn More",
       action: () => navigate("/services/voice-ai"),
       secondaryButton: {
@@ -40,17 +26,27 @@ const Services = () => {
       icon: Mail,
       title: "Email & CRM Automation",
       price: "$199 – $349",
-      description: "Business logic automation with email workflows, CRM integration, and data consistency. Reliable, maintainable systems that replace manual work and scale with your business.",
+      description: "Automated email workflows and CRM pipelines that capture leads, store them securely, notify business owners, and follow up with customers automatically. Ideal for businesses that want better lead management without manual work.",
+      status: "available",
       buttonText: "Learn More",
       action: () => navigate("/services/email-crm"),
+    },
+    {
+      icon: MessageSquare,
+      title: "WhatsApp Automation",
+      price: "$99 – $249",
+      description: "Advanced WhatsApp automation powered by AI, including conversational booking, customer support, reminders, and CRM integration. This service handles everything directly inside WhatsApp — from lead capture to appointment scheduling.",
+      status: "coming-soon",
+      buttonText: "Notify Me",
+      action: () => navigate("/services/whatsapp"),
+      note: "This service is currently being finalized and will be available very soon.",
     },
   ];
 
   const serviceComparison = [
-    { need: "WhatsApp message automation", service: "WhatsApp Automation" },
-    { need: "Appointment scheduling infrastructure", service: "Booking Systems" },
-    { need: "24/7 professional call handling", service: "Voice AI Agent" },
-    { need: "Business logic & CRM workflows", service: "Email & CRM Automation" },
+    { need: "24/7 professional call handling", service: "Voice AI Agent", available: true },
+    { need: "Lead capture & automated follow-ups", service: "Email & CRM Automation", available: true },
+    { need: "WhatsApp messaging & booking", service: "WhatsApp Automation", available: false },
   ];
 
   return (
@@ -61,7 +57,7 @@ const Services = () => {
             Our Automation Services
           </h2>
           <p className="text-lg text-muted-foreground">
-            Choose the automation that fits your business needs. Professional solutions for companies worldwide.
+            Professional automation solutions that replace manual work and scale with your business.
           </p>
         </div>
 
@@ -77,6 +73,7 @@ const Services = () => {
                 <TableRow>
                   <TableHead>Your Need</TableHead>
                   <TableHead>Recommended Service</TableHead>
+                  <TableHead className="text-right">Status</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -84,6 +81,13 @@ const Services = () => {
                   <TableRow key={index}>
                     <TableCell className="font-medium">{item.need}</TableCell>
                     <TableCell className="text-primary">{item.service}</TableCell>
+                    <TableCell className="text-right">
+                      {item.available ? (
+                        <Badge variant="default" className="bg-green-600 hover:bg-green-700">Available</Badge>
+                      ) : (
+                        <Badge variant="secondary">Coming Soon</Badge>
+                      )}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -91,16 +95,23 @@ const Services = () => {
           </CardContent>
         </Card>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group hover:shadow-elegant transition-all duration-300 animate-slide-up"
+              className={`group hover:shadow-elegant transition-all duration-300 animate-slide-up ${service.status === "coming-soon" ? "opacity-90" : ""}`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-6 h-6 text-primary-foreground" />
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <service.icon className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  {service.status === "available" ? (
+                    <Badge variant="default" className="bg-green-600 hover:bg-green-700">Available</Badge>
+                  ) : (
+                    <Badge variant="secondary">Coming Soon</Badge>
+                  )}
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
                 <p className="text-lg font-semibold text-primary">{service.price}</p>
@@ -109,14 +120,20 @@ const Services = () => {
                 <CardDescription className="text-base leading-relaxed">
                   {service.description}
                 </CardDescription>
+                {service.note && (
+                  <p className="text-sm text-muted-foreground italic border-l-2 border-primary/30 pl-3">
+                    {service.note}
+                  </p>
+                )}
                 <div className="space-y-2">
                   <Button 
-                    variant="outline" 
+                    variant={service.status === "coming-soon" ? "secondary" : "outline"}
                     className="w-full"
                     onClick={service.action}
                   >
+                    {service.status === "coming-soon" && <Bell className="w-4 h-4 mr-2" />}
                     {service.buttonText}
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    {service.status === "available" && <ArrowRight className="w-4 h-4 ml-2" />}
                   </Button>
                   {service.secondaryButton && (
                     <Button 
