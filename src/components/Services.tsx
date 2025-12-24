@@ -1,4 +1,4 @@
-import { MessageSquare, Mail, Phone, ArrowRight, Bell } from "lucide-react";
+import { MessageSquare, Sparkles, Phone, ArrowRight, Bell } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -23,10 +23,10 @@ const Services = () => {
       },
     },
     {
-      icon: Mail,
-      title: "Email & CRM Automation",
+      icon: Sparkles,
+      title: "Smart Lead Assistant",
       price: "$199 – $349",
-      description: "Automated email workflows and CRM pipelines that capture leads, store them securely, notify business owners, and follow up with customers automatically. Ideal for businesses that want better lead management without manual work.",
+      description: "An intelligent system that captures every incoming lead, analyzes intent, flags high-priority requests, and triggers follow-ups automatically. Never miss an important lead again.",
       status: "available",
       buttonText: "Learn More",
       action: () => navigate("/services/email-crm"),
@@ -45,7 +45,7 @@ const Services = () => {
 
   const serviceComparison = [
     { need: "24/7 professional call handling", service: "Voice AI Agent", available: true },
-    { need: "Lead capture & automated follow-ups", service: "Email & CRM Automation", available: true },
+    { need: "Lead capture & automated follow-ups", service: "Smart Lead Assistant", available: true },
     { need: "WhatsApp messaging & booking", service: "WhatsApp Automation", available: false },
   ];
 
