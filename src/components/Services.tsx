@@ -12,8 +12,8 @@ const Services = () => {
     {
       icon: Phone,
       title: "Voice AI Agent",
-      price: "$249 – $349 setup",
-      description: "An AI-powered voice agent that answers phone calls, understands customer requests, qualifies leads, and takes actions such as booking appointments or sending follow-ups. Designed for businesses that want to automate inbound calls while keeping a professional, human-like experience.",
+      price: "$299 setup",
+      description: "A professional AI voice assistant that handles real customer calls 24/7. Answers calls, qualifies leads, books appointments, and sends follow-ups — all with a natural, human-like experience.",
       status: "available",
       buttonText: "Learn More",
       action: () => navigate("/services/voice-ai"),
@@ -25,8 +25,8 @@ const Services = () => {
     {
       icon: Sparkles,
       title: "Smart Lead Assistant",
-      price: "$199 – $349",
-      description: "An intelligent system that captures every incoming lead, analyzes intent, flags high-priority requests, and triggers follow-ups automatically. Never miss an important lead again.",
+      price: "$249 setup",
+      description: "An intelligent system that captures every incoming lead, qualifies intent, integrates with your CRM, and triggers automated follow-ups. Never miss an important lead again.",
       status: "available",
       buttonText: "Learn More",
       action: () => navigate("/services/email-crm"),
@@ -34,12 +34,12 @@ const Services = () => {
     {
       icon: MessageSquare,
       title: "WhatsApp Automation",
-      price: "$99 – $249",
-      description: "Advanced WhatsApp automation powered by AI, including conversational booking, customer support, reminders, and CRM integration. This service handles everything directly inside WhatsApp — from lead capture to appointment scheduling.",
+      price: "Monthly Service",
+      description: "Automate customer conversations, bookings, and support on WhatsApp. Handle inquiries, capture leads, and send reminders — all directly inside WhatsApp.",
       status: "coming-soon",
       buttonText: "Notify Me",
       action: () => navigate("/services/whatsapp"),
-      note: "This service is currently being finalized and will be available very soon.",
+      note: "Coming soon as a monthly service.",
     },
   ];
 

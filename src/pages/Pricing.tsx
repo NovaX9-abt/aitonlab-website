@@ -9,52 +9,52 @@ const Pricing = () => {
   const plans = [
     {
       name: "Voice AI Agent",
-      priceRange: "$249 – $349",
-      description: "Professional AI voice assistant with usage-based pricing",
+      price: "$299",
+      description: "A professional AI voice assistant that handles real customer calls 24/7",
       features: [
         "24/7 call handling",
         "English & French support",
         "Appointment booking integration",
         "Lead capture & qualification",
         "Calendar & CRM connections",
-        "Monitoring & reliability checks",
       ],
-      delivery: "3–5 days",
+      delivery: "3–5 business days",
       link: "/services/voice-ai",
       status: "available",
       popular: true,
       usagePacks: [
-        { name: "Starter", calls: "100 calls", price: "$29" },
-        { name: "Growth", calls: "300 calls", price: "$79" },
-        { name: "Pro", calls: "1,000 calls", price: "$199" },
+        { name: "Starter", calls: "100 calls", price: "$39" },
+        { name: "Growth", calls: "300 calls", price: "$99" },
+        { name: "Pro", calls: "1,000 calls", price: "$249" },
       ],
-      usagePacksNote: "Usage packs cover real call traffic. Setup is one-time — purchase call packs as needed.",
+      usagePacksNote: "Usage packs cover real call traffic. Setup is one-time. Purchase packs as needed.",
     },
     {
       name: "Smart Lead Assistant",
-      priceRange: "$199 – $349",
-      description: "An intelligent system that ensures no important lead is ever missed",
+      price: "$249",
+      description: "An intelligent system that captures, qualifies, and follows up on every lead",
       features: [
-        "Smart lead capture & classification",
-        "AI-assisted lead prioritization",
-        "CRM integration",
+        "Automated lead capture",
+        "Lead qualification",
+        "CRM / Google Sheets integration",
         "Automated follow-ups",
-        "Scalable architecture",
+        "Initial usage included",
       ],
-      delivery: "3–5 days",
+      delivery: "3–5 business days",
       link: "/services/email-crm",
       status: "available",
+      note: "Designed for normal business lead volumes.",
     },
     {
       name: "WhatsApp Automation",
-      priceRange: "$99 – $249",
-      description: "Advanced WhatsApp automation powered by AI with conversational booking and CRM integration",
+      price: "Monthly Service",
+      description: "Automate customer conversations, bookings, and support on WhatsApp",
       features: [
         "WhatsApp Cloud API integration",
         "AI-powered conversations",
         "Conversational booking",
         "Customer support automation",
-        "Reminders & CRM integration",
+        "Reminders & notifications",
       ],
       delivery: "Coming Soon",
       link: "/services/whatsapp",
@@ -106,7 +106,7 @@ const Pricing = () => {
                 <CardHeader className="p-0 mb-6 pt-8">
                   <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
                   <div className="text-3xl font-bold text-primary mb-2">
-                    {plan.priceRange}
+                    {plan.price}
                   </div>
                   <CardDescription className="text-base">
                     {plan.description}
@@ -141,9 +141,14 @@ const Pricing = () => {
                       </p>
                     </div>
                   )}
+                  {plan.note && (
+                    <p className="text-sm text-muted-foreground italic border-l-2 border-primary/30 pl-3">
+                      {plan.note}
+                    </p>
+                  )}
                   {plan.status === "coming-soon" && (
                     <p className="text-sm text-muted-foreground italic border-l-2 border-primary/30 pl-3">
-                      This service is not yet available for purchase.
+                      This service will be offered as a monthly subscription. Pricing coming soon.
                     </p>
                   )}
                   <div className="pt-4 border-t">
@@ -180,7 +185,7 @@ const Pricing = () => {
               Try Your AI Voice Assistant Free for 3 Days
             </h3>
             <p className="text-lg text-muted-foreground mb-6">
-              Experience professional AI call handling. Setup starts from $249.
+              Experience professional AI call handling. One-time setup: $299.
             </p>
             <Button variant="hero" size="lg" onClick={() => window.location.href = "/riley-demo"}>
               Book Your Free Demo
@@ -189,8 +194,7 @@ const Pricing = () => {
 
           {/* Note about pricing */}
           <p className="text-center text-sm text-muted-foreground mt-12 max-w-2xl mx-auto">
-            Pricing depends on the complexity of your workflow. Simple automation starts at the prices listed above, 
-            and advanced custom systems may cost more after your free analysis. Every project includes a free 3-day test before final delivery.
+            All prices are one-time setup fees. Every project includes a free 3-day test before final delivery.
           </p>
         </div>
       </section>

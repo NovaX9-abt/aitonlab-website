@@ -220,15 +220,18 @@ const EmailCRMAutomation = () => {
           <Card className="mb-12 animate-slide-up" style={{ animationDelay: "300ms" }}>
             <CardHeader>
               <CardTitle>Pricing</CardTitle>
-              <CardDescription>$199 – $349</CardDescription>
+              <CardDescription>$249 — One-time setup</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Pricing reflects a fully implemented lead management system — not simple email forwarding.
-                Each setup is tailored to your business needs.
+                A fully implemented lead management system that includes automated lead capture, qualification, 
+                CRM / Google Sheets integration, and automated follow-ups.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Initial usage included. Designed for normal business lead volumes.
               </p>
               <p className="text-sm text-muted-foreground font-medium">
-                Every project includes a free 3-day test before final delivery.
+                Delivery: 3–5 business days. Every project includes a free 3-day test before final delivery.
               </p>
             </CardContent>
           </Card>

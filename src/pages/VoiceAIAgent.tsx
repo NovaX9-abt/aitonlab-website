@@ -19,9 +19,9 @@ const VoiceAIAgent = () => {
   ];
 
   const usagePacks = [
-    { name: "Starter", calls: "100 calls", price: "$29" },
-    { name: "Growth", calls: "300 calls", price: "$79" },
-    { name: "Pro", calls: "1,000 calls", price: "$199" },
+    { name: "Starter", calls: "100 calls", price: "$39" },
+    { name: "Growth", calls: "300 calls", price: "$99" },
+    { name: "Pro", calls: "1,000 calls", price: "$249" },
   ];
 
   return (
@@ -183,8 +183,8 @@ const VoiceAIAgent = () => {
               {/* Setup */}
               <div>
                 <h3 className="font-semibold text-lg mb-2">Voice AI Agent Setup</h3>
-                <p className="text-2xl font-bold text-primary mb-2">$249 – $349</p>
-                <p className="text-sm text-muted-foreground">One-time setup fee</p>
+                <p className="text-2xl font-bold text-primary mb-2">$299</p>
+                <p className="text-sm text-muted-foreground">One-time setup fee. Usage handled via call packs.</p>
               </div>
 
               {/* Usage Packs */}
@@ -201,6 +201,12 @@ const VoiceAIAgent = () => {
                     </div>
                   ))}
                 </div>
+                <p className="text-sm text-muted-foreground mt-4">
+                  Usage packs cover real call traffic. Setup is one-time. Purchase packs as needed.
+                </p>
+                <p className="text-sm text-muted-foreground font-medium mt-2">
+                  Delivery: 3–5 business days.
+                </p>
               </div>
             </CardContent>
           </Card>
