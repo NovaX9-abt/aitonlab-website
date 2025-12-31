@@ -9,7 +9,7 @@ const Pricing = () => {
   const plans = [
     {
       name: "Voice AI Agent",
-      price: "$299",
+      price: "Starting from $299",
       description: "A professional AI voice assistant that handles real customer calls 24/7",
       features: [
         "24/7 call handling",
@@ -22,16 +22,11 @@ const Pricing = () => {
       link: "/services/voice-ai",
       status: "available",
       popular: true,
-      usagePacks: [
-        { name: "Starter", calls: "100 calls", price: "$39" },
-        { name: "Growth", calls: "300 calls", price: "$99" },
-        { name: "Pro", calls: "1,000 calls", price: "$249" },
-      ],
-      usagePacksNote: "Usage packs cover real call traffic. Setup is one-time. Purchase packs as needed.",
+      note: "Final pricing depends on workflow complexity and integrations. Simple setups cost less than advanced workflows.",
     },
     {
       name: "Smart Lead Assistant",
-      price: "$249",
+      price: "Starting from $249",
       description: "An intelligent system that captures, qualifies, and follows up on every lead",
       features: [
         "Automated lead capture",
@@ -43,11 +38,12 @@ const Pricing = () => {
       delivery: "3–5 business days",
       link: "/services/email-crm",
       status: "available",
-      note: "Designed for normal business lead volumes.",
+      note: "Pricing varies based on automation complexity. Simple setups cost less than advanced workflows.",
     },
     {
       name: "WhatsApp Automation",
-      price: "Monthly Service",
+      price: "Setup from $199",
+      priceSubtext: "Ongoing service fee applies",
       description: "Automate customer conversations, bookings, and support on WhatsApp",
       features: [
         "WhatsApp Cloud API integration",
@@ -105,9 +101,12 @@ const Pricing = () => {
                 </div>
                 <CardHeader className="p-0 mb-6 pt-8">
                   <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                  <div className="text-3xl font-bold text-primary mb-2">
+                  <div className="text-3xl font-bold text-primary mb-1">
                     {plan.price}
                   </div>
+                  {plan.priceSubtext && (
+                    <p className="text-sm text-muted-foreground mb-2">{plan.priceSubtext}</p>
+                  )}
                   <CardDescription className="text-base">
                     {plan.description}
                   </CardDescription>
@@ -123,24 +122,6 @@ const Pricing = () => {
                       </li>
                     ))}
                   </ul>
-                  {plan.usagePacks && (
-                    <div className="pt-4 border-t border-border/50">
-                      <p className="text-sm font-semibold text-foreground mb-3">Voice AI Usage Packs:</p>
-                      <div className="space-y-2">
-                        {plan.usagePacks.map((pack, idx) => (
-                          <div key={idx} className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">
-                              <span className="font-medium text-foreground">{pack.name}</span> — {pack.calls}
-                            </span>
-                            <span className="font-medium text-foreground">{pack.price}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <p className="text-xs text-muted-foreground mt-3">
-                        {plan.usagePacksNote}
-                      </p>
-                    </div>
-                  )}
                   {plan.note && (
                     <p className="text-sm text-muted-foreground italic border-l-2 border-primary/30 pl-3">
                       {plan.note}
@@ -148,7 +129,7 @@ const Pricing = () => {
                   )}
                   {plan.status === "coming-soon" && (
                     <p className="text-sm text-muted-foreground italic border-l-2 border-primary/30 pl-3">
-                      This service will be offered as a monthly subscription. Pricing coming soon.
+                      Full pricing details coming soon.
                     </p>
                   )}
                   <div className="pt-4 border-t">
@@ -185,7 +166,7 @@ const Pricing = () => {
               Try Your AI Voice Assistant Free for 3 Days
             </h3>
             <p className="text-lg text-muted-foreground mb-6">
-              Experience professional AI call handling. One-time setup: $299.
+              Experience professional AI call handling. Setup starting from $299.
             </p>
             <Button variant="hero" size="lg" onClick={() => window.location.href = "/riley-demo"}>
               Book Your Free Demo
