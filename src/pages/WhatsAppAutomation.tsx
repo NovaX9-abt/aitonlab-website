@@ -151,19 +151,16 @@ const WhatsAppAutomation = () => {
           animationDelay: "300ms"
         }}>
             <CardHeader>
-              <CardTitle>
-            </CardTitle>
-              <CardDescription>$99 – $249</CardDescription>
+              <CardTitle>Pricing</CardTitle>
+              <CardDescription>Coming Soon — Monthly Service</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Pricing reflects the complexity of your integration. We build reliable systems with proper API setup, 
-                Meta compliance, and monitoring — not quick fixes that break.
+                WhatsApp Automation will be offered as a monthly service. Pricing details will be announced soon.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Advanced features such as AI-powered conversations may require additional configuration depending on your business needs.
+              <p className="text-sm text-muted-foreground font-medium">
+                Join the waitlist to be notified when this service becomes available.
               </p>
-              <p className="text-sm text-muted-foreground font-medium">Advanced features such as AI-powered conversations may require additional configuration depending on your business needs.</p>
             </CardContent>
           </Card>
 
