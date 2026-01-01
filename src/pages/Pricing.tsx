@@ -14,47 +14,54 @@ const Pricing = () => {
       features: [
         "24/7 call handling",
         "English & French support",
-        "Appointment booking integration",
+        "Appointment booking (optional)",
         "Lead capture & qualification",
-        "Calendar & CRM connections",
+        "Calendar & CRM / Google Sheets integration",
       ],
-      delivery: "3–5 business days",
+      delivery: [
+        "Standard setup: 3–5 business days",
+        "Custom workflows: 7–10 business days",
+      ],
       link: "/services/voice-ai",
       status: "available",
       popular: true,
-      note: "Final pricing depends on workflow complexity and integrations. Simple setups cost less than advanced workflows.",
+      note: "Final pricing depends on workflow complexity and required integrations.",
     },
     {
       name: "Smart Lead Assistant",
       price: "Starting from $249",
-      description: "An intelligent system that captures, qualifies, and follows up on every lead",
+      description: "An intelligent system that captures, qualifies, and follows up with leads automatically",
       features: [
         "Automated lead capture",
         "Lead qualification",
         "CRM / Google Sheets integration",
         "Automated follow-ups",
-        "Initial usage included",
       ],
-      delivery: "3–5 business days",
+      delivery: [
+        "Standard setup: 3–5 business days",
+        "Advanced or custom workflows: 7–10 business days",
+      ],
       link: "/services/email-crm",
       status: "available",
-      note: "Pricing varies based on automation complexity. Simple setups cost less than advanced workflows.",
+      note: "Pricing varies based on automation complexity and follow-up logic.",
     },
     {
       name: "WhatsApp Automation",
-      price: "Setup from $199",
+      price: "Setup starting from $199",
       priceSubtext: "Ongoing service fee applies",
       description: "Automate customer conversations, bookings, and support on WhatsApp",
       features: [
         "WhatsApp Cloud API integration",
-        "AI-powered conversations",
-        "Conversational booking",
-        "Customer support automation",
-        "Reminders & notifications",
+        "AI-powered customer conversations",
+        "Appointment booking & support automation",
       ],
-      delivery: "Coming Soon",
+      delivery: [
+        "Standard setup: 3–5 business days",
+        "Advanced workflows: 7–10 business days",
+      ],
       link: "/services/whatsapp",
       status: "coming-soon",
+      note: "Pricing and delivery depend on conversation flows and integrations.",
     },
   ];
 
@@ -133,9 +140,18 @@ const Pricing = () => {
                     </p>
                   )}
                   <div className="pt-4 border-t">
-                    <p className="text-sm text-muted-foreground mb-4">
-                      <span className="font-semibold text-foreground">Delivery:</span> {plan.delivery}
-                    </p>
+                    <div className="text-sm text-muted-foreground mb-4">
+                      <span className="font-semibold text-foreground block mb-2">Delivery timeline:</span>
+                      {Array.isArray(plan.delivery) ? (
+                        <ul className="space-y-1">
+                          {plan.delivery.map((item, idx) => (
+                            <li key={idx}>• {item}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <span>{plan.delivery}</span>
+                      )}
+                    </div>
                     {plan.status === "available" ? (
                       <Button
                         variant={plan.popular ? "default" : "outline"}
@@ -160,22 +176,22 @@ const Pricing = () => {
             ))}
           </div>
 
-          {/* Free Trial Card */}
+          {/* CTA Card */}
           <Card className="max-w-3xl mx-auto p-8 text-center shadow-elegant bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 animate-fade-in">
             <h3 className="text-2xl font-bold mb-4">
-              Try Your AI Voice Assistant Free for 3 Days
+              Ready to Automate Your Business?
             </h3>
             <p className="text-lg text-muted-foreground mb-6">
-              Experience professional AI call handling. Setup starting from $299.
+              Talk to Riley to discuss your needs and get a custom quote.
             </p>
             <Button variant="hero" size="lg" onClick={() => window.location.href = "/riley-demo"}>
-              Book Your Free Demo
+              Start a Conversation
             </Button>
           </Card>
 
-          {/* Note about pricing */}
+          {/* Global pricing note */}
           <p className="text-center text-sm text-muted-foreground mt-12 max-w-2xl mx-auto">
-            All prices are one-time setup fees. Every project includes a free 3-day test before final delivery.
+            All solutions are tailored to each business. Simple workflows cost less, while advanced automation and integrations require additional configuration.
           </p>
         </div>
       </section>
