@@ -10,58 +10,51 @@ const Pricing = () => {
     {
       name: "Voice AI Agent",
       price: "Starting from $299",
-      description: "A professional AI voice assistant that handles real customer calls 24/7",
+      description: "AI-powered voice agent that handles inbound calls, answers FAQs, manages bookings, and sends automated notifications.",
       features: [
-        "24/7 call handling",
-        "English & French support",
-        "Appointment booking (optional)",
-        "Lead capture & qualification",
-        "Calendar & CRM / Google Sheets integration",
+        "One-time setup fee: $299",
+        "Usage handled via call packs (no monthly subscription)",
       ],
-      delivery: [
-        "Standard setup: 3–5 business days",
-        "Custom workflows: 7–10 business days",
+      usagePacks: [
+        { name: "Starter", calls: "100 calls", price: "$39" },
+        { name: "Growth", calls: "300 calls", price: "$99" },
+        { name: "Pro", calls: "1,000 calls", price: "$249" },
       ],
+      delivery: "3–5 business days",
       link: "/services/voice-ai",
       status: "available",
       popular: true,
-      note: "Final pricing depends on workflow complexity and required integrations.",
+      note: "Usage packs cover real call traffic. Setup is one-time. Purchase packs as needed.",
     },
     {
       name: "Smart Lead Assistant",
       price: "Starting from $249",
-      description: "An intelligent system that captures, qualifies, and follows up with leads automatically",
+      description: "AI-powered workflow to capture, qualify, and follow up with leads from websites or other channels, syncing data to Google Sheets or CRM systems.",
       features: [
         "Automated lead capture",
         "Lead qualification",
         "CRM / Google Sheets integration",
         "Automated follow-ups",
       ],
-      delivery: [
-        "Standard setup: 3–5 business days",
-        "Advanced or custom workflows: 7–10 business days",
-      ],
+      delivery: "Standard setup: 3–5 business days",
+      deliveryNote: "More complex logic may require additional time",
       link: "/services/email-crm",
       status: "available",
-      note: "Pricing varies based on automation complexity and follow-up logic.",
+      note: "Final pricing depends on workflow complexity and required integrations.",
     },
     {
       name: "WhatsApp Automation",
       price: "Setup starting from $199",
-      priceSubtext: "Ongoing service fee applies",
-      description: "Automate customer conversations, bookings, and support on WhatsApp",
+      description: "Automated WhatsApp system for customer conversations, booking, and support.",
       features: [
         "WhatsApp Cloud API integration",
         "AI-powered customer conversations",
         "Appointment booking & support automation",
       ],
-      delivery: [
-        "Standard setup: 3–5 business days",
-        "Advanced workflows: 7–10 business days",
-      ],
+      delivery: "Standard setup: 3–5 business days",
       link: "/services/whatsapp",
       status: "coming-soon",
-      note: "Pricing and delivery depend on conversation flows and integrations.",
+      note: "Ongoing service fee applies depending on usage and hosting configuration.",
     },
   ];
 
@@ -74,13 +67,13 @@ const Pricing = () => {
           {/* Header */}
           <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Choose Your Perfect{" "}
+              Choose Your Automation{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Automation
+                Solution
               </span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              One-time setup fees. No subscriptions. Transparent pricing for businesses worldwide.
+              Clear setup pricing. Usage-based or ongoing fees apply depending on the service.
             </p>
           </div>
 
@@ -111,9 +104,6 @@ const Pricing = () => {
                   <div className="text-3xl font-bold text-primary mb-1">
                     {plan.price}
                   </div>
-                  {plan.priceSubtext && (
-                    <p className="text-sm text-muted-foreground mb-2">{plan.priceSubtext}</p>
-                  )}
                   <CardDescription className="text-base">
                     {plan.description}
                   </CardDescription>
@@ -129,27 +119,34 @@ const Pricing = () => {
                       </li>
                     ))}
                   </ul>
+                  
+                  {/* Usage Packs for Voice AI */}
+                  {plan.usagePacks && (
+                    <div className="bg-muted/50 rounded-lg p-4">
+                      <p className="font-semibold text-sm mb-3">Voice AI Usage Packs:</p>
+                      <ul className="space-y-2">
+                        {plan.usagePacks.map((pack, idx) => (
+                          <li key={idx} className="flex justify-between text-sm">
+                            <span className="text-muted-foreground">{pack.name} — {pack.calls}</span>
+                            <span className="font-medium">{pack.price}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
                   {plan.note && (
                     <p className="text-sm text-muted-foreground italic border-l-2 border-primary/30 pl-3">
                       {plan.note}
                     </p>
                   )}
-                  {plan.status === "coming-soon" && (
-                    <p className="text-sm text-muted-foreground italic border-l-2 border-primary/30 pl-3">
-                      Full pricing details coming soon.
-                    </p>
-                  )}
+                  
                   <div className="pt-4 border-t">
                     <div className="text-sm text-muted-foreground mb-4">
                       <span className="font-semibold text-foreground block mb-2">Delivery timeline:</span>
-                      {Array.isArray(plan.delivery) ? (
-                        <ul className="space-y-1">
-                          {plan.delivery.map((item, idx) => (
-                            <li key={idx}>• {item}</li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <span>{plan.delivery}</span>
+                      <span>{plan.delivery}</span>
+                      {plan.deliveryNote && (
+                        <p className="mt-1 text-xs italic">{plan.deliveryNote}</p>
                       )}
                     </div>
                     {plan.status === "available" ? (
@@ -189,10 +186,6 @@ const Pricing = () => {
             </Button>
           </Card>
 
-          {/* Global pricing note */}
-          <p className="text-center text-sm text-muted-foreground mt-12 max-w-2xl mx-auto">
-            All solutions are tailored to each business. Simple workflows cost less, while advanced automation and integrations require additional configuration.
-          </p>
         </div>
       </section>
 
