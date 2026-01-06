@@ -9,9 +9,9 @@ const RileyDemo = () => {
   const navigate = useNavigate();
 
   const usagePacks = [
-    { name: "Starter", calls: "100 calls", price: "$29" },
-    { name: "Growth", calls: "300 calls", price: "$79" },
-    { name: "Pro", calls: "1,000 calls", price: "$199" },
+    { name: "Starter", calls: "100 calls", price: "$39" },
+    { name: "Growth", calls: "300 calls", price: "$99" },
+    { name: "Pro", calls: "1,000 calls", price: "$249" },
   ];
 
   const features = [
@@ -20,7 +20,6 @@ const RileyDemo = () => {
     "Appointment booking integration",
     "Lead capture & qualification",
     "Calendar & CRM connections",
-    "Fair usage policy (2–4 min avg calls)",
   ];
 
   return (
@@ -40,13 +39,15 @@ const RileyDemo = () => {
 
             {/* Title */}
             <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Talk to Riley – AI Voice Assistant Demo
+              Talk to Riley — AI Voice Assistant Demo
             </h1>
 
             {/* Description */}
-            <p className="text-muted-foreground mb-8">
-              This demo lets you talk to Riley, our 24/7 Voice AI assistant.
-              Please only call if you want to experience the technology for business purposes.
+            <p className="text-muted-foreground mb-2">
+              Riley is our AI voice assistant designed to handle real business calls: answering customer questions, qualifying leads, and booking appointments automatically.
+            </p>
+            <p className="text-sm text-muted-foreground mb-8 italic">
+              This demo is intended for business evaluation purposes only.
             </p>
 
             {/* Start Call Button */}
@@ -57,21 +58,26 @@ const RileyDemo = () => {
               disabled
             >
               <Phone className="h-4 w-4 mr-2" />
-              Start Call (Coming Soon)
+              Start Call — +250 XXX XXX XXX
             </Button>
 
-            <p className="text-xs text-muted-foreground mt-4">
-              Phone number will be activated after MTN SIP setup is complete.
-            </p>
+            <div className="text-xs text-muted-foreground mt-4 space-y-1">
+              <p>Calls are handled by an AI assistant.</p>
+              <p>Average call duration: 2–4 minutes.</p>
+            </div>
           </Card>
 
-          {/* Pricing & Features Section */}
+          {/* Pricing Section */}
           <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
+              Voice AI Agent — Pricing
+            </h2>
+            
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Features Card */}
+              {/* Setup & Features Card */}
               <Card className="p-6 md:p-8">
-                <h2 className="text-xl font-bold mb-4">Voice AI Agent Setup</h2>
-                <p className="text-3xl font-bold text-primary mb-4">$199 – $299</p>
+                <h3 className="text-xl font-bold mb-2">One-Time Setup</h3>
+                <p className="text-3xl font-bold text-primary mb-4">Starting from $299</p>
                 <p className="text-sm text-muted-foreground mb-6">One-time setup fee</p>
                 
                 <ul className="space-y-3">
@@ -84,13 +90,18 @@ const RileyDemo = () => {
                     </li>
                   ))}
                 </ul>
+
+                <div className="mt-6 pt-4 border-t">
+                  <p className="text-sm font-semibold text-foreground">Delivery timeline:</p>
+                  <p className="text-sm text-muted-foreground">3–5 business days</p>
+                </div>
               </Card>
 
               {/* Usage Packs Card */}
               <Card className="p-6 md:p-8">
-                <h2 className="text-xl font-bold mb-4">Voice AI Usage Packs</h2>
+                <h3 className="text-xl font-bold mb-4">Voice AI Usage Packs</h3>
                 <p className="text-sm text-muted-foreground mb-6">
-                  Purchased separately based on your call volume
+                  Pay as needed based on your call volume
                 </p>
                 
                 <div className="space-y-4 mb-6">
@@ -105,18 +116,19 @@ const RileyDemo = () => {
                   ))}
                 </div>
                 
-                <p className="text-xs text-muted-foreground">
-                  Usage packs cover real call traffic. Setup is one-time — purchase call packs as needed.
-                </p>
-                
-                <p className="text-sm text-foreground mt-4 font-medium">
-                  Transparent call-based pricing. Fair usage policy applies (avg 2–4 min per call).
-                </p>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <p>Usage packs cover real call traffic.</p>
+                  <p>No mandatory monthly subscription.</p>
+                  <p>Purchase packs as your call volume grows.</p>
+                </div>
               </Card>
             </div>
 
             {/* CTA */}
-            <div className="text-center mt-8">
+            <div className="text-center mt-10">
+              <p className="text-muted-foreground mb-4">
+                Ready to automate your business calls?
+              </p>
               <Button 
                 variant="hero" 
                 size="lg"
@@ -129,7 +141,7 @@ const RileyDemo = () => {
                   }
                 }}
               >
-                Get a Free Quote
+                Get a Quote
               </Button>
             </div>
           </div>

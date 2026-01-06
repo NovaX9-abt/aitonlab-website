@@ -10,7 +10,7 @@ const Pricing = () => {
     {
       name: "Voice AI Agent",
       price: "Starting from $299",
-      description: "AI-powered voice agent that handles inbound calls, answers FAQs, manages bookings, and sends automated notifications.",
+      description: "AI-powered voice assistant that answers incoming calls, handles common questions, qualifies leads, and books appointments automatically — 24/7. Designed to reduce missed calls, save staff time, and improve customer experience.",
       features: [
         "One-time setup fee: $299",
         "Usage handled via call packs (no monthly subscription)",
