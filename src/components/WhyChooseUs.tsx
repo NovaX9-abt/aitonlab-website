@@ -1,27 +1,27 @@
-import { Zap, MapPin, DollarSign, Headphones } from "lucide-react";
+import { Clock, Briefcase, BadgeDollarSign, HeadphonesIcon } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const WhyChooseUs = () => {
   const reasons = [
     {
-      icon: Zap,
-      title: "Fast Delivery",
-      description: "1–3 days",
+      icon: Clock,
+      title: "Fast & Reliable Delivery",
+      description: "Standard setups delivered in 3–5 business days. We focus on solutions we can deploy and maintain reliably.",
     },
     {
-      icon: MapPin,
-      title: "Global Expertise",
-      description: "Worldwide clients",
+      icon: Briefcase,
+      title: "Built for Real Business Use",
+      description: "Voice calls, lead handling, WhatsApp conversations, bookings, and follow-ups — designed for real-world business workflows.",
     },
     {
-      icon: DollarSign,
-      title: "Clear One-Time Pricing",
-      description: "No hidden fees",
+      icon: BadgeDollarSign,
+      title: "Transparent Pricing Structure",
+      description: "Clear setup fees. Usage-based pricing or optional ongoing service depending on the solution.",
     },
     {
-      icon: Headphones,
-      title: "Support & Maintenance",
-      description: "Always included",
+      icon: HeadphonesIcon,
+      title: "Human Support When Needed",
+      description: "Clear handover, guidance, and support so you always stay in control of your automation.",
     },
   ];
 
@@ -30,10 +30,13 @@ const WhyChooseUs = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why Choose <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Us</span>
+            Why Businesses Choose{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              AitonLab
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Simple, effective automation solutions for businesses worldwide
+            Practical AI automations designed to save time, reduce costs, and convert more customers.
           </p>
         </div>
 
