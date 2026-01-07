@@ -50,6 +50,7 @@ const Pricing = () => {
       features: [
         "One-time setup fee: $249",
         "Includes initial usage for normal business volumes",
+        "Ongoing service fee may apply depending on usage and hosting configuration",
       ],
       delivery: "Standard setup: 3–5 business days",
       deliveryNote: "More complex logic may require additional time",
