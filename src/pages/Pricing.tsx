@@ -50,13 +50,12 @@ const Pricing = () => {
       features: [
         "One-time setup fee: $249",
         "Includes initial usage for normal business volumes",
-        "Ongoing service fee may apply depending on usage and hosting configuration",
       ],
       delivery: "Standard setup: 3–5 business days",
       deliveryNote: "More complex logic may require additional time",
       link: "/services/email-crm",
       status: "available",
-      note: "Final pricing depends on workflow complexity and required integrations.",
+      note: "Ongoing service fee may apply depending on usage and hosting configuration.",
     },
     {
       name: "WhatsApp Automation",
