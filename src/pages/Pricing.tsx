@@ -60,11 +60,18 @@ const Pricing = () => {
     {
       name: "WhatsApp Automation",
       price: "Setup starting from $199",
-      description: "Automated WhatsApp system for customer conversations, booking, and support.",
+      description: "Automated WhatsApp system for customer conversations, booking, and support — all within one platform.",
+      benefits: [
+        "AI-powered customer conversations on WhatsApp",
+        "Appointment booking directly in chat",
+        "Automated support and FAQ handling",
+        "Lead capture and qualification via WhatsApp",
+        "CRM and Google Sheets integration",
+        "Available 24/7 for customer inquiries",
+      ],
       features: [
-        "WhatsApp Cloud API integration",
-        "AI-powered customer conversations",
-        "Appointment booking & support automation",
+        "One-time setup fee: $199",
+        "Ongoing monthly service fee applies",
       ],
       delivery: "Standard setup: 3–5 business days",
       link: "/services/whatsapp",
