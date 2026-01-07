@@ -11,6 +11,15 @@ const Pricing = () => {
       name: "Voice AI Agent",
       price: "Starting from $299",
       description: "AI-powered voice assistant that answers incoming calls, handles common questions, qualifies leads, and books appointments automatically — 24/7. Designed to reduce missed calls, save staff time, and improve customer experience.",
+      benefits: [
+        "24/7 AI-powered inbound call handling",
+        "Automatic FAQ answering (services, pricing, availability, hours)",
+        "Lead capture & qualification during live calls",
+        "Appointment booking with calendar integration",
+        "Call summaries & structured data sent to CRM or Google Sheets",
+        "Multilingual support (English & French)",
+        "Designed to reduce missed calls and staff workload",
+      ],
       features: [
         "One-time setup fee: $299",
         "Usage handled via call packs (no monthly subscription)",
@@ -109,6 +118,20 @@ const Pricing = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-0 space-y-6">
+                  {/* Benefits list for Voice AI */}
+                  {plan.benefits && (
+                    <ul className="space-y-2">
+                      {plan.benefits.map((benefit, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <Check className="w-3 h-3 text-primary" />
+                          </div>
+                          <span className="text-sm text-muted-foreground">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  
                   <ul className="space-y-3">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
