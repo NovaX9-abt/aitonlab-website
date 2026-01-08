@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, MessageSquare, Send, Phone, Loader2 } from "lucide-react";
+import { Mail, MessageSquare, Send, Loader2 } from "lucide-react";
 const Contact = () => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -81,24 +81,12 @@ const Contact = () => {
 
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Phone className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="font-medium mb-1">Phone</div>
-                        <a href="tel:+250" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                          +250 XXX XXX XXX
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <MessageSquare className="w-5 h-5 text-primary" />
                       </div>
                       <div>
                         <div className="font-medium mb-1">WhatsApp</div>
-                        <a href="https://wa.me/250" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                          Message on WhatsApp
+                        <a href="https://wa.me/250793581847" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                          +250 793 581 847
                         </a>
                       </div>
                     </div>
@@ -141,10 +129,9 @@ const Contact = () => {
                     <Label htmlFor="service">What Service Do You Want? *</Label>
                     <select id="service" name="service" required className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
                       <option value="">Select a service</option>
+                      <option value="voice">Voice AI Agent</option>
+                      <option value="smart-lead">Smart Lead Assistant</option>
                       <option value="whatsapp">WhatsApp Automation</option>
-                      <option value="email">Email & CRM Automation</option>
-                      <option value="booking">Booking Systems</option>
-                      <option value="voice">Voice AI Agent (Riley)</option>
                     </select>
                   </div>
 
@@ -164,7 +151,7 @@ const Contact = () => {
                         </>}
                     </Button>
                     <Button type="button" variant="outline" className="flex-1" onClick={() => window.location.href = "/riley-demo"}>
-                      <Phone className="mr-2" />
+                      <MessageSquare className="mr-2" />
                       Call Riley for Demo
                     </Button>
                   </div>
