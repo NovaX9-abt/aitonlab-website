@@ -95,7 +95,7 @@ const Pricing = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Clear setup pricing. Usage-based or ongoing fees apply depending on the service.
+              Clear setup pricing. Final cost may vary based on workflow complexity and usage.
             </p>
           </div>
 
