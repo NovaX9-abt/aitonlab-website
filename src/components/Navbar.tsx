@@ -49,7 +49,11 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">
+          <button 
+            className="md:hidden p-2 rounded-lg bg-background border border-border shadow-sm hover:bg-muted transition-colors" 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+            aria-label="Toggle menu"
+          >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -66,9 +70,6 @@ const Navbar = () => {
               <button onClick={() => scrollToSection("contact")} className="text-sm font-medium hover:text-primary transition-colors py-2 text-left">
                 Contact
               </button>
-              <Button variant="hero" size="sm" onClick={() => { setIsMobileMenuOpen(false); window.location.href = "/riley-demo"; }} className="w-full">
-                Talk to Riley
-              </Button>
             </div>
           </div>}
       </div>
