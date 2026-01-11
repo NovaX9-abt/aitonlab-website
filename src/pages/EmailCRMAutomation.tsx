@@ -231,7 +231,7 @@ const EmailCRMAutomation = () => {
                 Initial usage included. Designed for normal business lead volumes.
               </p>
               <p className="text-sm text-muted-foreground font-medium">
-                Delivery: 3–5 business days. Every project includes a free 3-day test before final delivery.
+                Delivery: 3–5 business days.
               </p>
             </CardContent>
           </Card>
@@ -246,27 +246,13 @@ const EmailCRMAutomation = () => {
                 <p className="text-muted-foreground mb-6">
                   Let's discuss how Smart Lead Assistant can work for your business.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <div className="flex flex-col items-center">
-                    <Button 
-                      variant="hero" 
-                      size="lg"
-                      onClick={() => navigate("/riley-demo")}
-                    >
-                      Discuss Your Needs
-                    </Button>
-                    <span className="text-sm text-muted-foreground mt-2">
-                      Includes a free 3-day test if you decide to proceed.
-                    </span>
-                  </div>
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    onClick={() => navigate("/#contact")}
-                  >
-                    Get a Free Quote
-                  </Button>
-                </div>
+                <Button 
+                  variant="hero" 
+                  size="lg"
+                  onClick={() => navigate("/riley-demo")}
+                >
+                  Talk to Riley
+                </Button>
               </CardContent>
             </Card>
           </div>
