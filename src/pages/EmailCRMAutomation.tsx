@@ -4,21 +4,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
 const EmailCRMAutomation = () => {
   const navigate = useNavigate();
-
-  const whatYouGet = [
-    "Smart lead capture and classification",
-    "AI-assisted lead prioritization",
-    "CRM integration (Google Sheets, Notion, or similar)",
-    "Automated follow-ups",
-    "Clean, maintainable automation architecture",
-    "A system designed to scale with your business",
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const whatYouGet = ["Smart lead capture and classification", "AI-assisted lead prioritization", "CRM integration (Google Sheets, Notion, or similar)", "Automated follow-ups", "Clean, maintainable automation architecture", "A system designed to scale with your business"];
+  return <div className="min-h-screen bg-background">
       <Navbar />
       
       <main className="container mx-auto px-6 py-24">
@@ -61,28 +50,21 @@ const EmailCRMAutomation = () => {
           </Card>
 
           {/* How It Works */}
-          <Card className="mb-8 animate-slide-up" style={{ animationDelay: "50ms" }}>
+          <Card className="mb-8 animate-slide-up" style={{
+          animationDelay: "50ms"
+        }}>
             <CardHeader>
               <CardTitle>How It Works</CardTitle>
-              <CardDescription>When a customer contacts your business by email or form</CardDescription>
+              <CardDescription>When a customer contacts your business by email, Whatsapp or form</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                {[
-                  "The system automatically captures the message",
-                  "An AI assistant analyzes the intent (booking, pricing, urgent request, general inquiry)",
-                  "High-priority leads are flagged instantly",
-                  "Customer data is stored cleanly in your lead database",
-                  "Automated, neutral replies can be sent when needed",
-                  "Follow-ups are triggered so no lead is forgotten",
-                ].map((step, index) => (
-                  <div key={index} className="flex items-start gap-3">
+                {["The system automatically captures the message", "An AI assistant analyzes the intent (booking, pricing, urgent request, general inquiry)", "High-priority leads are flagged instantly", "Customer data is stored cleanly in your lead database", "Automated, neutral replies can be sent when needed", "Follow-ups are triggered so no lead is forgotten"].map((step, index) => <div key={index} className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <span className="text-xs font-semibold text-primary">{index + 1}</span>
                     </div>
                     <p className="text-muted-foreground">{step}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               <p className="text-sm text-muted-foreground mt-6 font-medium border-l-2 border-primary/30 pl-3">
                 You stay in control. The system assists — it does not replace you.
@@ -91,7 +73,9 @@ const EmailCRMAutomation = () => {
           </Card>
 
           {/* Examples */}
-          <Card className="mb-8 animate-slide-up" style={{ animationDelay: "100ms" }}>
+          <Card className="mb-8 animate-slide-up" style={{
+          animationDelay: "100ms"
+        }}>
             <CardHeader>
               <CardTitle>Real-World Examples</CardTitle>
               <CardDescription>See how businesses use Smart Lead Assistant</CardDescription>
@@ -147,7 +131,9 @@ const EmailCRMAutomation = () => {
           </Card>
 
           {/* Who This Is Best For */}
-          <Card className="mb-8 animate-slide-up" style={{ animationDelay: "150ms" }}>
+          <Card className="mb-8 animate-slide-up" style={{
+          animationDelay: "150ms"
+        }}>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-primary" />
@@ -172,24 +158,18 @@ const EmailCRMAutomation = () => {
           </Card>
 
           {/* Benefits */}
-          <Card className="mb-8 animate-slide-up" style={{ animationDelay: "200ms" }}>
+          <Card className="mb-8 animate-slide-up" style={{
+          animationDelay: "200ms"
+        }}>
             <CardHeader>
               <CardTitle>Why This Matters</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {[
-                  "Never forget to follow up with a potential customer",
-                  "Respond faster to high-value leads",
-                  "Keep all lead data organized in one place",
-                  "Reduce manual work and inbox chaos",
-                  "Close more deals by staying consistent"
-                ].map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-3">
+                {["Never forget to follow up with a potential customer", "Respond faster to high-value leads", "Keep all lead data organized in one place", "Reduce manual work and inbox chaos", "Close more deals by staying consistent"].map((benefit, index) => <div key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <p className="text-muted-foreground">{benefit}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               <p className="text-sm text-muted-foreground mt-6 font-medium border-l-2 border-primary/30 pl-3">
                 Most clients save 3–5 hours per week and significantly reduce lost opportunities.
@@ -198,26 +178,28 @@ const EmailCRMAutomation = () => {
           </Card>
 
           {/* What You Will Get */}
-          <Card className="mb-8 animate-slide-up" style={{ animationDelay: "250ms" }}>
+          <Card className="mb-8 animate-slide-up" style={{
+          animationDelay: "250ms"
+        }}>
             <CardHeader>
               <CardTitle>What You Get</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 gap-3">
-                {whatYouGet.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
+                {whatYouGet.map((item, index) => <div key={index} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <Check className="w-3 h-3 text-primary" />
                     </div>
                     <span className="text-muted-foreground">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </CardContent>
           </Card>
 
           {/* Pricing */}
-          <Card className="mb-12 animate-slide-up" style={{ animationDelay: "300ms" }}>
+          <Card className="mb-12 animate-slide-up" style={{
+          animationDelay: "300ms"
+        }}>
             <CardHeader>
               <CardTitle>Pricing</CardTitle>
               <CardDescription>$249 — One-time setup</CardDescription>
@@ -231,13 +213,15 @@ const EmailCRMAutomation = () => {
                 Initial usage included. Designed for normal business lead volumes.
               </p>
               <p className="text-sm text-muted-foreground font-medium">
-                Delivery: 3–5 business days.
+                Delivery: 3–5 business days. Every project includes a free 3-day test before final delivery.
               </p>
             </CardContent>
           </Card>
 
           {/* CTA */}
-          <div className="text-center animate-fade-in" style={{ animationDelay: "400ms" }}>
+          <div className="text-center animate-fade-in" style={{
+          animationDelay: "400ms"
+        }}>
             <Card className="bg-muted/20 border-none">
               <CardContent className="pt-8 pb-8">
                 <h2 className="text-2xl font-bold mb-4">
@@ -246,13 +230,19 @@ const EmailCRMAutomation = () => {
                 <p className="text-muted-foreground mb-6">
                   Let's discuss how Smart Lead Assistant can work for your business.
                 </p>
-                <Button 
-                  variant="hero" 
-                  size="lg"
-                  onClick={() => navigate("/riley-demo")}
-                >
-                  Talk to Riley
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="flex flex-col items-center">
+                    <Button variant="hero" size="lg" onClick={() => navigate("/riley-demo")}>
+                      Discuss Your Needs
+                    </Button>
+                    <span className="text-sm text-muted-foreground mt-2">
+                      Includes a free 3-day test if you decide to proceed.
+                    </span>
+                  </div>
+                  <Button variant="outline" size="lg" onClick={() => navigate("/#contact")}>
+                    Get a Free Quote
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -260,8 +250,6 @@ const EmailCRMAutomation = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default EmailCRMAutomation;
