@@ -179,7 +179,7 @@ const BookingSystems = () => {
                 Booking can be accessed via web forms, email, or WhatsApp (when available), depending on your setup.
               </p>
               <p className="text-sm text-muted-foreground font-medium">
-                Every project includes a free 3-day test before final delivery.
+                Delivery: 3–5 business days depending on workflow complexity.
               </p>
             </CardContent>
           </Card>
@@ -194,27 +194,13 @@ const BookingSystems = () => {
                 <p className="text-muted-foreground mb-6">
                   We will recommend the simplest and most cost-effective automation for your business.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <div className="flex flex-col items-center">
-                    <Button 
-                      variant="hero" 
-                      size="lg"
-                      onClick={() => navigate("/riley-demo")}
-                    >
-                      Book a Demo with Riley
-                    </Button>
-                    <span className="text-sm text-muted-foreground mt-2">
-                      Includes a free 3-day test if you decide to proceed.
-                    </span>
-                  </div>
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    onClick={() => navigate("/#contact")}
-                  >
-                    Get a Free Quote
-                  </Button>
-                </div>
+                <Button 
+                  variant="hero" 
+                  size="lg"
+                  onClick={() => navigate("/riley-demo")}
+                >
+                  Talk to Riley
+                </Button>
               </CardContent>
             </Card>
           </div>

@@ -1,4 +1,4 @@
-import { Check, Bell } from "lucide-react";
+import { Check } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -109,18 +109,13 @@ const Pricing = () => {
                 } ${plan.status === "coming-soon" ? "opacity-90" : ""}`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="absolute top-4 right-4 flex gap-2">
-                  {plan.popular && (
+                {plan.popular && (
+                  <div className="absolute top-4 right-4">
                     <Badge className="bg-gradient-primary text-primary-foreground">
                       Most Popular
                     </Badge>
-                  )}
-                  {plan.status === "available" ? (
-                    <Badge className="bg-green-600 hover:bg-green-700">Available</Badge>
-                  ) : (
-                    <Badge variant="secondary">Coming Soon</Badge>
-                  )}
-                </div>
+                  </div>
+                )}
                 <CardHeader className="p-0 mb-6 pt-8">
                   <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
                   <div className="text-3xl font-bold text-primary mb-1">
@@ -185,30 +180,16 @@ const Pricing = () => {
                         <p className="mt-1 text-xs italic">{plan.deliveryNote}</p>
                       )}
                     </div>
-                    {plan.status === "available" ? (
-                      <div className="text-center">
-                        <Button
-                          variant={plan.popular ? "default" : "outline"}
-                          className="w-full"
-                          onClick={() => window.location.href = "/riley-demo"}
-                        >
-                          Talk to Riley
-                        </Button>
-                        <p className="text-xs text-muted-foreground mt-2">contact@aitonlab.rw</p>
-                      </div>
-                    ) : (
-                      <div className="text-center">
-                        <Button
-                          variant="secondary"
-                          className="w-full"
-                          disabled
-                        >
-                          <Bell className="w-4 h-4 mr-2" />
-                          Coming Soon
-                        </Button>
-                        <p className="text-xs text-muted-foreground mt-2">contact@aitonlab.rw</p>
-                      </div>
-                    )}
+                    <div className="text-center">
+                      <Button
+                        variant={plan.popular ? "default" : "outline"}
+                        className="w-full"
+                        onClick={() => window.location.href = "/riley-demo"}
+                      >
+                        Talk to Riley
+                      </Button>
+                      <p className="text-xs text-muted-foreground mt-2">contact@aitonlab.rw</p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

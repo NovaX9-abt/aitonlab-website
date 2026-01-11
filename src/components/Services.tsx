@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
 
 const Services = () => {
   const navigate = useNavigate();
@@ -73,7 +72,6 @@ const Services = () => {
                 <TableRow>
                   <TableHead>Your Need</TableHead>
                   <TableHead>Recommended Service</TableHead>
-                  <TableHead className="text-right">Status</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -81,13 +79,6 @@ const Services = () => {
                   <TableRow key={index}>
                     <TableCell className="font-medium">{item.need}</TableCell>
                     <TableCell className="text-primary">{item.service}</TableCell>
-                    <TableCell className="text-right">
-                      {item.available ? (
-                        <Badge variant="default" className="bg-green-600 hover:bg-green-700">Available</Badge>
-                      ) : (
-                        <Badge variant="secondary">Coming Soon</Badge>
-                      )}
-                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -103,15 +94,10 @@ const Services = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardHeader>
-                <div className="flex items-center justify-between mb-4">
+                <div className="mb-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <service.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  {service.status === "available" ? (
-                    <Badge variant="default" className="bg-green-600 hover:bg-green-700">Available</Badge>
-                  ) : (
-                    <Badge variant="secondary">Coming Soon</Badge>
-                  )}
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
                 <p className="text-lg font-semibold text-primary">{service.price}</p>
