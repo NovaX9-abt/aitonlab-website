@@ -186,27 +186,70 @@ const Pricing = () => {
                       )}
                     </div>
                     {plan.status === "available" ? (
-                      <Button
-                        variant={plan.popular ? "default" : "outline"}
-                        className="w-full"
-                        onClick={() => window.location.href = "/riley-demo"}
-                      >
-                        Talk to Riley
-                      </Button>
+                      <div className="text-center">
+                        <Button
+                          variant={plan.popular ? "default" : "outline"}
+                          className="w-full"
+                          onClick={() => window.location.href = "/riley-demo"}
+                        >
+                          Talk to Riley
+                        </Button>
+                        <p className="text-xs text-muted-foreground mt-2">contact@aitonlab.rw</p>
+                      </div>
                     ) : (
-                      <Button
-                        variant="secondary"
-                        className="w-full"
-                        disabled
-                      >
-                        <Bell className="w-4 h-4 mr-2" />
-                        Coming Soon
-                      </Button>
+                      <div className="text-center">
+                        <Button
+                          variant="secondary"
+                          className="w-full"
+                          disabled
+                        >
+                          <Bell className="w-4 h-4 mr-2" />
+                          Coming Soon
+                        </Button>
+                        <p className="text-xs text-muted-foreground mt-2">contact@aitonlab.rw</p>
+                      </div>
                     )}
                   </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* How Pricing Works Section */}
+          <div className="max-w-3xl mx-auto mb-12 animate-fade-in">
+            <h3 className="text-2xl font-bold text-center mb-6">How Our Pricing Works</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-muted-foreground">50% of the setup fee is paid upfront to confirm project kickoff and resource allocation.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-muted-foreground">A 14-day paid trial is included to test the solution in real business conditions.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-muted-foreground">If the client stops after the trial, the setup fee is refunded — no long-term risk.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-muted-foreground">Usage-based or hosting fees may apply depending on automation volume.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-muted-foreground">Voice AI solutions include flexible usage packs with no long-term commitment.</span>
+              </li>
+            </ul>
           </div>
 
           {/* CTA Card */}
