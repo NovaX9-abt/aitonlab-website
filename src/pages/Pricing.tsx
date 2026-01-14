@@ -75,7 +75,6 @@ const Pricing = () => {
       ],
       delivery: "Standard setup: 3–5 business days",
       link: "/services/whatsapp",
-      status: "coming-soon",
       note: "Ongoing service fee applies depending on usage and hosting configuration.",
     },
   ];
@@ -180,7 +179,16 @@ const Pricing = () => {
                         <p className="mt-1 text-xs italic">{plan.deliveryNote}</p>
                       )}
                     </div>
-                    <div className="text-center">
+                    <div className="text-center space-y-2">
+                      {plan.link && (
+                        <Button
+                          variant="outline"
+                          className="w-full"
+                          onClick={() => window.location.href = plan.link}
+                        >
+                          Learn More
+                        </Button>
+                      )}
                       <Button
                         variant={plan.popular ? "default" : "outline"}
                         className="w-full"
