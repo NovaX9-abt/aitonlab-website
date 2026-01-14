@@ -1,4 +1,4 @@
-import { MessageSquare, Sparkles, Phone, ArrowRight, Bell } from "lucide-react";
+import { MessageSquare, Sparkles, Phone, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -35,10 +35,8 @@ const Services = () => {
       title: "WhatsApp Automation",
       price: "From $199 + service fee",
       description: "Automate customer conversations, bookings, and support on WhatsApp. Handle inquiries, capture leads, and send reminders — all directly inside WhatsApp.",
-      status: "coming-soon",
-      buttonText: "Notify Me",
+      buttonText: "Learn More",
       action: () => navigate("/services/whatsapp"),
-      note: "Coming soon as an ongoing monthly service.",
     },
   ];
 
@@ -90,7 +88,7 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className={`group hover:shadow-elegant transition-all duration-300 animate-slide-up ${service.status === "coming-soon" ? "opacity-90" : ""}`}
+              className="group hover:shadow-elegant transition-all duration-300 animate-slide-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardHeader>
@@ -106,20 +104,14 @@ const Services = () => {
                 <CardDescription className="text-base leading-relaxed">
                   {service.description}
                 </CardDescription>
-                {service.note && (
-                  <p className="text-sm text-muted-foreground italic border-l-2 border-primary/30 pl-3">
-                    {service.note}
-                  </p>
-                )}
                 <div className="space-y-2">
                   <Button 
-                    variant={service.status === "coming-soon" ? "secondary" : "outline"}
+                    variant="outline"
                     className="w-full"
                     onClick={service.action}
                   >
-                    {service.status === "coming-soon" && <Bell className="w-4 h-4 mr-2" />}
                     {service.buttonText}
-                    {service.status === "available" && <ArrowRight className="w-4 h-4 ml-2" />}
+                    <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                   {service.secondaryButton && (
                     <Button 
