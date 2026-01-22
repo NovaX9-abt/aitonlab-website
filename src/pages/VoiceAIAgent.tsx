@@ -19,9 +19,9 @@ const VoiceAIAgent = () => {
   ];
 
   const monthlyPlans = [
-    { name: "Starter", minutes: "~150 minutes", price: "$129/month" },
-    { name: "Growth", minutes: "~400 minutes", price: "$249/month" },
-    { name: "Pro", minutes: "~900 minutes", price: "$399/month" },
+    { name: "Starter", minutes: "Includes up to ~150 minutes of calls", price: "$129/month" },
+    { name: "Growth", minutes: "Includes up to ~400 minutes of calls", price: "$249/month" },
+    { name: "Pro", minutes: "Includes up to ~900 minutes of calls", price: "$399/month" },
   ];
 
   return (
@@ -183,8 +183,9 @@ const VoiceAIAgent = () => {
               {/* Setup */}
               <div>
                 <h3 className="font-semibold text-lg mb-2">Voice AI Agent Setup</h3>
-                <p className="text-2xl font-bold text-primary mb-2">$399</p>
+                <p className="text-2xl font-bold text-primary mb-2">$399 – $499</p>
                 <p className="text-sm text-muted-foreground">One-time setup fee.</p>
+                <p className="text-sm text-muted-foreground mt-1">Final setup price depends on workflow complexity and required integrations.</p>
               </div>
 
               {/* Monthly Plans */}
@@ -192,20 +193,23 @@ const VoiceAIAgent = () => {
                 <h3 className="font-semibold text-lg mb-4">Monthly Plans</h3>
                 <div className="space-y-3">
                   {monthlyPlans.map((plan, idx) => (
-                    <div key={idx} className="flex justify-between items-center p-3 rounded-lg bg-muted/50">
-                      <div>
+                    <div key={idx} className="flex flex-col p-3 rounded-lg bg-muted/50">
+                      <div className="flex justify-between items-center">
                         <span className="font-medium text-foreground">{plan.name}</span>
-                        <span className="text-muted-foreground ml-2">— {plan.minutes}</span>
+                        <span className="font-bold text-primary">{plan.price}</span>
                       </div>
-                      <span className="font-bold text-primary">{plan.price}</span>
+                      <span className="text-sm text-muted-foreground">{plan.minutes}</span>
                     </div>
                   ))}
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
                   Additional call minutes are billed based on usage.
                 </p>
-                <p className="text-sm text-muted-foreground font-medium mt-2">
-                  Delivery: 3–5 business days.
+                <p className="text-sm font-semibold text-foreground mt-4">
+                  Delivery timeline:
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  3–5 business days.
                 </p>
               </div>
             </CardContent>
