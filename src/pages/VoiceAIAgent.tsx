@@ -18,10 +18,10 @@ const VoiceAIAgent = () => {
     "Monitoring and reliability checks",
   ];
 
-  const usagePacks = [
-    { name: "Starter", calls: "100 calls", price: "$39" },
-    { name: "Growth", calls: "300 calls", price: "$99" },
-    { name: "Pro", calls: "1,000 calls", price: "$249" },
+  const monthlyPlans = [
+    { name: "Starter", minutes: "~150 minutes", price: "$129/month" },
+    { name: "Growth", minutes: "~400 minutes", price: "$249/month" },
+    { name: "Pro", minutes: "~900 minutes", price: "$399/month" },
   ];
 
   return (
@@ -183,26 +183,26 @@ const VoiceAIAgent = () => {
               {/* Setup */}
               <div>
                 <h3 className="font-semibold text-lg mb-2">Voice AI Agent Setup</h3>
-                <p className="text-2xl font-bold text-primary mb-2">$299</p>
-                <p className="text-sm text-muted-foreground">One-time setup fee. Usage handled via call packs.</p>
+                <p className="text-2xl font-bold text-primary mb-2">$399</p>
+                <p className="text-sm text-muted-foreground">One-time setup fee.</p>
               </div>
 
-              {/* Usage Packs */}
+              {/* Monthly Plans */}
               <div>
-                <h3 className="font-semibold text-lg mb-4">Voice AI Usage Packs</h3>
+                <h3 className="font-semibold text-lg mb-4">Monthly Plans</h3>
                 <div className="space-y-3">
-                  {usagePacks.map((pack, idx) => (
+                  {monthlyPlans.map((plan, idx) => (
                     <div key={idx} className="flex justify-between items-center p-3 rounded-lg bg-muted/50">
                       <div>
-                        <span className="font-medium text-foreground">{pack.name}</span>
-                        <span className="text-muted-foreground ml-2">— {pack.calls}</span>
+                        <span className="font-medium text-foreground">{plan.name}</span>
+                        <span className="text-muted-foreground ml-2">— {plan.minutes}</span>
                       </div>
-                      <span className="font-bold text-primary">{pack.price}</span>
+                      <span className="font-bold text-primary">{plan.price}</span>
                     </div>
                   ))}
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Usage packs cover real call traffic. Setup is one-time. Purchase packs as needed.
+                  Additional call minutes are billed based on usage.
                 </p>
                 <p className="text-sm text-muted-foreground font-medium mt-2">
                   Delivery: 3–5 business days.
@@ -219,10 +219,10 @@ const VoiceAIAgent = () => {
             <CardContent>
               <div className="space-y-4">
                 {[
-                  "Setup covers architecture, integrations, and custom configuration",
-                  "Usage packs ensure fair pricing — you only pay for real call traffic",
-                  "No hidden fees or surprise charges",
-                  "Scales with your business growth — purchase more packs as needed"
+                  "The setup fee covers architecture, integrations, and custom configuration",
+                  "Monthly plans include Rwanda local phone number infrastructure, AI voice orchestration, and system hosting",
+                  "Included call minutes provide predictable costs, while additional usage scales with your business",
+                  "No hidden fees or surprise charges"
                 ].map((point, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -230,9 +230,6 @@ const VoiceAIAgent = () => {
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-foreground font-medium">
-                You stay fully in control of your costs with transparent call-based pricing.
-              </p>
             </CardContent>
           </Card>
 

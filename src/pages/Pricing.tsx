@@ -8,8 +8,9 @@ import Footer from "@/components/Footer";
 const Pricing = () => {
   const plans = [
     {
-      name: "Voice AI Agent",
-      price: "Starting from $299",
+      name: "Voice AI Agent (Rwanda Local Number Included)",
+      price: "$399",
+      priceLabel: "One-time setup fee",
       description: "AI-powered voice assistant that answers incoming calls, handles common questions, qualifies leads, and books appointments automatically — 24/7. Designed to reduce missed calls, save staff time, and improve customer experience.",
       benefits: [
         "24/7 AI-powered inbound call handling",
@@ -21,23 +22,23 @@ const Pricing = () => {
         "Designed to reduce missed calls and staff workload",
       ],
       features: [
-        "One-time setup fee: $299",
-        "Usage handled via call packs (no monthly subscription)",
+        "Setup Fee: $399 (one-time)",
       ],
-      usagePacks: [
-        { name: "Starter", calls: "100 calls", price: "$39" },
-        { name: "Growth", calls: "300 calls", price: "$99" },
-        { name: "Pro", calls: "1,000 calls", price: "$249" },
+      monthlyPlans: [
+        { name: "Starter", minutes: "~150 minutes", price: "$129/month" },
+        { name: "Growth", minutes: "~400 minutes", price: "$249/month" },
+        { name: "Pro", minutes: "~900 minutes", price: "$399/month" },
       ],
       delivery: "3–5 business days",
       link: "/services/voice-ai",
       status: "available",
       popular: true,
-      note: "Usage packs cover real call traffic. Setup is one-time. Purchase packs as needed.",
+      note: "Additional call minutes are billed based on usage.",
     },
     {
       name: "Smart Lead Assistant",
-      price: "Starting from $249",
+      price: "From $249",
+      priceLabel: "One-time setup fee",
       description: "AI-powered workflow to capture, qualify, and follow up with leads from WhatsApp conversations, smart forms, or direct calls, syncing data to Google Sheets or CRM systems.",
       benefits: [
         "Lead capture via WhatsApp conversations",
@@ -49,17 +50,19 @@ const Pricing = () => {
         "Reduced response time and increased conversion rates",
       ],
       features: [
-        "One-time setup fee: $249",
+        "Setup Fee: from $249 (one-time)",
+        "Monthly Service: from $49/month depending on usage and hosting configuration",
       ],
       delivery: "Standard setup: 3–5 business days",
       deliveryNote: "Advanced logic or integrations may require additional time",
       link: "/services/email-crm",
       status: "available",
-      note: "Website-based lead capture is NOT included. Direct call entry is handled via a Voice AI Agent and may require additional setup and cost. Ongoing service fee may apply depending on usage and hosting configuration.",
+      note: "Voice AI call entry may require a Voice AI Agent plan. Hosting and AI usage may affect the final monthly fee.",
     },
     {
       name: "WhatsApp Automation",
-      price: "Setup starting from $199",
+      price: "From $199",
+      priceLabel: "One-time setup fee",
       description: "Automated WhatsApp system for customer conversations, booking, and support — all within one platform.",
       benefits: [
         "AI-powered customer conversations on WhatsApp",
@@ -70,12 +73,12 @@ const Pricing = () => {
         "Available 24/7 for customer inquiries",
       ],
       features: [
-        "One-time setup fee: $199",
-        "Ongoing monthly service fee applies",
+        "Setup Fee: from $199 (one-time)",
+        "Monthly Service: from $49/month depending on automation volume and hosting",
       ],
       delivery: "Standard setup: 3–5 business days",
       link: "/services/whatsapp",
-      note: "Ongoing service fee applies depending on usage and hosting configuration.",
+      note: "High message volumes may increase the monthly cost.",
     },
   ];
 
@@ -150,15 +153,15 @@ const Pricing = () => {
                     ))}
                   </ul>
                   
-                  {/* Usage Packs for Voice AI */}
-                  {plan.usagePacks && (
+                  {/* Monthly Plans for Voice AI */}
+                  {plan.monthlyPlans && (
                     <div className="bg-muted/50 rounded-lg p-4">
-                      <p className="font-semibold text-sm mb-3">Voice AI Usage Packs:</p>
+                      <p className="font-semibold text-sm mb-3">Monthly Plans:</p>
                       <ul className="space-y-2">
-                        {plan.usagePacks.map((pack, idx) => (
+                        {plan.monthlyPlans.map((mp, idx) => (
                           <li key={idx} className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">{pack.name} — {pack.calls}</span>
-                            <span className="font-medium">{pack.price}</span>
+                            <span className="text-muted-foreground">{mp.name} — {mp.minutes}</span>
+                            <span className="font-medium">{mp.price}</span>
                           </li>
                         ))}
                       </ul>
@@ -236,7 +239,13 @@ const Pricing = () => {
                 <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-3 h-3 text-primary" />
                 </div>
-                <span className="text-muted-foreground">Voice AI solutions include flexible usage packs with no long-term commitment.</span>
+                <span className="text-muted-foreground">Voice AI solutions include flexible monthly plans with no long-term commitment.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-muted-foreground">All telecom infrastructure, hosting, and AI usage are included in the monthly service plans unless otherwise specified.</span>
               </li>
             </ul>
           </div>
