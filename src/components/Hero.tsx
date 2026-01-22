@@ -25,15 +25,25 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Smart Automations for Modern Businesses —{" "}
+            AI Agents That Work{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Fast, Simple, Affordable
+              While You Sleep
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We help companies automate tasks like WhatsApp replies, customer follow-ups, bookings, and voice call handling — so you save time and close more clients.
+            AitonLab builds custom AI voice and WhatsApp agents that handle customer calls, capture leads, and book appointments — 24/7.
+          </p>
+
+          {/* Supporting line */}
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Never miss a customer again. Reduce workload. Increase conversions.
+          </p>
+
+          {/* Description */}
+          <p className="text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            We help service businesses in Kigali automate customer communication — from phone calls to WhatsApp — using custom-built AI agents that work around the clock.
           </p>
 
           {/* CTAs */}
