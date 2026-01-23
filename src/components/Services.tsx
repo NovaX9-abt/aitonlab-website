@@ -11,7 +11,7 @@ const Services = () => {
     {
       icon: Phone,
       title: "Voice AI Agent",
-      price: "Starting from $299",
+      price: "Setup from $399 — Monthly plans from $129/month",
       description: "A professional AI voice assistant that handles real customer calls 24/7. Answers calls, qualifies leads, books appointments, and sends follow-ups — all with a natural, human-like experience.",
       status: "available",
       buttonText: "Learn More",
@@ -24,7 +24,7 @@ const Services = () => {
     {
       icon: Sparkles,
       title: "Smart Lead Assistant",
-      price: "Starting from $249",
+      price: "Setup from $249 — Monthly service from $49/month",
       description: "An intelligent system that captures every incoming lead, qualifies intent, integrates with your CRM, and triggers automated follow-ups. Never miss an important lead again.",
       status: "available",
       buttonText: "Learn More",
@@ -33,7 +33,7 @@ const Services = () => {
     {
       icon: MessageSquare,
       title: "WhatsApp Automation",
-      price: "From $199 + service fee",
+      price: "Setup from $199 — Monthly service from $49/month",
       description: "Automate customer conversations, bookings, and support on WhatsApp. Handle inquiries, capture leads, and send reminders — all directly inside WhatsApp.",
       buttonText: "Learn More",
       action: () => navigate("/services/whatsapp"),
