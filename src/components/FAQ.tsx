@@ -66,11 +66,13 @@ We do not sell, share, or reuse client data under any circumstance.`
   {
     question: "How do I get started with AitonLab?",
     answer: `You can:
-• contact our WhatsApp bot at +250 793 581 847
-• fill out the contact form at the bottom of the homepage
-• or email us directly at contact@aitonlab.rw
 
-You will be contacted shortly to discuss your business needs.`
+• Chat with our AitonLab WhatsApp Agent at +250 793 581 847 to share your business needs.
+• Call Riley, our AI Voice Agent, at (+250 xxxx) to describe your project by phone.
+• Fill out the contact form at the bottom of the homepage.
+• Or email us directly at contact@aitonlab.rw.
+
+All channels collect your business information so our team can get back to you shortly.`
   }
 ];
 
