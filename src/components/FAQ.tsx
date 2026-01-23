@@ -72,7 +72,7 @@ We do not sell, share, or reuse client data under any circumstance.`
 • Fill out the contact form at the bottom of the homepage.
 • Or email us directly at contact@aitonlab.rw.
 
-All channels collect your business information so our team can get back to you shortly.`
+Riley and the Whatsapp Agent collect your business information and you can book a call with an AitonLab consultant shortly.`
   }
 ];
 
