@@ -84,7 +84,7 @@ const Contact = () => {
                         <MessageSquare className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <div className="font-medium mb-1">WhatsApp</div>
+                        <div className="font-medium mb-1">WhatsApp Chatbot</div>
                         <a href="https://wa.me/250793581847" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                           +250 793 581 847
                         </a>
