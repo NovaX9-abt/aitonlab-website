@@ -32,7 +32,7 @@ There are no hidden fees.`
   },
   {
     question: "How long does setup take?",
-    answer: `Most projects go live within 7 to 14 days after project confirmation.
+    answer: `Most projects go live within 3 to 5 days after project confirmation.
 We configure, test, and deliver a fully operational AI agent.`
   },
   {
