@@ -219,30 +219,35 @@ const EmailCRMAutomation = () => {
           </Card>
 
           {/* CTA */}
-          <div className="text-center animate-fade-in" style={{
-          animationDelay: "400ms"
-        }}>
+          <div className="text-center animate-fade-in" style={{ animationDelay: "400ms" }}>
             <Card className="bg-muted/20 border-none">
               <CardContent className="pt-8 pb-8">
                 <h2 className="text-2xl font-bold mb-4">
-                  Ready to Capture Every Lead?
+                  Ready to discuss your business needs?
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Let's discuss how Smart Lead Assistant can work for your business.
+                  Speak with our AI assistants to explain your project. They will collect your information and help schedule a call with an AitonLab consultant.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <div className="flex flex-col items-center">
-                    <Button variant="hero" size="lg" onClick={() => navigate("/riley-demo")}>
-                      Discuss Your Needs
-                    </Button>
-                    <span className="text-sm text-muted-foreground mt-2">
-                      Includes a free 3-day test if you decide to proceed.
-                    </span>
-                  </div>
-                  <Button variant="outline" size="lg" onClick={() => navigate("/#contact")}>
-                    Get a Free Quote
-                  </Button>
+                <Button 
+                  variant="hero" 
+                  size="lg"
+                  onClick={() => navigate("/riley-demo")}
+                >
+                  Talk to Riley
+                </Button>
+                <div className="mt-6 space-y-2 text-sm text-muted-foreground">
+                  <p>
+                    Chat with our WhatsApp assistant:{" "}
+                    <a href="https://wa.me/250793581847" className="text-primary hover:underline">+250 793 581 847</a>
+                  </p>
+                  <p>
+                    Email us:{" "}
+                    <a href="mailto:contact@aitonlab.rw" className="text-primary hover:underline">contact@aitonlab.rw</a>
+                  </p>
                 </div>
+                <p className="mt-4 text-xs text-muted-foreground">
+                  Riley and our WhatsApp assistant are AI agents that gather your business requirements and connect you with an AitonLab consultant.
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -250,6 +255,8 @@ const EmailCRMAutomation = () => {
       </main>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default EmailCRMAutomation;

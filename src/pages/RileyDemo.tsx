@@ -8,18 +8,18 @@ import { useNavigate } from "react-router-dom";
 const RileyDemo = () => {
   const navigate = useNavigate();
 
-  const usagePacks = [
-    { name: "Starter", calls: "100 calls", price: "$39" },
-    { name: "Growth", calls: "300 calls", price: "$99" },
-    { name: "Pro", calls: "1,000 calls", price: "$249" },
+  const monthlyPlans = [
+    { name: "Starter", details: "~150 minutes", price: "$129 / month" },
+    { name: "Growth", details: "~400 minutes", price: "$249 / month" },
+    { name: "Pro", details: "~900 minutes", price: "$399 / month" },
   ];
 
   const features = [
     "24/7 professional call handling",
     "English & French support",
-    "Appointment booking integration",
-    "Lead capture & qualification",
-    "Calendar & CRM connections",
+    "Call qualification & lead capture",
+    "Consultation booking with AitonLab team",
+    "Calendar & CRM integrations",
   ];
 
   return (
@@ -44,10 +44,12 @@ const RileyDemo = () => {
 
             {/* Description */}
             <p className="text-muted-foreground mb-2">
-              Riley is our AI voice assistant designed to handle real business calls: answering customer questions, qualifying leads, and booking appointments automatically.
+              Riley is our AI voice assistant designed to handle real business inquiries.
+              He gathers your business needs and helps schedule a consultation call with an AitonLab consultant.
             </p>
             <p className="text-sm text-muted-foreground mb-8 italic">
-              This demo is intended for business evaluation purposes only.
+              This line is reserved for business inquiries only.
+              Calls without genuine business interest may not be processed.
             </p>
 
             {/* Start Call Button */}
@@ -77,10 +79,9 @@ const RileyDemo = () => {
               {/* Setup & Features Card */}
               <Card className="p-6 md:p-8">
                 <h3 className="text-xl font-bold mb-2">One-Time Setup</h3>
-                <p className="text-3xl font-bold text-primary mb-4">Starting from $299</p>
-                <p className="text-sm text-muted-foreground mb-6">One-time setup fee</p>
+                <p className="text-3xl font-bold text-primary mb-4">Starting from $399</p>
                 
-                <ul className="space-y-3">
+                <ul className="space-y-3 mb-6">
                   {features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -91,35 +92,31 @@ const RileyDemo = () => {
                   ))}
                 </ul>
 
-                <div className="mt-6 pt-4 border-t">
+                <div className="pt-4 border-t">
                   <p className="text-sm font-semibold text-foreground">Delivery timeline:</p>
                   <p className="text-sm text-muted-foreground">3–5 business days</p>
                 </div>
               </Card>
 
-              {/* Usage Packs Card */}
+              {/* Monthly Plans Card */}
               <Card className="p-6 md:p-8">
-                <h3 className="text-xl font-bold mb-4">Voice AI Usage Packs</h3>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Pay as needed based on your call volume
-                </p>
+                <h3 className="text-xl font-bold mb-6">Monthly Voice AI Plans</h3>
                 
                 <div className="space-y-4 mb-6">
-                  {usagePacks.map((pack, idx) => (
+                  {monthlyPlans.map((plan, idx) => (
                     <div key={idx} className="flex justify-between items-center p-3 rounded-lg bg-muted/50">
                       <div>
-                        <span className="font-medium text-foreground">{pack.name}</span>
-                        <span className="text-muted-foreground ml-2">— {pack.calls}</span>
+                        <span className="font-medium text-foreground">{plan.name}</span>
+                        <span className="text-muted-foreground ml-2">({plan.details})</span>
                       </div>
-                      <span className="font-bold text-primary">{pack.price}</span>
+                      <span className="font-bold text-primary">{plan.price}</span>
                     </div>
                   ))}
                 </div>
                 
                 <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>Usage packs cover real call traffic.</p>
-                  <p>No mandatory monthly subscription.</p>
-                  <p>Purchase packs as your call volume grows.</p>
+                  <p>Plans include telecom infrastructure, hosting, and AI usage.</p>
+                  <p>Additional usage-based fees may apply for high call volumes.</p>
                 </div>
               </Card>
             </div>

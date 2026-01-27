@@ -242,28 +242,32 @@ const VoiceAIAgent = () => {
             <Card className="bg-muted/20 border-none">
               <CardContent className="pt-8 pb-8">
                 <h2 className="text-2xl font-bold mb-4">
-                  Ready to Never Miss a Call Again?
+                  Ready to discuss your business needs?
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Experience the technology yourself or get a custom quote for your business.
+                  Speak with our AI assistants to explain your project. They will collect your information and help schedule a call with an AitonLab consultant.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    variant="hero" 
-                    size="lg"
-                    onClick={() => navigate("/riley-demo")}
-                  >
-                    <Phone className="w-4 h-4 mr-2" />
-                    Try Riley Demo
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    onClick={() => navigate("/#contact")}
-                  >
-                    Get a Quote
-                  </Button>
+                <Button 
+                  variant="hero" 
+                  size="lg"
+                  onClick={() => navigate("/riley-demo")}
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  Talk to Riley
+                </Button>
+                <div className="mt-6 space-y-2 text-sm text-muted-foreground">
+                  <p>
+                    Chat with our WhatsApp assistant:{" "}
+                    <a href="https://wa.me/250793581847" className="text-primary hover:underline">+250 793 581 847</a>
+                  </p>
+                  <p>
+                    Email us:{" "}
+                    <a href="mailto:contact@aitonlab.rw" className="text-primary hover:underline">contact@aitonlab.rw</a>
+                  </p>
                 </div>
+                <p className="mt-4 text-xs text-muted-foreground">
+                  Riley and our WhatsApp assistant are AI agents that gather your business requirements and connect you with an AitonLab consultant.
+                </p>
               </CardContent>
             </Card>
           </div>
