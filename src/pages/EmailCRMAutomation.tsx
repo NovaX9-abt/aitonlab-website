@@ -7,7 +7,8 @@ import Footer from "@/components/Footer";
 const EmailCRMAutomation = () => {
   const navigate = useNavigate();
   const whatYouGet = ["Smart lead capture and classification", "AI-assisted lead prioritization", "CRM integration (Google Sheets, Notion, or similar)", "Automated follow-ups", "Clean, maintainable automation architecture", "A system designed to scale with your business"];
-  return <div className="min-h-screen bg-background">
+  return (
+    <div className="min-h-screen bg-background">
       <Navbar />
       
       <main className="container mx-auto px-6 py-24">
