@@ -232,7 +232,7 @@ const Pricing = () => {
                 <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-3 h-3 text-primary" />
                 </div>
-                <span className="text-muted-foreground">If the client stops after the trial, the setup fee is refunded — no long-term risk.</span>
+                <span className="text-muted-foreground">If the pilot does not meet agreed performance criteria, we refund the service fee. Infrastructure and usage costs remain non-refundable.</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
