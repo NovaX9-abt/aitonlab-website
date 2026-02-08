@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,6 +17,16 @@ const Footer = () => {
               <p className="text-sm text-muted-foreground mt-1">
                 Empowering Rwandan businesses with AI
               </p>
+            </div>
+
+            {/* Links */}
+            <div className="flex items-center gap-6">
+              <Link 
+                to="/security" 
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Security & Data Protection
+              </Link>
             </div>
 
             {/* Copyright */}
