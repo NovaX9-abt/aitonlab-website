@@ -2,10 +2,12 @@ import { Check } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Pricing = () => {
+  const navigate = useNavigate();
   const plans = [
     {
       name: "Voice AI Agent (Rwanda Local Number Included)",
@@ -192,7 +194,7 @@ const Pricing = () => {
                         <Button
                           variant="outline"
                           className="w-full"
-                          onClick={() => window.location.href = plan.link}
+                          onClick={() => navigate(plan.link)}
                         >
                           Learn More
                         </Button>
@@ -200,7 +202,7 @@ const Pricing = () => {
                       <Button
                         variant={plan.popular ? "default" : "outline"}
                         className="w-full"
-                        onClick={() => window.location.href = "/riley-demo"}
+                        onClick={() => navigate("/riley-demo")}
                       >
                         Talk to Riley
                       </Button>
@@ -263,7 +265,7 @@ const Pricing = () => {
             <p className="text-lg text-muted-foreground mb-6">
               Talk to Riley to discuss your needs and get a custom quote.
             </p>
-            <Button variant="hero" size="lg" onClick={() => window.location.href = "/riley-demo"}>
+            <Button variant="hero" size="lg" onClick={() => navigate("/riley-demo")}>
               Start a Conversation
             </Button>
           </Card>
