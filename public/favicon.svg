@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .a-body { fill: #2E4036; }
+      .dot { fill: #C75B2A; }
+    </style>
+  </defs>
+  <!-- Main "A" shape - left leg -->
+  <polygon class="a-body" points="256,48 56,464 120,464 256,168 392,464 456,464 256,48"/>
+  <!-- Cross bar -->
+  <rect class="a-body" x="148" y="310" width="216" height="42" rx="21"/>
+  <!-- Inner triangle cutout (transparent) -->
+  <polygon fill="#fff" fill-opacity="0" points="256,190 180,380 332,380"/>
+  <!-- Left inner leg extension -->
+  <polygon class="a-body" points="160,360 100,464 164,464 200,380"/>
+  <!-- Right inner leg extension -->
+  <polygon class="a-body" points="352,360 412,464 348,464 312,380"/>
+  <!-- Arrow pointing up-right from top of A -->
+  <g class="a-body">
+    <line x1="240" y1="100" x2="300" y2="50" stroke="#2E4036" stroke-width="28" stroke-linecap="round"/>
+    <polygon points="280,30 320,38 292,66"/>
+  </g>
+  <!-- Orange accent dot at top -->
+  <circle class="dot" cx="270" cy="36" r="24"/>
+  <!-- Horizontal connection / orbit line through middle -->
+  <ellipse class="a-body" cx="256" cy="310" rx="140" ry="12"/>
+  <circle fill="#FAF9F5" cx="256" cy="310" r="14"/>
+  <circle class="a-body" cx="256" cy="310" r="8"/>
+</svg>

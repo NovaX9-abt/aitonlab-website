@@ -1,66 +1,113 @@
-import { Quote, Star } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { Construction, ArrowRight } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScannerCarousel from "./ScannerCarousel";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Testimonials = () => {
-  return (
-    <section id="testimonials" className="py-28 relative">
-      <div className="glow-line mb-28" />
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <p className="text-sm font-semibold tracking-widest uppercase text-secondary mb-4">Testimonials</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Client Success Stories</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Hear from businesses that have transformed their customer support with AI.
-            </p>
-          </div>
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
 
-          <div className="glass rounded-2xl p-12 md:p-16 text-center shadow-elegant animate-slide-up">
-            <div className="max-w-2xl mx-auto space-y-6">
-              <div className="w-20 h-20 rounded-full gradient-primary flex items-center justify-center mx-auto opacity-80">
-                <Quote className="w-10 h-10 text-primary-foreground" />
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (textRef.current) {
+        const textElements = textRef.current.children;
+        gsap.fromTo(
+          textElements,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            stagger: 0.08,
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 80%",
+            },
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section id="projects" ref={sectionRef} className="py-32 relative overflow-hidden bg-moss">
+      {/* Background */}
+      <div className="absolute inset-0 bg-grid opacity-10 mix-blend-overlay" />
+      <div
+        className="absolute top-0 right-0 w-[600px] h-[400px] pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse at top right, rgba(204,88,51,0.15), transparent 65%)",
+          filter: "blur(60px)",
+        }}
+      />
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div ref={textRef} className="max-w-3xl mx-auto text-center mb-16">
+          <div>
+            <span className="text-sm font-bold tracking-widest uppercase text-clay">Client Stories</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 font-sans text-cream">
+            Real Results{" "}
+            <span className="font-[Cormorant_Garamond] italic font-normal text-clay text-[1.1em]">
+              Coming Soon
+            </span>
+          </h2>
+
+          {/* Honest teaser block */}
+          <div
+            className="bg-white/5 backdrop-blur-md rounded-[2rem] p-8 max-w-2xl mx-auto text-left shadow-lg transition-transform duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-clay/50 group"
+            style={{ border: "1px solid rgba(204,88,51,0.2)" }}
+          >
+            <div className="flex items-start gap-5">
+              <div
+                className="w-12 h-12 rounded-[1rem] flex items-center justify-center shrink-0 mt-0.5 bg-clay text-cream shadow-md group-hover:scale-110 transition-transform duration-300"
+              >
+                <Construction className="w-5 h-5" />
               </div>
-              <h3 className="text-3xl font-bold">Testimonials Coming Soon</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm currently working with my first clients to deliver exceptional AI solutions.
-                Their success stories will be featured here soon!
-              </p>
-              <div className="flex justify-center gap-1 pt-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                ))}
+              <div>
+                <p className="text-base font-bold mb-2 text-cream font-sans">
+                  Building with our first Kigali partners
+                </p>
+                <p className="text-sm text-cream/70 leading-relaxed font-sans mb-4">
+                  We're currently deploying AI agents with salons, clinics, and hotels in Kigali.
+                  Real ROI stories and verified results will be published here as our partnerships
+                  mature. We believe in honest reporting — no invented stats, ever.
+                </p>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="inline-flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all duration-300 text-clay hover:text-[#A94727]"
+                >
+                  Be one of our first partners
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
-              <p className="text-sm text-muted-foreground italic">
-                "Building trust, one successful project at a time."
-              </p>
             </div>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mt-12 opacity-30">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="glass rounded-2xl p-6 animate-fade-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="space-y-4">
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-4 h-4 fill-muted text-muted" />
-                    ))}
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-3 bg-muted rounded w-full" />
-                    <div className="h-3 bg-muted rounded w-5/6" />
-                    <div className="h-3 bg-muted rounded w-4/6" />
-                  </div>
-                  <div className="flex items-center gap-3 pt-4">
-                    <div className="w-10 h-10 rounded-full bg-muted" />
-                    <div className="space-y-1 flex-1">
-                      <div className="h-3 bg-muted rounded w-24" />
-                      <div className="h-2 bg-muted rounded w-32" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
+      </div>
+
+      {/* Full-width scanner carousel */}
+      <div className="relative fade-in">
+        <div className="h-px w-full mb-0 opacity-40 bg-gradient-to-r from-transparent via-clay to-transparent" />
+        <ScannerCarousel className="w-full" />
+        <div className="h-px w-full mt-0 opacity-40 bg-gradient-to-r from-transparent via-clay to-transparent" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10 mt-12">
+        <p className="text-xs text-center text-cream/40 font-mono tracking-wide uppercase">
+          Hover over cards · Drag to explore · Each card represents an industry sector we serve
+        </p>
       </div>
     </section>
   );

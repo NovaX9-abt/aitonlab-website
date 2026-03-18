@@ -1,83 +1,156 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import heroAbstract from "@/assets/hero-abstract.png";
+import { useEffect, useState } from "react";
+import { ArrowRight, ChevronDown, Mic } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import AIOrb from "./AIOrb";
+import RileyModal from "./RileyModal";
 
 const Hero = () => {
-  const navigate = useNavigate();
+  const [rileyOpen, setRileyOpen] = useState(false);
+
+  useEffect(() => {
+    AOS.init({ once: true, duration: 800, easing: "ease-out-cubic" });
+  }, []);
+
+  const scrollToServices = () =>
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+
+  const scrollToContact = () =>
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute inset-0 gradient-glow opacity-60" />
-      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px]" />
+    <>
+      <RileyModal isOpen={rileyOpen} onClose={() => setRileyOpen(false)} />
 
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `linear-gradient(hsl(270 70% 60% / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(270 70% 60% / 0.3) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }} />
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+        {/* ── Background layers ── */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-40"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&q=80')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-[#2E4036]/80 to-[#1A1A1A]/90" />
+        <div className="absolute inset-0 bg-grid opacity-30" />
+        <div
+          className="absolute top-1/3 left-0 w-[500px] h-[500px] rounded-full opacity-30 animate-pulse-glow"
+          style={{
+            background: "radial-gradient(circle, #CC583322, transparent 70%)",
+            filter: "blur(80px)",
+          }}
+        />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
-          <div className="space-y-8 animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-secondary/30 bg-secondary/5">
-              <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              <span className="text-sm font-medium text-secondary">Available for Work</span>
-            </div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-80px)]">
 
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
-              <span className="text-foreground">AI Agents That</span>
-              <br />
-              <span className="text-foreground">Work </span>
-              <span className="text-gradient">While You</span>
-              <br />
-              <span className="text-gradient">Sleep</span>
-            </h1>
+            {/* ── Left: Content ── */}
+            <div className="space-y-8 py-20 lg:py-0">
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-              AitonLab builds custom AI voice and WhatsApp agents that handle customer calls, capture leads, and book appointments — 24/7.
-            </p>
+              {/* Status badge */}
+              <div data-aos="fade-right" data-aos-delay="100">
+                <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-clay/30 bg-moss/40 backdrop-blur-md">
+                  <span className="w-2 h-2 rounded-full bg-clay animate-pulse" />
+                  <span className="text-xs font-semibold text-cream tracking-wide uppercase">
+                    Active in Kigali · Rwanda
+                  </span>
+                </span>
+              </div>
 
-            <div className="flex flex-wrap gap-4 pt-2">
-              <Button
-                variant="hero"
-                size="lg"
-                onClick={() => navigate("/riley-demo")}
-                className="group"
+              {/* Headline */}
+              <div data-aos="fade-right" data-aos-delay="200">
+                <h1 className="text-6xl sm:text-7xl xl:text-[5.5rem] leading-[1.05] tracking-tight">
+                  <span className="font-bold font-sans text-cream block mb-2">AI Agents That</span>
+                  <span className="font-bold font-sans text-cream block mb-4">Work </span>
+                  <span className="font-[Cormorant_Garamond] italic font-normal text-clay text-[1.25em] leading-[0.9] block">
+                    While You
+                    <br />
+                    Sleep.
+                  </span>
+                </h1>
+              </div>
+
+              {/* Subtitle */}
+              <div data-aos="fade-right" data-aos-delay="320">
+                <p className="text-lg md:text-xl text-cream/70 max-w-lg leading-relaxed font-sans">
+                  Autonomous AI for calls, WhatsApp, leads & bookings{" "}
+                  <span className="text-cream font-semibold">24/7</span> – no missed
+                  opportunities in{" "}
+                  <span className="text-clay font-semibold">Kigali</span>.
+                </p>
+              </div>
+
+              {/* CTA Buttons */}
+              <div
+                data-aos="fade-right"
+                data-aos-delay="420"
+                className="flex flex-col sm:flex-row flex-wrap gap-4 mt-8"
               >
-                Book a Demo
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-border/50 hover:border-primary/50 hover:bg-primary/5"
-                onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-              >
-                Our Services
-              </Button>
-            </div>
-          </div>
+                {/* Primary: Book Demo */}
+                <button
+                  id="hero-book-demo"
+                  onClick={scrollToContact}
+                  className="bg-clay hover:bg-[#A94727] text-cream font-semibold px-8 py-4 rounded-[2rem] text-base transition-transform duration-300 hover:scale-[1.03] shadow-lg flex items-center justify-center gap-2.5"
+                  style={{ transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}
+                >
+                  Book Free Demo
+                  <ArrowRight className="w-5 h-5" />
+                </button>
 
-          {/* Right hero image */}
-          <div className="relative animate-fade-in hidden lg:block" style={{ animationDelay: "0.3s" }}>
-            <div className="relative">
-              <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-3xl animate-pulse" style={{ animationDuration: "4s" }} />
-              <img
-                src={heroAbstract}
-                alt="Abstract AI visualization"
-                className="relative w-full max-w-lg mx-auto drop-shadow-2xl"
-              />
+                {/* Secondary: Riley voice */}
+                <div className="flex flex-col items-start gap-1">
+                  <button
+                    id="hero-riley-cta"
+                    onClick={() => setRileyOpen(true)}
+                    className="group flex flex-1 w-full items-center justify-center gap-2.5 font-semibold px-6 py-4 rounded-[2rem] text-base border border-moss hover:border-clay hover:bg-moss/20 transition-all duration-300 text-cream backdrop-blur-md hover:-translate-y-1"
+                  >
+                    <Mic className="w-5 h-5 text-clay" />
+                    Talk to Riley – Free Voice Demo
+                  </button>
+                  <span className="text-xs text-cream/50 ml-4 font-mono">
+                    *Dedicated RW number pending (separate from WhatsApp)
+                  </span>
+                </div>
+              </div>
+
+              {/* Stats row */}
+              <div data-aos="fade-up" data-aos-delay="540" className="flex flex-wrap gap-8 pt-6 mt-4 border-t border-moss/30">
+                {[
+                  { value: "24/7", label: "AI Calls" },
+                  { value: "+98%", label: "WhatsApp" },
+                  { value: "99.9%", label: "Uptime" },
+                ].map((s, i) => (
+                  <div key={i} className="flex flex-col">
+                    <span className="text-3xl font-bold font-mono text-cream">
+                      {s.value}
+                    </span>
+                    <span className="text-sm text-clay mt-1 uppercase tracking-wider font-semibold">{s.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            {/* Decorative line */}
-            <div className="absolute top-1/2 -left-20 w-40 h-px bg-gradient-to-r from-transparent to-primary/30 -rotate-45" />
+
+            {/* ── Right: 3D AI Orb ── */}
+            <div
+              className="relative hidden lg:flex items-center justify-center"
+              data-aos="fade-left"
+              data-aos-delay="300"
+              style={{ height: "600px" }}
+            >
+              <AIOrb />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+
+        {/* Scroll indicator */}
+        <button
+          onClick={scrollToServices}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <span className="text-xs font-medium tracking-widest uppercase opacity-60">Scroll</span>
+          <ChevronDown className="w-5 h-5 animate-bounce opacity-60" />
+        </button>
+
+        <div className="absolute bottom-0 left-0 right-0 glow-line opacity-40" />
+      </section>
+    </>
   );
 };
 
