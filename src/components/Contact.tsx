@@ -7,15 +7,10 @@ import RileyModal from "./RileyModal";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Initialize Supabase client with env vars from .env.local
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL ?? "";
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY ?? "";
 
-if (!supabaseUrl || !supabaseKey) {
-  console.error('Missing Supabase env vars. Check VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in .env.local');
-}
-
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase = supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null;
 
 const Contact = () => {
   const [rileyOpen, setRileyOpen] = useState(false);
@@ -89,6 +84,7 @@ const Contact = () => {
     console.log('Submitting:', data);
 
     try {
+      if (!supabase) throw new Error("Supabase not configured");
       const { error } = await supabase
         .from("contact_submissions")
         .insert([data]);
