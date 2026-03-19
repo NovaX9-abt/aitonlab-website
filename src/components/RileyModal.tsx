@@ -73,7 +73,7 @@ const RileyModal = ({ isOpen, onClose }: RileyModalProps) => {
                         <span className="block text-lg font-[Cormorant_Garamond] italic text-cream/70 mt-1">AI Voice Assistant Demo</span>
                     </h2>
                     <p className="text-sm text-cream/80 leading-relaxed font-sans">
-                        Riley is our AI voice assistant designed to handle real business inquiries. He gathers your business needs and helps schedule a consultation call with an AitonLab consultant.
+                        Riley is our AI voice assistant designed to handle real business inquiries. She gathers your business needs and helps schedule a consultation call with an AitonLab consultant.
                     </p>
 
                     <div className="bg-charcoal/50 rounded-xl p-4 text-left border border-clay/10 space-y-2 mt-4 mb-6">
@@ -87,20 +87,16 @@ const RileyModal = ({ isOpen, onClose }: RileyModalProps) => {
                         </div>
                     </div>
 
-                    {/* Call CTA */}
-                    <a
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        id="riley-start-call"
-                        className="w-full flex items-center justify-center gap-2.5 text-cream font-semibold py-4 rounded-[2rem] text-base bg-clay hover:bg-[#A94727] transition-all duration-300 hover:scale-[1.03] shadow-md"
-                        style={{ textDecoration: "none", transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)", cursor: "not-allowed" }}
-                    >
-                        <Phone className="w-4 h-4" />
-                        Start Call — +250 XXX XXX XXX
-                    </a>
+                    {/* Coming Soon Banner */}
+                    <div className="w-full py-4 px-6 rounded-[2rem] text-base bg-clay/20 border border-clay/30">
+                        <p className="text-cream font-semibold text-base mb-1">Coming Soon</p>
+                        <p className="text-cream/60 text-sm">
+                            Riley's dedicated RW phone line is being set up. You'll be able to call and speak directly with our AI assistant very soon.
+                        </p>
+                    </div>
 
                     <p className="text-[11px] text-cream/50 font-mono mt-4 leading-relaxed">
-                        *(Number Pending) Riley uses a dedicated RW line, separate from our WhatsApp line (+250 793 581 847). Handled by AI.
+                        Riley will use a dedicated RW line, separate from our WhatsApp line (+250 793 581 847). Handled by AI.
                     </p>
                 </div>
             </div>

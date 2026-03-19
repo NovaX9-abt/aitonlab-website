@@ -127,7 +127,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* ── Right: 3D AI Orb ── */}
+            {/* ── Right: 3D AI Orb (desktop) ── */}
             <div
               className="relative hidden lg:flex items-center justify-center"
               data-aos="fade-left"
@@ -135,6 +135,117 @@ const Hero = () => {
               style={{ height: "600px" }}
             >
               <AIOrb />
+            </div>
+
+            {/* ── Mobile Orb (visible below lg) ── */}
+            <div
+              className="relative flex lg:hidden items-center justify-center py-4"
+              data-aos="fade-up"
+              data-aos-delay="300"
+              style={{ height: "280px" }}
+            >
+              <div className="relative w-[240px] h-[240px]">
+                {/* Glow */}
+                <div
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    background: "radial-gradient(circle, rgba(46,64,54,0.3), rgba(204,88,51,0.15) 50%, transparent 75%)",
+                    filter: "blur(30px)",
+                    animation: "orb-pulse 5s ease-in-out infinite",
+                  }}
+                />
+                {/* Outer ring */}
+                <div
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    border: "1px solid rgba(46,64,54,0.25)",
+                    animation: "spin-slow 25s linear infinite",
+                  }}
+                />
+                {/* Middle ring */}
+                <div
+                  className="absolute rounded-full"
+                  style={{
+                    inset: "20px",
+                    border: "1px solid rgba(204,88,51,0.2)",
+                    animation: "spin-slow 18s linear infinite reverse",
+                  }}
+                />
+                {/* Core sphere */}
+                <div
+                  className="absolute rounded-full"
+                  style={{
+                    inset: "50px",
+                    background: "radial-gradient(circle at 35% 35%, #8FA89A, #2E4036 45%, #1A241F 80%, #0F1613)",
+                    boxShadow: "0 0 40px rgba(46,64,54,0.5), 0 0 80px rgba(46,64,54,0.2), inset -12px -12px 24px rgba(15,22,19,0.8), inset 6px 6px 18px rgba(143,168,154,0.3)",
+                    animation: "float-y 7s ease-in-out infinite",
+                  }}
+                />
+                {/* Specular highlight */}
+                <div
+                  className="absolute rounded-full"
+                  style={{
+                    top: "58px",
+                    left: "68px",
+                    width: "50px",
+                    height: "36px",
+                    background: "radial-gradient(ellipse at 40% 40%, rgba(255,255,255,0.35), transparent 70%)",
+                    filter: "blur(3px)",
+                  }}
+                />
+                {/* Orbiting dots */}
+                {[0, 120, 240].map((deg, i) => (
+                  <div
+                    key={i}
+                    className="absolute inset-0 rounded-full"
+                    style={{ animation: `spin-slow ${12 + i * 3}s linear infinite ${i % 2 ? "reverse" : ""}` }}
+                  >
+                    <div
+                      className="absolute rounded-full"
+                      style={{
+                        width: 5,
+                        height: 5,
+                        top: -2,
+                        left: "50%",
+                        marginLeft: -2,
+                        background: i % 2 === 0 ? "#8FA89A" : "#D67B5A",
+                        boxShadow: i % 2 === 0
+                          ? "0 0 8px #8FA89A, 0 0 16px rgba(46,64,54,0.5)"
+                          : "0 0 6px #D67B5A, 0 0 12px rgba(204,88,51,0.5)",
+                      }}
+                    />
+                  </div>
+                ))}
+                {/* Floating labels */}
+                {[
+                  { top: "-8px", left: "-16px", label: "AI Calls", value: "24/7", color: "moss" },
+                  { top: "-8px", right: "-16px", label: "WhatsApp", value: "↑ 98%", color: "clay" },
+                  { bottom: "-8px", left: "4px", label: "Leads", value: "Auto", color: "clay" },
+                  { bottom: "-8px", right: "4px", label: "Uptime", value: "99.9%", color: "moss" },
+                ].map((card, i) => (
+                  <div
+                    key={i}
+                    className="absolute bg-white/5 backdrop-blur-md rounded-lg px-2 py-1.5 pointer-events-none"
+                    style={{
+                      top: (card as any).top,
+                      left: (card as any).left,
+                      right: (card as any).right,
+                      bottom: (card as any).bottom,
+                      animation: `float-y ${5 + i * 0.8}s ease-in-out infinite`,
+                      animationDelay: `${i * 0.5}s`,
+                      border: `1px solid ${card.color === "moss" ? "rgba(46,64,54,0.4)" : "rgba(204,88,51,0.4)"}`,
+                    }}
+                  >
+                    <p className="text-[10px] text-cream/70 leading-none">{card.label}</p>
+                    <p
+                      className="text-xs font-bold font-mono leading-tight"
+                      style={{ color: card.color === "moss" ? "#8FA89A" : "#D67B5A" }}
+                    >
+                      {card.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
