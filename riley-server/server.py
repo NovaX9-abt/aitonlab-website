@@ -9,6 +9,7 @@ import json
 import base64
 import asyncio
 import logging
+import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from collections import defaultdict
@@ -224,7 +225,10 @@ def execute_tool(name: str, args: dict) -> dict:
     if name not in TOOLS:
         return {"status": "error", "error_message": f"Unknown tool: {name}"}
     try:
+        t0 = time.perf_counter()
         result = TOOLS[name](**args)
+        elapsed = time.perf_counter() - t0
+        logger.info(f"[TIMING] Tool {name} execution took {elapsed:.3f}s")
         logger.info(f"Tool {name} result: {result}")
         return result
     except Exception as e:
@@ -248,6 +252,17 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.on_event("startup")
+async def warmup_tools():
+    """Pre-build Google API clients at startup so first tool call is fast."""
+    try:
+        calendar_tool._get_service()
+        sheets_tool._get_sheet()
+        logger.info("Tool clients warmed up (Calendar + Sheets)")
+    except Exception as e:
+        logger.warning(f"Tool warmup failed (will retry on first call): {e}")
 
 
 @app.get("/health")
@@ -365,7 +380,9 @@ async def websocket_endpoint(ws: WebSocket):
                             if hasattr(response, 'tool_call') and response.tool_call:
                                 for fc in response.tool_call.function_calls:
                                     try:
+                                        t_start = time.perf_counter()
                                         tool_name = fc.name
+                                        tool_call_id = fc.id if hasattr(fc, 'id') else None
                                         # Handle args from Gemini (may be proto MapComposite)
                                         raw_args = fc.args
                                         if raw_args is None:
@@ -378,7 +395,7 @@ async def websocket_endpoint(ws: WebSocket):
                                             except Exception:
                                                 tool_args = json.loads(str(raw_args))
 
-                                        logger.info(f"Tool call: {tool_name}({tool_args})")
+                                        logger.info(f"[TIMING] Tool call received: {tool_name}({tool_args}) id={tool_call_id}")
 
                                         await ws.send_json({
                                             "type": "tool_call",
@@ -387,7 +404,10 @@ async def websocket_endpoint(ws: WebSocket):
                                         })
 
                                         # Execute the tool in a thread pool (non-blocking)
+                                        t_exec = time.perf_counter()
                                         result = await execute_tool_async(tool_name, tool_args)
+                                        t_exec_done = time.perf_counter()
+                                        logger.info(f"[TIMING] {tool_name} async execution: {t_exec_done - t_exec:.3f}s")
 
                                         await ws.send_json({
                                             "type": "tool_result",
@@ -395,25 +415,35 @@ async def websocket_endpoint(ws: WebSocket):
                                             "status": result.get("status", "unknown")
                                         })
 
-                                        # Send result back to Gemini
+                                        # Send result back to Gemini (include id for matching)
+                                        t_gemini = time.perf_counter()
+                                        fn_response_kwargs = {
+                                            "name": tool_name,
+                                            "response": result,
+                                        }
+                                        if tool_call_id:
+                                            fn_response_kwargs["id"] = tool_call_id
                                         await session.send_tool_response(
                                             function_responses=[
-                                                types.FunctionResponse(
-                                                    name=tool_name,
-                                                    response=result
-                                                )
+                                                types.FunctionResponse(**fn_response_kwargs)
                                             ]
                                         )
+                                        t_gemini_done = time.perf_counter()
+                                        logger.info(f"[TIMING] {tool_name} send_tool_response to Gemini: {t_gemini_done - t_gemini:.3f}s")
+                                        logger.info(f"[TIMING] {tool_name} TOTAL (call to Gemini response sent): {t_gemini_done - t_start:.3f}s")
                                     except Exception as tool_err:
                                         logger.error(f"Tool call handling error: {tool_err}", exc_info=True)
                                         # Send error result back to Gemini so it can continue
                                         try:
+                                            err_kwargs = {
+                                                "name": fc.name,
+                                                "response": {"status": "error", "error_message": str(tool_err)},
+                                            }
+                                            if hasattr(fc, 'id') and fc.id:
+                                                err_kwargs["id"] = fc.id
                                             await session.send_tool_response(
                                                 function_responses=[
-                                                    types.FunctionResponse(
-                                                        name=fc.name,
-                                                        response={"status": "error", "error_message": str(tool_err)}
-                                                    )
+                                                    types.FunctionResponse(**err_kwargs)
                                                 ]
                                             )
                                         except Exception:
