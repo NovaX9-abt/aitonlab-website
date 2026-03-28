@@ -198,7 +198,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-base font-bold text-moss font-sans flex flex-col md:flex-row md:items-center gap-1 mb-1.5">
                     Voice AI (Riley):
-                    <span className="text-[11px] font-mono font-bold text-clay uppercase tracking-wide bg-clay/10 px-2 py-0.5 rounded-md border border-clay/10 w-fit">Local RW number pending activation</span>
+                    <span className="text-[11px] font-mono font-bold text-clay uppercase tracking-wide bg-clay/10 px-2 py-0.5 rounded-md border border-clay/10 w-fit">Live AI Voice Demo</span>
                   </h4>
                   <p className="text-xs text-moss/70 font-sans leading-relaxed mt-1">Riley gathers your business needs – Schedules a consultation – 2-4 min</p>
                 </div>

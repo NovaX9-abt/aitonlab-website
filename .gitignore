@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Riley server secrets
+riley-server/.env
+riley-server/token.json
+riley-server/client_secret.json
+riley-server/__pycache__/
+riley-server/tools/__pycache__/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

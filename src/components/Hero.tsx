@@ -105,7 +105,7 @@ const Hero = () => {
                     Talk to Riley – Free Voice Demo
                   </button>
                   <span className="text-xs text-cream/50 ml-4 font-mono">
-                    *Dedicated RW number pending (separate from WhatsApp)
+                    Live AI voice demo &middot; Ask anything
                   </span>
                 </div>
               </div>
