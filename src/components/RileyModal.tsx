@@ -102,7 +102,7 @@ const RileyModal = ({ isOpen, onClose }: RileyModalProps) => {
                         </h2>
                         <p className="text-sm text-cream/80 leading-relaxed font-sans mt-4 px-2">
                             Riley can tell you about our services, answer your questions,
-                            and book a consultation with the AitonLab team.
+                            and book a consultation with an AitonLab consultant.
                         </p>
                         <button
                             onClick={startSession}
@@ -114,6 +114,9 @@ const RileyModal = ({ isOpen, onClose }: RileyModalProps) => {
                         </button>
                         <p className="text-[11px] text-cream/50 font-mono mt-4">
                             Avg. conversation: 2–4 min &middot; Handled by AI
+                        </p>
+                        <p className="text-[10px] text-cream/40 font-mono mt-1">
+                            For business inquiries only
                         </p>
                     </div>
                 )}
@@ -197,7 +200,7 @@ const RileyModal = ({ isOpen, onClose }: RileyModalProps) => {
                             Thanks for talking with Riley!
                         </h3>
                         <p className="text-sm text-cream/70 mt-2 font-sans">
-                            The AitonLab team will follow up with you soon.
+                            An AitonLab consultant will follow up with you soon.
                         </p>
                         {transcripts.length > 0 && (
                             <div className="mt-4 w-full max-h-[30vh] overflow-y-auto space-y-2 px-1">
